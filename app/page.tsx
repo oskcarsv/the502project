@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-blue-400 font-mono flex items-center justify-center p-4">
+    <main className="min-h-screen bg-black text-green-400 font-mono flex items-center justify-center p-4">
       <div className="max-w-3xl">
         <div className="mb-8">
           <span className="text-gray-500">~/the502project</span>
@@ -29,13 +29,13 @@ export default function Home() {
             Este es el espacio donde los <span className="text-white">emprendedores</span>, <span className="text-white">founders</span> y <span className="text-white">builders</span> de Guatemala se juntan y construyen.
           </p>
 
-          <div className="mt-12 pt-8 border-t border-blue-900">
+          <div className="mt-12 pt-8 border-t border-green-900">
             <p className="mb-4">Únete a la comunidad:</p>
             <a
               href="https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all duration-200 font-bold"
+              className="inline-block px-6 py-3 border-2 border-green-400 hover:bg-green-400 hover:text-black transition-all duration-200 font-bold"
             >
               {'>'} WhatsApp Community
             </a>
@@ -43,6 +43,12 @@ export default function Home() {
 
           <p className="mt-8 text-sm text-gray-600">
             Hagamos el cambio. Juntos.
+          </p>
+
+          <p className="mt-4 text-sm text-gray-700">
+            <a href="mailto:hello@the502project.com" className="hover:text-green-400 transition-colors">
+              hello@the502project.com
+            </a>
           </p>
         </div>
       </div>
