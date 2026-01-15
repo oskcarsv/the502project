@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/goals',
-        destination: 'https://the-goals-project.vercel.app',
+        destination: 'https://the-goals-project.vercel.app/goals',
       },
       {
         source: '/goals/:path*',
-        destination: 'https://the-goals-project.vercel.app/:path*',
+        destination: 'https://the-goals-project.vercel.app/goals/:path*',
       },
     ];
   },
