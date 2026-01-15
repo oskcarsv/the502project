@@ -46,7 +46,7 @@ export default function Home() {
                 href="/goals"
                 className="inline-block px-6 py-3 border-2 border-gray-700 text-gray-400 hover:border-green-400 hover:text-green-400 transition-all duration-200"
               >
-                {'>'} the_goals_project
+                {'>'} Club de Metas
               </Link>
             </div>
           </div>
