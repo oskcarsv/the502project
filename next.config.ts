@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: '/goals',
+        destination: 'https://the-goals-project.vercel.app',
+      },
+      {
+        source: '/goals/:path*',
+        destination: 'https://the-goals-project.vercel.app/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
