@@ -54,7 +54,3 @@ src/
 ## Deploy
 
 Push a GitHub y conecta con [Vercel](https://vercel.com) o [Cloudflare Pages](https://pages.cloudflare.com).
-
----
-
-Construyendo el futuro desde Guatemala 🇬🇹
