@@ -1,47 +1,65 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 const links = {
   discord: 'https://discord.gg/AZeuYhCu',
   whatsapp: 'https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM'
 };
 
-const events = [
-  {
-    title: 'Guatemala City Event',
-    date: '2026-02-15',
-    time: '18:00',
-    type: 'presencial',
-    location: 'Guatemala City',
-    description: 'founders compartiendo estrategias reales'
-  },
-  {
-    title: 'Demo Day',
-    date: '2026-02-22',
-    time: '19:00',
-    type: 'virtual',
-    location: 'WhatsApp',
-    description: '5 minutos para mostrar tu proyecto y recibir feedback'
-  },
-  {
-    title: 'Workshop: Validación rápida',
-    date: '2026-03-01',
-    time: '10:00',
-    type: 'virtual',
-    location: 'WhatsApp',
-    description: 'técnicas para validar antes de escribir código'
-  }
-];
+const allEvents = await getCollection('events');
+const today = new Date().toISOString().split('T')[0];
+
+const upcomingEvents = allEvents
+  .filter(event => event.data.date >= today && event.data.status !== 'past')
+  .sort((a, b) => a.data.date.localeCompare(b.data.date));
+
+const pastEvents = allEvents
+  .filter(event => event.data.date < today || event.data.status === 'past')
+  .sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+const featuredEvent = upcomingEvents.find(e => e.data.featured) || upcomingEvents[0];
+const otherUpcoming = upcomingEvents.filter(e => e.slug !== featuredEvent?.slug);
 
 const formatDate = (date: string) => {
   const d = new Date(date);
   return d.toLocaleDateString('es-GT', { day: 'numeric', month: 'short' });
 };
+
+const formatFullDate = (date: string) => {
+  const d = new Date(date);
+  return d.toLocaleDateString('es-GT', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+};
+
+const getStatusBadge = (status: string) => {
+  const badges: Record<string, { text: string; class: string }> = {
+    'open': { text: 'registro abierto', class: 'bg-502-green/20 text-502-green' },
+    'waitlist': { text: 'lista de espera', class: 'bg-yellow-500/20 text-yellow-400' },
+    'sold-out': { text: 'agotado', class: 'bg-red-500/20 text-red-400' },
+    'requires-application': { text: 'requiere aplicación', class: 'bg-purple-500/20 text-purple-400' },
+    'past': { text: 'finalizado', class: 'bg-gray-500/20 text-gray-400' }
+  };
+  return badges[status] || badges['open'];
+};
+
+const getTypeBadge = (type: string) => {
+  const types: Record<string, { text: string; class: string }> = {
+    'presencial': { text: 'presencial', class: 'text-502-green' },
+    'virtual': { text: 'virtual', class: 'text-purple-400' },
+    'hybrid': { text: 'híbrido', class: 'text-blue-400' }
+  };
+  return types[type] || types['presencial'];
+};
 ---
 
 <Layout
   title="Eventos | the502project"
-  description="eventos de la comunidad 502"
+  description="cartelera de eventos de la comunidad 502"
   lang="es"
 >
   <div class="min-h-screen grid-bg">
@@ -56,9 +74,13 @@ const formatDate = (date: string) => {
         </span>
         <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">regresar</span>
       </a>
-      <a href="#eventos" class="nav-item group flex items-center gap-3">
+      <a href="#proximos" class="nav-item group flex items-center gap-3">
         <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">eventos</span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">próximos</span>
+      </a>
+      <a href="#pasados" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">pasados</span>
       </a>
       <a href="#proponer" class="nav-item group flex items-center gap-3">
         <span class="nav-indicator"></span>
@@ -78,8 +100,8 @@ const formatDate = (date: string) => {
     <!-- Main content -->
     <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-32 xl:ml-48">
 
-      <!-- Events Section -->
-      <section id="eventos" class="min-h-screen flex flex-col justify-center py-20">
+      <!-- Upcoming Events Section -->
+      <section id="proximos" class="min-h-screen flex flex-col justify-center py-20">
         <span class="text-502-green text-xs tracking-wider mb-8 block">EVENTOS</span>
 
         <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6">
@@ -87,37 +109,168 @@ const formatDate = (date: string) => {
         </h1>
         <p class="text-gray-400 text-lg max-w-lg mb-12">
           founders y cracks del ecosistema compartiendo lo que funciona.
-          acción, no charlas motivacionales. si querés una TED talk, youtube es gratis.
+          acción, no charlas motivacionales.
         </p>
 
-        <!-- Events List -->
-        <div class="fade-in">
-          <p class="text-gray-500 text-sm mb-6">próximos</p>
+        <!-- Featured Event -->
+        {featuredEvent && (
+          <div class="fade-in mb-12">
+            <p class="text-gray-500 text-sm mb-4">próximo evento</p>
+            <a
+              href={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl || '#'}
+              target={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl ? '_blank' : undefined}
+              rel={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl ? 'noopener noreferrer' : undefined}
+              class="block group"
+            >
+              <div class="border border-white/10 hover:border-502-green/50 transition-colors p-6 md:p-8">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <span class={`text-xs px-2 py-1 rounded ${getStatusBadge(featuredEvent.data.status).class}`}>
+                    {getStatusBadge(featuredEvent.data.status).text}
+                  </span>
+                  <span class={`text-xs ${getTypeBadge(featuredEvent.data.type).class}`}>
+                    {getTypeBadge(featuredEvent.data.type).text}
+                  </span>
+                  {featuredEvent.data.collaboration && (
+                    <span class="text-xs text-gray-500">
+                      · con {featuredEvent.data.collaboratorName}
+                    </span>
+                  )}
+                </div>
+
+                <h2 class="text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-502-green transition-colors">
+                  {featuredEvent.data.titleEs || featuredEvent.data.title}
+                </h2>
+
+                <p class="text-gray-400 mb-6">
+                  {featuredEvent.data.descriptionEs || featuredEvent.data.description}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-gray-300">{formatFullDate(featuredEvent.data.date)}</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-gray-300">{featuredEvent.data.time}{featuredEvent.data.endTime && ` - ${featuredEvent.data.endTime}`}</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="text-gray-300">{featuredEvent.data.locationEs || featuredEvent.data.location}</span>
+                  </div>
+                </div>
+
+                {(featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl) && featuredEvent.data.status !== 'sold-out' && (
+                  <div class="mt-6 pt-6 border-t border-white/10">
+                    <span class="inline-flex items-center gap-2 text-502-green group-hover:underline">
+                      registrarme
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
+                )}
+              </div>
+            </a>
+          </div>
+        )}
+
+        <!-- Other Upcoming Events -->
+        {otherUpcoming.length > 0 && (
+          <div class="fade-in">
+            <p class="text-gray-500 text-sm mb-6">más eventos</p>
+            <div class="space-y-0">
+              {otherUpcoming.map((event) => (
+                <a
+                  href={event.data.lumaUrl || event.data.customRegistrationUrl || '#'}
+                  target={event.data.lumaUrl || event.data.customRegistrationUrl ? '_blank' : undefined}
+                  rel={event.data.lumaUrl || event.data.customRegistrationUrl ? 'noopener noreferrer' : undefined}
+                  class="stagger-item group border-b border-white/10 py-6 first:pt-0 block"
+                >
+                  <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class={`text-xs ${getTypeBadge(event.data.type).class}`}>
+                          {getTypeBadge(event.data.type).text}
+                        </span>
+                        <span class={`text-xs px-2 py-0.5 rounded ${getStatusBadge(event.data.status).class}`}>
+                          {getStatusBadge(event.data.status).text}
+                        </span>
+                      </div>
+                      <h3 class="text-xl md:text-2xl group-hover:text-502-green transition-colors mb-2">
+                        {event.data.titleEs || event.data.title}
+                      </h3>
+                      <p class="text-gray-400 text-sm">
+                        {event.data.descriptionEs || event.data.description}
+                      </p>
+                    </div>
+                    <div class="flex flex-col items-start md:items-end gap-1 text-sm text-gray-500 md:min-w-[140px]">
+                      <span>{formatDate(event.data.date)}</span>
+                      <span>{event.data.time}</span>
+                      <span class="text-gray-600">{event.data.locationEs || event.data.location}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {upcomingEvents.length === 0 && (
+          <div class="fade-in border border-white/10 p-8 text-center">
+            <p class="text-gray-400 mb-4">no hay eventos programados por ahora</p>
+            <a href="#proponer" class="text-502-green hover:underline">propón uno</a>
+          </div>
+        )}
+      </section>
+
+      <!-- Past Events Section -->
+      {pastEvents.length > 0 && (
+        <section id="pasados" class="fade-in py-24 border-t border-white/5">
+          <span class="text-502-green text-xs tracking-wider mb-8 block">ARCHIVO</span>
+
+          <h2 class="text-3xl sm:text-4xl mb-8">
+            eventos <span class="italic">pasados</span>
+          </h2>
+
           <div class="space-y-0">
-            {events.map((event) => (
-              <div class="stagger-item group border-b border-white/10 py-6 first:pt-0">
-                <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-2">
-                  <h3 class="text-xl md:text-2xl group-hover:text-502-green transition-colors">
-                    {event.title}
-                  </h3>
-                  <div class="flex items-center gap-4 text-sm text-gray-500">
-                    <span>{formatDate(event.date)}</span>
-                    <span>{event.time}</span>
-                    <span class:list={[
-                      event.type === 'virtual' ? 'text-purple-400' : 'text-502-green'
-                    ]}>
-                      {event.type}
+            {pastEvents.map((event) => (
+              <div class="stagger-item border-b border-white/10 py-5 first:pt-0 opacity-60 hover:opacity-100 transition-opacity">
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <h3 class="text-lg md:text-xl">
+                        {event.data.titleEs || event.data.title}
+                      </h3>
+                      {event.data.collaboration && (
+                        <span class="text-xs text-gray-600">
+                          con {event.data.collaboratorName}
+                        </span>
+                      )}
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                      {event.data.descriptionEs || event.data.description}
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-4 text-sm text-gray-600 md:min-w-[100px] md:justify-end">
+                    <span>{formatDate(event.data.date)}</span>
+                    <span class={getTypeBadge(event.data.type).class}>
+                      {getTypeBadge(event.data.type).text}
                     </span>
                   </div>
                 </div>
-                <p class="text-gray-400 text-sm">
-                  {event.description} · {event.location}
-                </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <!-- Propose Section -->
       <section id="proponer" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
