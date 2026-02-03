@@ -1,27 +1,42 @@
 {
   "name": "the502project",
-  "version": "0.1.0",
-  "private": true,
+  "version": "2.0.0",
+  "description": "Comunidad de builders, founders y dreamers construyendo empresas de talla mundial desde Guatemala",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@personal:oskcarsv/the502project.git"
+  },
+  "keywords": [
+    "guatemala",
+    "community",
+    "builders",
+    "startups",
+    "tech"
+  ],
+  "author": "The 502 Project",
+  "license": "MIT",
   "dependencies": {
-    "next": "15.0.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.17.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.30.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9",
-    "eslint-config-next": "^15.0.3",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,0 +1,108 @@
+---
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: {
+    title: 'Iniciativas',
+    subtitle: 'Proyectos impulsados por la comunidad para crecer juntos',
+    viewAll: 'Ver todas las iniciativas',
+    comingSoon: 'Próximamente'
+  },
+  en: {
+    title: 'Initiatives',
+    subtitle: 'Community-driven projects to grow together',
+    viewAll: 'View all initiatives',
+    comingSoon: 'Coming Soon'
+  }
+};
+
+const text = t[lang];
+
+const initiatives = [
+  {
+    id: 'goals',
+    title: lang === 'es' ? 'Club de Metas' : 'Goals Club',
+    description: lang === 'es'
+      ? 'Establece metas públicas y trackea tu progreso junto a otros builders.'
+      : 'Set public goals and track your progress alongside other builders.',
+    icon: '🎯',
+    status: 'active',
+    link: '/goals'
+  },
+  {
+    id: 'meetups',
+    title: lang === 'es' ? 'Meetups 502' : '502 Meetups',
+    description: lang === 'es'
+      ? 'Eventos presenciales y virtuales para conectar con la comunidad.'
+      : 'In-person and virtual events to connect with the community.',
+    icon: '🤝',
+    status: 'active',
+    link: lang === 'es' ? '/events' : '/en/events'
+  },
+  {
+    id: 'opensource',
+    title: 'Open Source',
+    description: lang === 'es'
+      ? 'Contribuye a proyectos open source hechos por la comunidad.'
+      : 'Contribute to open source projects made by the community.',
+    icon: '💻',
+    status: 'coming',
+    link: '#'
+  }
+];
+---
+
+<section id="initiatives" class="py-24 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">{text.title}</h2>
+      <p class="section-subtitle mx-auto">{text.subtitle}</p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {initiatives.map((initiative) => (
+        <a
+          href={initiative.status === 'active' ? initiative.link : undefined}
+          class:list={[
+            'card group relative',
+            initiative.status === 'coming' && 'opacity-60 cursor-not-allowed'
+          ]}
+        >
+          {initiative.status === 'coming' && (
+            <span class="absolute top-4 right-4 text-xs px-2 py-1 bg-502-green/20 text-502-green rounded-full">
+              {text.comingSoon}
+            </span>
+          )}
+          <div class="text-4xl mb-4">{initiative.icon}</div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-502-green transition-colors">
+            {initiative.title}
+          </h3>
+          <p class="text-gray-400 text-sm">
+            {initiative.description}
+          </p>
+          {initiative.status === 'active' && (
+            <div class="mt-4 text-502-green text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+              {lang === 'es' ? 'Explorar' : 'Explore'}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          )}
+        </a>
+      ))}
+    </div>
+
+    <!-- View All Link -->
+    <div class="text-center mt-12">
+      <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="link">
+        {text.viewAll} →
+      </a>
+    </div>
+  </div>
+</section>

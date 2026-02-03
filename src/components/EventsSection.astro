@@ -1,0 +1,120 @@
+---
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: {
+    title: 'Próximos Eventos',
+    subtitle: 'Conéctate con la comunidad en eventos presenciales y virtuales',
+    viewAll: 'Ver calendario completo',
+    noEvents: 'Próximamente anunciaremos nuevos eventos',
+    virtual: 'Virtual',
+    inPerson: 'Presencial'
+  },
+  en: {
+    title: 'Upcoming Events',
+    subtitle: 'Connect with the community at in-person and virtual events',
+    viewAll: 'View full calendar',
+    noEvents: 'New events coming soon',
+    virtual: 'Virtual',
+    inPerson: 'In-Person'
+  }
+};
+
+const text = t[lang];
+
+// Placeholder events - these would come from a CMS or markdown files
+const events = [
+  {
+    id: 1,
+    title: lang === 'es' ? 'Meetup Mensual Guatemala City' : 'Monthly Meetup Guatemala City',
+    date: '2026-02-15',
+    time: '18:00',
+    type: 'in-person',
+    location: 'Guatemala City',
+    description: lang === 'es'
+      ? 'Networking y charlas con la comunidad de builders.'
+      : 'Networking and talks with the builders community.'
+  },
+  {
+    id: 2,
+    title: lang === 'es' ? 'Demo Day: Muestra tu proyecto' : 'Demo Day: Show your project',
+    date: '2026-02-22',
+    time: '19:00',
+    type: 'virtual',
+    location: 'Discord',
+    description: lang === 'es'
+      ? 'Presenta lo que estás construyendo a la comunidad.'
+      : 'Present what you are building to the community.'
+  }
+];
+
+function formatDate(dateStr: string, lang: string) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString(lang === 'es' ? 'es-GT' : 'en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  });
+}
+---
+
+<section id="events" class="py-24 bg-502-gray/30 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">{text.title}</h2>
+      <p class="section-subtitle mx-auto">{text.subtitle}</p>
+    </div>
+
+    <!-- Events List -->
+    {events.length > 0 ? (
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {events.map((event) => (
+          <div class="card flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+            <!-- Date Badge -->
+            <div class="flex-shrink-0 text-center bg-502-green/10 rounded-lg p-3 min-w-[80px]">
+              <div class="text-502-green font-bold text-lg">
+                {new Date(event.date).getDate()}
+              </div>
+              <div class="text-gray-400 text-xs uppercase">
+                {new Date(event.date).toLocaleDateString(lang === 'es' ? 'es-GT' : 'en-US', { month: 'short' })}
+              </div>
+            </div>
+
+            <!-- Event Info -->
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class:list={[
+                  'text-xs px-2 py-0.5 rounded-full',
+                  event.type === 'virtual' ? 'bg-purple-500/20 text-purple-400' : 'bg-502-green/20 text-502-green'
+                ]}>
+                  {event.type === 'virtual' ? text.virtual : text.inPerson}
+                </span>
+                <span class="text-gray-500 text-sm">
+                  {event.time} · {event.location}
+                </span>
+              </div>
+              <h3 class="text-lg font-semibold mb-1">{event.title}</h3>
+              <p class="text-gray-400 text-sm">{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center text-gray-400 py-12">
+        <p>{text.noEvents}</p>
+      </div>
+    )}
+
+    <!-- View All Link -->
+    <div class="text-center mt-12">
+      <a href={lang === 'es' ? '/events' : '/en/events'} class="link">
+        {text.viewAll} →
+      </a>
+    </div>
+  </div>
+</section>

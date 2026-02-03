@@ -1,27 +1,60 @@
 # The 502 Project
 
-Emprendedores, founders y builders de Guatemala construyendo tecnología de nivel mundial.
+Comunidad de builders, founders y dreamers construyendo empresas de talla mundial desde Guatemala.
 
 ## Stack
 
-- Next.js 15
-- React 19
-- Tailwind CSS
-- TypeScript
+- [Astro 5](https://astro.build) - Framework web moderno
+- [React 19](https://react.dev) - UI Components
+- [Tailwind CSS](https://tailwindcss.com) - Estilos
+- [TypeScript](https://www.typescriptlang.org) - Type safety
 
-## Comandos
+## Desarrollo
 
 ```bash
-npm install  # Instalar
-npm run dev  # Desarrollo
-npm run build # Build
-npm start    # Producción
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+
+# Build para producción
+npm run build
+
+# Preview del build
+npm run preview
 ```
+
+## Estructura
+
+```
+src/
+├── components/     # Componentes reutilizables
+├── layouts/        # Layout principal
+├── pages/          # Páginas (ES por defecto)
+│   └── en/         # Páginas en inglés
+└── styles/         # Estilos globales
+```
+
+## Páginas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Home (español) |
+| `/en` | Home (inglés) |
+| `/events` | Calendario de eventos |
+| `/initiatives` | Iniciativas de la comunidad |
+| `/code` | Código de conducta |
+
+## Comunidad
+
+- [Discord](https://discord.gg/AZeuYhCu)
+- [WhatsApp](https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM)
 
 ## Deploy
 
-Push a GitHub y conecta con [Vercel](https://vercel.com).
+Push a GitHub y conecta con [Vercel](https://vercel.com) o [Cloudflare Pages](https://pages.cloudflare.com).
 
 ---
 
-Hagamos el cambio. Juntos.
+Construyendo el futuro desde Guatemala 🇬🇹

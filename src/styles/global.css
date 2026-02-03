@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-502-black text-white antialiased;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  ::selection {
+    @apply bg-502-green text-502-black;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+  }
+
+  a {
+    @apply transition-colors duration-150;
+  }
+}
+
+@layer components {
+  .serif {
+    font-family: 'Instrument Serif', serif;
+  }
+
+  .mono {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Subtle grid background - different from grain */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(86, 239, 159, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(86, 239, 159, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Side nav active indicator */
+  .nav-indicator {
+    @apply w-1 h-1 rounded-full bg-502-green;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item:hover .nav-indicator,
+  .nav-item.active .nav-indicator {
+    @apply w-8;
+  }
+
+  /* Scroll animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger animation for list items */
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+
+  .stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

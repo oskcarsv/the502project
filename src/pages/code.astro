@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = {
+  discord: 'https://discord.gg/AZeuYhCu',
+  whatsapp: 'https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM'
+};
+---
+
+<Layout
+  title="Código de Conducta | the502project"
+  description="reglas simples para una comunidad sana"
+  lang="es"
+>
+  <div class="min-h-screen grid-bg">
+    <!-- Side Index Navigation (desktop) -->
+    <nav class="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
+      <a href="/" class="group flex items-center gap-3">
+        <span class="relative w-2 h-2 flex items-center justify-center">
+          <span class="absolute w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:opacity-0 transition-opacity"></span>
+          <svg class="absolute w-3 h-3 text-502-green opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">regresar</span>
+      </a>
+      <a href="#reglas" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">reglas</span>
+      </a>
+      <a href="#no-aceptamos" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">no aceptamos</span>
+      </a>
+      <a href="#reportar" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">reportar</span>
+      </a>
+    </nav>
+
+    <!-- Top bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-end">
+      <div class="flex items-center gap-4 text-xs text-gray-500">
+        <a href="/" class="hover:text-white lg:hidden">inicio</a>
+        <a href="/en/code" class="hover:text-502-green border-l border-white/10 pl-4">en</a>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-32 xl:ml-48">
+
+      <!-- Rules Section -->
+      <section id="reglas" class="min-h-screen flex flex-col justify-center py-20">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">CÓDIGO DE CONDUCTA</span>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6">
+          las <span class="italic">reglas</span>
+        </h1>
+
+        <!-- TL;DR -->
+        <div class="border border-white/10 p-6 mb-12">
+          <p class="text-lg">
+            <span class="text-502-green">sé la persona que suma, no la que resta.</span>
+            en the502project construimos juntos un espacio donde todos se sientan seguros,
+            respetados y motivados para crear. tratá a los demás como te gustaría ser tratado:
+            con respeto, empatía y profesionalismo.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl mb-4">acá todas las personas son <span class="italic">bienvenidas</span></h2>
+            <p class="text-gray-400">
+              en the502project creemos que la diversidad nos hace más fuertes. no importa tu género,
+              raza, orientación sexual, capacidades, apariencia física o creencias. este es tu espacio
+              para aprender, crear y crecer.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl mb-4">nos tratamos con <span class="italic">respeto</span></h2>
+            <p class="text-gray-400">
+              ya sea en eventos presenciales, en whatsapp, o en cualquier otro canal de la comunidad,
+              buscamos un ambiente de colaboración constructiva. las diferencias de opinión son
+              bienvenidas, pero siempre las expresamos con profesionalismo.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl mb-4"><span class="text-502-green">cero tolerancia</span> a comportamientos que excluyan</h2>
+            <p class="text-gray-400">
+              no aceptamos ninguna forma de discriminación, acoso, intimidación o conducta que haga
+              que alguien se sienta inseguro o no bienvenido.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Not Accepted Section -->
+      <section id="no-aceptamos" class="min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">NO ACEPTAMOS</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-12">
+          comportamientos que <span class="italic">no</span> toleramos
+        </h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl text-white mb-3">lenguaje y contenido ofensivo</h3>
+            <ul class="text-gray-400 space-y-2">
+              <li>• comentarios discriminatorios de cualquier tipo</li>
+              <li>• lenguaje sexual explícito o contenido inapropiado</li>
+              <li>• contenido violento, amenazas o lenguaje intimidante</li>
+              <li>• insultos personales o ataques dirigidos</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl text-white mb-3">acoso e intimidación</h3>
+            <ul class="text-gray-400 space-y-2">
+              <li>• acoso de cualquier tipo, ya sea en persona o en línea</li>
+              <li>• atención sexual no deseada o avances inapropiados</li>
+              <li>• intimidación deliberada, stalking o seguimiento</li>
+              <li>• fotografía o grabación sin consentimiento</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl text-white mb-3">uso inadecuado de canales</h3>
+            <ul class="text-gray-400 space-y-2">
+              <li>• spam o publicaciones repetitivas sin valor</li>
+              <li>• publicidad o ventas no solicitadas</li>
+              <li>• compartir información privada de otros</li>
+              <li>• trolling o provocación deliberada</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Report Section -->
+      <section id="reportar" class="min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">REPORTAR</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-8">
+          ¿fuiste víctima o <span class="italic">testigo</span>?
+        </h2>
+
+        <p class="text-gray-400 text-lg mb-10 max-w-lg">
+          tu seguridad y bienestar son nuestra prioridad. si experimentás o ves cualquier
+          comportamiento que viole este código de conducta, contactá a los representantes
+          de the502project de inmediato. tu reporte será tratado con confidencialidad.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-502-green text-502-black text-sm font-bold hover:bg-white transition-colors"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            reportar por whatsapp
+          </a>
+          <a
+            href="mailto:hello@the502project.com"
+            class="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-sm hover:border-502-green hover:text-502-green transition-colors"
+          >
+            email
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-16 border-t border-white/5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-502-green" viewBox="0 0 100 100" fill="currentColor">
+              <rect x="10" y="10" width="35" height="35" rx="2"/>
+              <path d="M55 10 Q90 10 90 45 L55 45 Z"/>
+              <path d="M10 55 Q10 90 45 90 L45 55 Z"/>
+              <path d="M55 55 Q90 55 90 90 L55 90 Z"/>
+            </svg>
+            <span class="text-xs text-gray-500">the502project</span>
+          </div>
+
+          <div class="flex flex-wrap gap-4 text-xs text-gray-500">
+            <a href="/" class="hover:text-502-green">inicio</a>
+            <a href="mailto:hello@the502project.com" class="hover:text-502-green">contacto</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 300) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</Layout>

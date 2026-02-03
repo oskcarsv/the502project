@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const links = {
+  discord: 'https://discord.gg/AZeuYhCu',
+  whatsapp: 'https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM'
+};
+
+const events = [
+  {
+    title: 'Guatemala City Event',
+    date: '2026-02-15',
+    time: '18:00',
+    type: 'presencial',
+    location: 'Guatemala City',
+    description: 'founders compartiendo estrategias reales'
+  },
+  {
+    title: 'Demo Day',
+    date: '2026-02-22',
+    time: '19:00',
+    type: 'virtual',
+    location: 'WhatsApp',
+    description: '5 minutos para mostrar tu proyecto y recibir feedback'
+  },
+  {
+    title: 'Workshop: Validación rápida',
+    date: '2026-03-01',
+    time: '10:00',
+    type: 'virtual',
+    location: 'WhatsApp',
+    description: 'técnicas para validar antes de escribir código'
+  }
+];
+
+const formatDate = (date: string) => {
+  const d = new Date(date);
+  return d.toLocaleDateString('es-GT', { day: 'numeric', month: 'short' });
+};
+---
+
+<Layout
+  title="Eventos | the502project"
+  description="eventos de la comunidad 502"
+  lang="es"
+>
+  <div class="min-h-screen grid-bg">
+    <!-- Side Index Navigation (desktop) -->
+    <nav class="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
+      <a href="/" class="group flex items-center gap-3">
+        <span class="relative w-2 h-2 flex items-center justify-center">
+          <span class="absolute w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:opacity-0 transition-opacity"></span>
+          <svg class="absolute w-3 h-3 text-502-green opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">regresar</span>
+      </a>
+      <a href="#eventos" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">eventos</span>
+      </a>
+      <a href="#proponer" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">proponer</span>
+      </a>
+    </nav>
+
+    <!-- Top bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-end">
+      <div class="flex items-center gap-4 text-xs text-gray-500">
+        <a href="/" class="hover:text-white lg:hidden">inicio</a>
+        <a href="/initiatives" class="hover:text-white lg:hidden">iniciativas</a>
+        <a href="/en/events" class="hover:text-502-green border-l border-white/10 pl-4">en</a>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-32 xl:ml-48">
+
+      <!-- Events Section -->
+      <section id="eventos" class="min-h-screen flex flex-col justify-center py-20">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">EVENTOS</span>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6">
+          donde <span class="italic">pasan</span> cosas
+        </h1>
+        <p class="text-gray-400 text-lg max-w-lg mb-12">
+          founders y cracks del ecosistema compartiendo lo que funciona.
+          acción, no charlas motivacionales. si querés una TED talk, youtube es gratis.
+        </p>
+
+        <!-- Events List -->
+        <div class="fade-in">
+          <p class="text-gray-500 text-sm mb-6">próximos</p>
+          <div class="space-y-0">
+            {events.map((event) => (
+              <div class="stagger-item group border-b border-white/10 py-6 first:pt-0">
+                <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-2">
+                  <h3 class="text-xl md:text-2xl group-hover:text-502-green transition-colors">
+                    {event.title}
+                  </h3>
+                  <div class="flex items-center gap-4 text-sm text-gray-500">
+                    <span>{formatDate(event.date)}</span>
+                    <span>{event.time}</span>
+                    <span class:list={[
+                      event.type === 'virtual' ? 'text-purple-400' : 'text-502-green'
+                    ]}>
+                      {event.type}
+                    </span>
+                  </div>
+                </div>
+                <p class="text-gray-400 text-sm">
+                  {event.description} · {event.location}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Propose Section -->
+      <section id="proponer" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">PROPONER</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-8">
+          <span class="italic">propón</span> algo
+        </h2>
+
+        <p class="text-gray-400 text-lg mb-10 max-w-lg">
+          ¿tienes una idea para un evento? workshops, charlas, lo que sea.
+          esta comunidad es tuya.
+        </p>
+
+        <a
+          href={links.discord}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-502-green hover:underline"
+        >
+          proponer en discord
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-16 border-t border-white/5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-502-green" viewBox="0 0 100 100" fill="currentColor">
+              <rect x="10" y="10" width="35" height="35" rx="2"/>
+              <path d="M55 10 Q90 10 90 45 L55 45 Z"/>
+              <path d="M10 55 Q10 90 45 90 L45 55 Z"/>
+              <path d="M55 55 Q90 55 90 90 L55 90 Z"/>
+            </svg>
+            <span class="text-xs text-gray-500">the502project</span>
+          </div>
+
+          <div class="flex flex-wrap gap-4 text-xs text-gray-500">
+            <a href="/code" class="hover:text-502-green">código de conducta</a>
+            <a href="mailto:hello@the502project.com" class="hover:text-502-green">contacto</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 300) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</Layout>

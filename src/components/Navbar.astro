@@ -1,0 +1,101 @@
+---
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: {
+    events: 'Eventos',
+    initiatives: 'Iniciativas',
+    code: 'Código de conducta',
+    switchLang: 'EN'
+  },
+  en: {
+    events: 'Events',
+    initiatives: 'Initiatives',
+    code: 'Code of Conduct',
+    switchLang: 'ES'
+  }
+};
+
+const text = t[lang];
+const switchPath = lang === 'es' ? '/en' : '/';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-502-black/80 backdrop-blur-lg border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href={lang === 'es' ? '/' : '/en'} class="flex items-center gap-3 group">
+        <svg class="w-8 h-8 text-502-green transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="currentColor">
+          <rect x="10" y="10" width="35" height="35" rx="2"/>
+          <path d="M55 10 Q90 10 90 45 L55 45 Z"/>
+          <path d="M10 55 Q10 90 45 90 L45 55 Z"/>
+          <path d="M55 55 Q90 55 90 90 L55 90 Z"/>
+        </svg>
+        <span class="font-bold text-lg hidden sm:block">The 502 Project</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href={lang === 'es' ? '/events' : '/en/events'} class="text-gray-300 hover:text-502-green transition-colors">
+          {text.events}
+        </a>
+        <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="text-gray-300 hover:text-502-green transition-colors">
+          {text.initiatives}
+        </a>
+        <a href={lang === 'es' ? '/code' : '/en/code'} class="text-gray-300 hover:text-502-green transition-colors text-sm">
+          {text.code}
+        </a>
+      </div>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-4">
+        <!-- Language Switch -->
+        <a
+          href={switchPath}
+          class="px-3 py-1.5 text-sm border border-white/20 rounded-md hover:border-502-green hover:text-502-green transition-all"
+        >
+          {text.switchLang}
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-gray-400 hover:text-white"
+          aria-label="Menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-502-black/95 backdrop-blur-lg">
+    <div class="px-4 py-4 space-y-3">
+      <a href={lang === 'es' ? '/events' : '/en/events'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
+        {text.events}
+      </a>
+      <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
+        {text.initiatives}
+      </a>
+      <a href={lang === 'es' ? '/code' : '/en/code'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
+        {text.code}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
