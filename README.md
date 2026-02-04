@@ -52,5 +52,4 @@ src/
 - [WhatsApp](https://chat.whatsapp.com/JNvMJwm9Y0aDOBEQj3sFkM)
 
 ## Deploy
-
 Push a GitHub y conecta con [Vercel](https://vercel.com) o [Cloudflare Pages](https://pages.cloudflare.com).
