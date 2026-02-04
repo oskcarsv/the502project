@@ -10,6 +10,9 @@ const links = {
 const allEvents = await getCollection('events');
 const today = new Date().toISOString().split('T')[0];
 
+// Parse date strings as noon to avoid timezone offset issues
+const parseDate = (date: string) => new Date(date + 'T12:00:00');
+
 const upcomingEvents = allEvents
   .filter(event => event.data.date >= today && event.data.status !== 'past')
   .sort((a, b) => a.data.date.localeCompare(b.data.date));
@@ -21,28 +24,54 @@ const pastEvents = allEvents
 const featuredEvent = upcomingEvents.find(e => e.data.featured) || upcomingEvents[0];
 const otherUpcoming = upcomingEvents.filter(e => e.slug !== featuredEvent?.slug);
 
+// Build calendar data - months that have events
+const eventMonths = new Map<string, { month: string; year: number; events: typeof allEvents }>();
+allEvents.forEach(event => {
+  const d = parseDate(event.data.date);
+  const key = `${d.getFullYear()}-${String(d.getMonth()).padStart(2, '0')}`;
+  if (!eventMonths.has(key)) {
+    eventMonths.set(key, {
+      month: d.toLocaleDateString('es-GT', { month: 'long' }),
+      year: d.getFullYear(),
+      events: []
+    });
+  }
+  eventMonths.get(key)!.events.push(event);
+});
+const sortedMonths = [...eventMonths.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+const recentMonths = sortedMonths.slice(0, 3);
+const olderMonths = sortedMonths.slice(3);
+
 const formatDate = (date: string) => {
-  const d = new Date(date);
+  const d = parseDate(date);
   return d.toLocaleDateString('es-GT', { day: 'numeric', month: 'short' });
 };
 
 const formatFullDate = (date: string) => {
-  const d = new Date(date);
+  const d = parseDate(date);
   return d.toLocaleDateString('es-GT', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
-    year: 'numeric'
   });
 };
 
+const formatDay = (date: string) => {
+  return parseDate(date).getDate().toString();
+};
+
+const formatWeekday = (date: string) => {
+  const d = parseDate(date);
+  return d.toLocaleDateString('es-GT', { weekday: 'short' }).toUpperCase();
+};
+
 const getStatusBadge = (status: string) => {
-  const badges: Record<string, { text: string; class: string }> = {
-    'open': { text: 'registro abierto', class: 'bg-502-green/20 text-502-green' },
-    'waitlist': { text: 'lista de espera', class: 'bg-yellow-500/20 text-yellow-400' },
-    'sold-out': { text: 'agotado', class: 'bg-red-500/20 text-red-400' },
-    'requires-application': { text: 'requiere aplicación', class: 'bg-purple-500/20 text-purple-400' },
-    'past': { text: 'finalizado', class: 'bg-gray-500/20 text-gray-400' }
+  const badges: Record<string, { text: string; class: string; dot: string }> = {
+    'open': { text: 'registro abierto', class: 'bg-502-green/10 text-502-green', dot: 'bg-502-green' },
+    'waitlist': { text: 'lista de espera', class: 'bg-yellow-500/10 text-yellow-400', dot: 'bg-yellow-400' },
+    'sold-out': { text: 'agotado', class: 'bg-red-500/10 text-red-400', dot: 'bg-red-400' },
+    'requires-application': { text: 'requiere aplicación', class: 'bg-purple-500/10 text-purple-400', dot: 'bg-purple-400' },
+    'past': { text: 'finalizado', class: 'bg-gray-500/10 text-gray-400', dot: 'bg-gray-400' }
   };
   return badges[status] || badges['open'];
 };
@@ -54,6 +83,13 @@ const getTypeBadge = (type: string) => {
     'hybrid': { text: 'híbrido', class: 'text-blue-400' }
   };
   return types[type] || types['presencial'];
+};
+
+const getRegistrationLabel = (event: typeof allEvents[0]) => {
+  if (event.data.status === 'requires-application') return 'aplicar';
+  if (event.data.status === 'sold-out') return 'agotado';
+  if (event.data.status === 'waitlist') return 'lista de espera';
+  return 'registrarme';
 };
 ---
 
@@ -78,9 +114,9 @@ const getTypeBadge = (type: string) => {
         <span class="nav-indicator"></span>
         <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">próximos</span>
       </a>
-      <a href="#pasados" class="nav-item group flex items-center gap-3">
+      <a href="#calendario" class="nav-item group flex items-center gap-3">
         <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">pasados</span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">calendario</span>
       </a>
       <a href="#proponer" class="nav-item group flex items-center gap-3">
         <span class="nav-indicator"></span>
@@ -98,7 +134,7 @@ const getTypeBadge = (type: string) => {
     </div>
 
     <!-- Main content -->
-    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-32 xl:ml-48">
+    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-44 xl:ml-56">
 
       <!-- Upcoming Events Section -->
       <section id="proximos" class="min-h-screen flex flex-col justify-center py-20">
@@ -107,76 +143,78 @@ const getTypeBadge = (type: string) => {
         <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6">
           donde <span class="italic">pasan</span> cosas
         </h1>
-        <p class="text-gray-400 text-lg max-w-lg mb-12">
+        <p class="text-gray-400 text-lg max-w-lg mb-16">
           founders y cracks del ecosistema compartiendo lo que funciona.
           acción, no charlas motivacionales.
         </p>
 
         <!-- Featured Event -->
         {featuredEvent && (
-          <div class="fade-in mb-12">
+          <div class="fade-in mb-10">
             <p class="text-gray-500 text-sm mb-4">próximo evento</p>
             <a
-              href={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl || '#'}
-              target={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl ? '_blank' : undefined}
-              rel={featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl ? 'noopener noreferrer' : undefined}
+              href={`/events/${featuredEvent.slug}`}
               class="block group"
             >
-              <div class="border border-white/10 hover:border-502-green/50 transition-colors p-6 md:p-8">
-                <div class="flex flex-wrap items-center gap-3 mb-4">
-                  <span class={`text-xs px-2 py-1 rounded ${getStatusBadge(featuredEvent.data.status).class}`}>
-                    {getStatusBadge(featuredEvent.data.status).text}
-                  </span>
-                  <span class={`text-xs ${getTypeBadge(featuredEvent.data.type).class}`}>
-                    {getTypeBadge(featuredEvent.data.type).text}
-                  </span>
-                  {featuredEvent.data.collaboration && (
-                    <span class="text-xs text-gray-500">
-                      · con {featuredEvent.data.collaboratorName}
-                    </span>
-                  )}
+              <div class="border border-white/10 hover:border-502-green/50 transition-all duration-300 p-6 md:p-8">
+                <div class="flex items-start gap-5 md:gap-8">
+                  <!-- Date block -->
+                  <div class="hidden sm:flex flex-col items-center min-w-[60px] pt-1">
+                    <span class="text-xs text-gray-500 tracking-wider">{formatWeekday(featuredEvent.data.date)}</span>
+                    <span class="text-3xl md:text-4xl font-light text-white">{formatDay(featuredEvent.data.date)}</span>
+                  </div>
+
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                      <span class={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full ${getStatusBadge(featuredEvent.data.status).class}`}>
+                        <span class={`w-1.5 h-1.5 rounded-full ${getStatusBadge(featuredEvent.data.status).dot}`}></span>
+                        {getStatusBadge(featuredEvent.data.status).text}
+                      </span>
+                      <span class={`text-xs ${getTypeBadge(featuredEvent.data.type).class}`}>
+                        {getTypeBadge(featuredEvent.data.type).text}
+                      </span>
+                      {featuredEvent.data.collaboration && (
+                        <span class="text-xs text-gray-500">
+                          con {featuredEvent.data.collaboratorName}
+                        </span>
+                      )}
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl mb-3 group-hover:text-502-green transition-colors">
+                      {featuredEvent.data.titleEs || featuredEvent.data.title}
+                    </h2>
+
+                    <p class="text-gray-400 text-sm md:text-base mb-5 leading-relaxed">
+                      {featuredEvent.data.descriptionEs || featuredEvent.data.description}
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-5 text-sm text-gray-400">
+                      <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{formatFullDate(featuredEvent.data.date)}</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{featuredEvent.data.time}{featuredEvent.data.endTime && ` - ${featuredEvent.data.endTime}`}</span>
+                      </div>
+                    </div>
+
+                    {(featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl) && featuredEvent.data.status !== 'sold-out' && (
+                      <div class="mt-5 pt-5 border-t border-white/10">
+                        <span class="inline-flex items-center gap-2 text-502-green text-sm group-hover:underline">
+                          {getRegistrationLabel(featuredEvent)}
+                          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-
-                <h2 class="text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-502-green transition-colors">
-                  {featuredEvent.data.titleEs || featuredEvent.data.title}
-                </h2>
-
-                <p class="text-gray-400 mb-6">
-                  {featuredEvent.data.descriptionEs || featuredEvent.data.description}
-                </p>
-
-                <div class="flex flex-wrap items-center gap-6 text-sm">
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span class="text-gray-300">{formatFullDate(featuredEvent.data.date)}</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span class="text-gray-300">{featuredEvent.data.time}{featuredEvent.data.endTime && ` - ${featuredEvent.data.endTime}`}</span>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span class="text-gray-300">{featuredEvent.data.locationEs || featuredEvent.data.location}</span>
-                  </div>
-                </div>
-
-                {(featuredEvent.data.lumaUrl || featuredEvent.data.customRegistrationUrl) && featuredEvent.data.status !== 'sold-out' && (
-                  <div class="mt-6 pt-6 border-t border-white/10">
-                    <span class="inline-flex items-center gap-2 text-502-green group-hover:underline">
-                      registrarme
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-                )}
               </div>
             </a>
           </div>
@@ -185,36 +223,41 @@ const getTypeBadge = (type: string) => {
         <!-- Other Upcoming Events -->
         {otherUpcoming.length > 0 && (
           <div class="fade-in">
-            <p class="text-gray-500 text-sm mb-6">más eventos</p>
+            <p class="text-gray-500 text-sm mb-4">más eventos</p>
             <div class="space-y-0">
               {otherUpcoming.map((event) => (
                 <a
-                  href={event.data.lumaUrl || event.data.customRegistrationUrl || '#'}
-                  target={event.data.lumaUrl || event.data.customRegistrationUrl ? '_blank' : undefined}
-                  rel={event.data.lumaUrl || event.data.customRegistrationUrl ? 'noopener noreferrer' : undefined}
-                  class="stagger-item group border-b border-white/10 py-6 first:pt-0 block"
+                  href={`/events/${event.slug}`}
+                  class="stagger-item group border-b border-white/10 py-5 flex items-start gap-5 md:gap-8 block"
                 >
-                  <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                    <div class="flex-1">
-                      <div class="flex flex-wrap items-center gap-2 mb-2">
-                        <span class={`text-xs ${getTypeBadge(event.data.type).class}`}>
-                          {getTypeBadge(event.data.type).text}
-                        </span>
-                        <span class={`text-xs px-2 py-0.5 rounded ${getStatusBadge(event.data.status).class}`}>
-                          {getStatusBadge(event.data.status).text}
-                        </span>
-                      </div>
-                      <h3 class="text-xl md:text-2xl group-hover:text-502-green transition-colors mb-2">
-                        {event.data.titleEs || event.data.title}
-                      </h3>
-                      <p class="text-gray-400 text-sm">
-                        {event.data.descriptionEs || event.data.description}
-                      </p>
+                  <!-- Date block -->
+                  <div class="hidden sm:flex flex-col items-center min-w-[60px] pt-1">
+                    <span class="text-xs text-gray-600 tracking-wider">{formatWeekday(event.data.date)}</span>
+                    <span class="text-2xl font-light text-gray-400 group-hover:text-white transition-colors">{formatDay(event.data.date)}</span>
+                  </div>
+
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                      <span class={`text-xs ${getTypeBadge(event.data.type).class}`}>
+                        {getTypeBadge(event.data.type).text}
+                      </span>
+                      <span class={`inline-flex items-center gap-1.5 text-xs px-2 py-0.5 rounded-full ${getStatusBadge(event.data.status).class}`}>
+                        <span class={`w-1 h-1 rounded-full ${getStatusBadge(event.data.status).dot}`}></span>
+                        {getStatusBadge(event.data.status).text}
+                      </span>
+                      {event.data.collaboration && (
+                        <span class="text-xs text-gray-600">con {event.data.collaboratorName}</span>
+                      )}
                     </div>
-                    <div class="flex flex-col items-start md:items-end gap-1 text-sm text-gray-500 md:min-w-[140px]">
+                    <h3 class="text-lg md:text-xl group-hover:text-502-green transition-colors mb-1">
+                      {event.data.titleEs || event.data.title}
+                    </h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                      {event.data.descriptionEs || event.data.description}
+                    </p>
+                    <div class="flex items-center gap-4 mt-2 text-xs text-gray-600">
                       <span>{formatDate(event.data.date)}</span>
-                      <span>{event.data.time}</span>
-                      <span class="text-gray-600">{event.data.locationEs || event.data.location}</span>
+                      <span>{event.data.time}{event.data.endTime && ` - ${event.data.endTime}`}</span>
                     </div>
                   </div>
                 </a>
@@ -231,46 +274,99 @@ const getTypeBadge = (type: string) => {
         )}
       </section>
 
-      <!-- Past Events Section -->
-      {pastEvents.length > 0 && (
-        <section id="pasados" class="fade-in py-24 border-t border-white/5">
-          <span class="text-502-green text-xs tracking-wider mb-8 block">ARCHIVO</span>
+      <!-- Calendar Timeline Section -->
+      <section id="calendario" class="fade-in py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">CALENDARIO</span>
 
-          <h2 class="text-3xl sm:text-4xl mb-8">
-            eventos <span class="italic">pasados</span>
-          </h2>
+        <h2 class="text-3xl sm:text-4xl mb-10">
+          línea de <span class="italic">tiempo</span>
+        </h2>
 
-          <div class="space-y-0">
-            {pastEvents.map((event) => (
-              <div class="stagger-item border-b border-white/10 py-5 first:pt-0 opacity-60 hover:opacity-100 transition-opacity">
-                <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
-                  <div>
-                    <div class="flex items-center gap-2 mb-1">
-                      <h3 class="text-lg md:text-xl">
-                        {event.data.titleEs || event.data.title}
-                      </h3>
-                      {event.data.collaboration && (
-                        <span class="text-xs text-gray-600">
-                          con {event.data.collaboratorName}
-                        </span>
-                      )}
+        <div class="space-y-8">
+          {recentMonths.map(([key, { month, year, events }]) => (
+            <div class="stagger-item">
+              <div class="flex items-baseline gap-3 mb-4">
+                <h3 class="text-lg capitalize text-white">{month}</h3>
+                <span class="text-sm text-gray-600">{year}</span>
+                <span class="text-xs text-gray-700">{events.length} {events.length === 1 ? 'evento' : 'eventos'}</span>
+              </div>
+              <div class="space-y-0 border-l border-white/10 ml-1 pl-6">
+                {events.sort((a, b) => a.data.date.localeCompare(b.data.date)).map((event) => {
+                  const isPast = event.data.date < today || event.data.status === 'past';
+                  return (
+                    <div class={`relative py-3 ${isPast ? 'opacity-50' : ''}`}>
+                      <div class="absolute -left-[29px] top-5 w-2 h-2 rounded-full bg-white/20" />
+                      <a href={`/events/${event.slug}`} class="group block">
+                        <div class="flex items-baseline gap-3">
+                          <span class="text-sm text-gray-500 min-w-[40px]">{formatDay(event.data.date)}</span>
+                          <span class="text-base group-hover:text-502-green transition-colors">{event.data.titleEs || event.data.title}</span>
+                          {event.data.collaboration && (
+                            <span class="text-xs text-gray-600">· {event.data.collaboratorName}</span>
+                          )}
+                        </div>
+                        <div class="flex items-center gap-3 ml-[52px] mt-1">
+                          <span class={`text-xs ${getTypeBadge(event.data.type).class}`}>{getTypeBadge(event.data.type).text}</span>
+                          <span class="text-xs text-gray-600">{event.data.time}</span>
+                          {isPast && <span class="text-xs px-1.5 py-0.5 rounded bg-gray-500/10 text-gray-500">te lo perdiste</span>}
+                        </div>
+                      </a>
                     </div>
-                    <p class="text-gray-500 text-sm">
-                      {event.data.descriptionEs || event.data.description}
-                    </p>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {olderMonths.length > 0 && (
+          <div class="mt-8">
+            <button
+              id="toggle-older-events"
+              class="inline-flex items-center gap-2 text-gray-500 hover:text-502-green text-sm transition-colors"
+            >
+              <span id="toggle-text">ver todos los eventos</span>
+              <svg id="toggle-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="older-events" class="hidden space-y-8 mt-8">
+              {olderMonths.map(([key, { month, year, events }]) => (
+                <div>
+                  <div class="flex items-baseline gap-3 mb-4">
+                    <h3 class="text-lg capitalize text-white">{month}</h3>
+                    <span class="text-sm text-gray-600">{year}</span>
+                    <span class="text-xs text-gray-700">{events.length} {events.length === 1 ? 'evento' : 'eventos'}</span>
                   </div>
-                  <div class="flex items-center gap-4 text-sm text-gray-600 md:min-w-[100px] md:justify-end">
-                    <span>{formatDate(event.data.date)}</span>
-                    <span class={getTypeBadge(event.data.type).class}>
-                      {getTypeBadge(event.data.type).text}
-                    </span>
+                  <div class="space-y-0 border-l border-white/10 ml-1 pl-6">
+                    {events.sort((a, b) => a.data.date.localeCompare(b.data.date)).map((event) => {
+                      const isPast = event.data.date < today || event.data.status === 'past';
+                      return (
+                        <div class={`relative py-3 ${isPast ? 'opacity-50' : ''}`}>
+                          <div class="absolute -left-[29px] top-5 w-2 h-2 rounded-full bg-white/20" />
+                          <a href={`/events/${event.slug}`} class="group block">
+                            <div class="flex items-baseline gap-3">
+                              <span class="text-sm text-gray-500 min-w-[40px]">{formatDay(event.data.date)}</span>
+                              <span class="text-base group-hover:text-502-green transition-colors">{event.data.titleEs || event.data.title}</span>
+                              {event.data.collaboration && (
+                                <span class="text-xs text-gray-600">· {event.data.collaboratorName}</span>
+                              )}
+                            </div>
+                            <div class="flex items-center gap-3 ml-[52px] mt-1">
+                              <span class={`text-xs ${getTypeBadge(event.data.type).class}`}>{getTypeBadge(event.data.type).text}</span>
+                              <span class="text-xs text-gray-600">{event.data.time}</span>
+                              {isPast && <span class="text-xs px-1.5 py-0.5 rounded bg-gray-500/10 text-gray-500">te lo perdiste</span>}
+                            </div>
+                          </a>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </section>
-      )}
+        )}
+      </section>
 
       <!-- Propose Section -->
       <section id="proponer" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
@@ -285,17 +381,30 @@ const getTypeBadge = (type: string) => {
           esta comunidad es tuya.
         </p>
 
-        <a
-          href={links.discord}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-502-green hover:underline"
-        >
-          proponer en discord
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
+        <div class="flex flex-col gap-4">
+          <a
+            href={links.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-502-green hover:underline"
+          >
+            proponer en whatsapp
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href={links.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-gray-400 hover:text-502-green hover:underline transition-colors"
+          >
+            proponer en discord
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </section>
 
       <!-- Footer -->
@@ -341,5 +450,19 @@ const getTypeBadge = (type: string) => {
         }
       });
     });
+
+    const toggleBtn = document.getElementById('toggle-older-events');
+    const olderEvents = document.getElementById('older-events');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+
+    if (toggleBtn && olderEvents) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = olderEvents.classList.contains('hidden');
+        olderEvents.classList.toggle('hidden');
+        if (toggleText) toggleText.textContent = isHidden ? 'ocultar eventos anteriores' : 'ver todos los eventos';
+        if (toggleIcon) toggleIcon.style.transform = isHidden ? 'rotate(180deg)' : '';
+      });
+    }
   </script>
 </Layout>

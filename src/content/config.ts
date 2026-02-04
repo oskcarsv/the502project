@@ -9,8 +9,6 @@ const events = defineCollection({
     time: z.string(),
     endTime: z.string().optional(),
     type: z.enum(['presencial', 'virtual', 'hybrid']),
-    location: z.string(),
-    locationEs: z.string().optional(),
     description: z.string(),
     descriptionEs: z.string().optional(),
     image: z.string().optional(),
@@ -22,6 +20,8 @@ const events = defineCollection({
     collaboration: z.boolean().default(false),
     collaboratorName: z.string().optional(),
     collaboratorLogo: z.string().optional(),
+    collaboratorUrl: z.string().optional(),
+    recordingUrl: z.string().optional(),
   }),
 });
 
