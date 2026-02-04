@@ -10,7 +10,6 @@ Comunidad de builders, founders y dreamers construyendo empresas de talla mundia
 - [TypeScript](https://www.typescriptlang.org) - Type safety
 
 ## Desarrollo
-
 ```bash
 # Instalar dependencias
 npm install
@@ -26,7 +25,6 @@ npm run preview
 ```
 
 ## Estructura
-
 ```
 src/
 ├── components/     # Componentes reutilizables
@@ -37,7 +35,6 @@ src/
 ```
 
 ## Páginas
-
 | Ruta | Descripción |
 |------|-------------|
 | `/` | Home (español) |
