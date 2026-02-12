@@ -14,14 +14,14 @@ const today = new Date().toISOString().split('T')[0];
 const parseDate = (date: string) => new Date(date + 'T12:00:00');
 
 const upcomingEvents = allEvents
-  .filter(event => event.data.date >= today && event.data.status !== 'past')
+  .filter(event => event.data.date >= today)
   .sort((a, b) => a.data.date.localeCompare(b.data.date));
 
 const pastEvents = allEvents
-  .filter(event => event.data.date < today || event.data.status === 'past')
+  .filter(event => event.data.date < today)
   .sort((a, b) => b.data.date.localeCompare(a.data.date));
 
-const featuredEvent = upcomingEvents.find(e => e.data.featured) || upcomingEvents[0];
+const featuredEvent = upcomingEvents[0];
 const otherUpcoming = upcomingEvents.filter(e => e.slug !== featuredEvent?.slug);
 
 // Build calendar data - months that have events
@@ -292,7 +292,7 @@ const getRegistrationLabel = (event: typeof allEvents[0]) => {
               </div>
               <div class="space-y-0 border-l border-white/10 ml-1 pl-6">
                 {events.sort((a, b) => a.data.date.localeCompare(b.data.date)).map((event) => {
-                  const isPast = event.data.date < today || event.data.status === 'past';
+                  const isPast = event.data.date < today;
                   return (
                     <div class={`relative py-3 ${isPast ? 'opacity-50' : ''}`}>
                       <div class="absolute -left-[29px] top-5 w-2 h-2 rounded-full bg-white/20" />
@@ -339,7 +339,7 @@ const getRegistrationLabel = (event: typeof allEvents[0]) => {
                   </div>
                   <div class="space-y-0 border-l border-white/10 ml-1 pl-6">
                     {events.sort((a, b) => a.data.date.localeCompare(b.data.date)).map((event) => {
-                      const isPast = event.data.date < today || event.data.status === 'past';
+                      const isPast = event.data.date < today;
                       return (
                         <div class={`relative py-3 ${isPast ? 'opacity-50' : ''}`}>
                           <div class="absolute -left-[29px] top-5 w-2 h-2 rounded-full bg-white/20" />

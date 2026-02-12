@@ -8,7 +8,6 @@ type: "presencial"
 description: "Practical space for builders and founders who want to master their finances. Hands-on workshop with real examples and exercises."
 descriptionEs: "Espacio práctico para builders y founders que quieren dominar sus finanzas. Taller hands-on con ejemplos y ejercicios reales."
 status: "past"
-featured: false
 collaboration: true
 collaboratorName: "Finny"
 collaboratorUrl: "https://finny.gt/"

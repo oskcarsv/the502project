@@ -8,7 +8,6 @@ type: "presencial"
 description: "Christmas gathering to close the year together. No speakers, no agenda. Just vibes, conversations and celebrating what we built as a community."
 descriptionEs: "Convivio navideño para cerrar el año juntos. Sin speakers, sin agenda. Solo buena vibra, conversaciones y celebrar lo que construimos como comunidad."
 status: "past"
-featured: false
 lumaUrl: "https://luma.com/o47zaaaa"
 ---
 

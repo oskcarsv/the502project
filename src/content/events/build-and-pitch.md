@@ -7,8 +7,7 @@ endTime: "5:30 PM"
 type: "presencial"
 description: "20 ambitious builders selected for a 6-hour nonstop sprint. Like a hackathon but without competition — pure execution and a final pitch. Notion workshop, unlimited specialty coffee and lunch included."
 descriptionEs: "20 builders ambiciosos seleccionados para un sprint nonstop de 6 horas. Como una hackathon pero sin competencia — pura ejecución y pitch final. Incluye taller de Notion, café de especialidad ilimitado y almuerzo."
-status: "requires-application"
-featured: false
+status: "past"
 collaboration: true
 collaboratorName: "Notion"
 collaboratorUrl: "https://www.notion.com/"

@@ -7,8 +7,7 @@ endTime: "8:30 PM"
 type: "presencial"
 description: "The biggest v0 update to date, and you're invited to build with us. First official v0 (Vercel) event in Guatemala. Credits, coffee and the best vibes."
 descriptionEs: "v0 tendrá la actualización más grande hasta la fecha, y estás invitado a buildear con nosotros. Primer evento oficial de v0 (Vercel) en Guatemala. Créditos, café y la mejor de las vibras."
-status: "open"
-featured: true
+status: "past"
 collaboration: true
 collaboratorName: "v0 by Vercel"
 collaboratorUrl: "https://v0.app/"
