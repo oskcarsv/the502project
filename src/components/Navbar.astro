@@ -8,13 +8,13 @@ const { lang = 'es' } = Astro.props;
 const t = {
   es: {
     events: 'Eventos',
-    initiatives: 'Iniciativas',
+    blog: 'Blog',
     code: 'Código de conducta',
     switchLang: 'EN'
   },
   en: {
     events: 'Events',
-    initiatives: 'Initiatives',
+    blog: 'Blog',
     code: 'Code of Conduct',
     switchLang: 'ES'
   }
@@ -43,8 +43,8 @@ const switchPath = lang === 'es' ? '/en' : '/';
         <a href={lang === 'es' ? '/events' : '/en/events'} class="text-gray-300 hover:text-502-green transition-colors">
           {text.events}
         </a>
-        <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="text-gray-300 hover:text-502-green transition-colors">
-          {text.initiatives}
+        <a href={lang === 'es' ? '/blog' : '/en/blog'} class="text-gray-300 hover:text-502-green transition-colors">
+          {text.blog}
         </a>
         <a href={lang === 'es' ? '/code' : '/en/code'} class="text-gray-300 hover:text-502-green transition-colors text-sm">
           {text.code}
@@ -81,8 +81,8 @@ const switchPath = lang === 'es' ? '/en' : '/';
       <a href={lang === 'es' ? '/events' : '/en/events'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
         {text.events}
       </a>
-      <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
-        {text.initiatives}
+      <a href={lang === 'es' ? '/blog' : '/en/blog'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
+        {text.blog}
       </a>
       <a href={lang === 'es' ? '/code' : '/en/code'} class="block py-2 text-gray-300 hover:text-502-green transition-colors">
         {text.code}

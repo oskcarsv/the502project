@@ -9,13 +9,11 @@ const t = {
   es: {
     title: 'Iniciativas',
     subtitle: 'Proyectos impulsados por la comunidad para crecer juntos',
-    viewAll: 'Ver todas las iniciativas',
     comingSoon: 'Próximamente'
   },
   en: {
     title: 'Initiatives',
     subtitle: 'Community-driven projects to grow together',
-    viewAll: 'View all initiatives',
     comingSoon: 'Coming Soon'
   }
 };
@@ -98,11 +96,5 @@ const initiatives = [
       ))}
     </div>
 
-    <!-- View All Link -->
-    <div class="text-center mt-12">
-      <a href={lang === 'es' ? '/initiatives' : '/en/initiatives'} class="link">
-        {text.viewAll} →
-      </a>
-    </div>
   </div>
 </section>

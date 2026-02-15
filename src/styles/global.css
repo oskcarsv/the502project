@@ -81,4 +81,46 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Blog article: párrafos bien separados y callouts visibles */
+  .blog-article-prose p {
+    margin-bottom: 2rem;
+  }
+  .blog-article-prose p:last-child {
+    margin-bottom: 0;
+  }
+  .blog-article-prose blockquote {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border-left: 4px solid #56ef9f;
+    background: rgba(86, 239, 159, 0.1);
+    border-radius: 0 8px 8px 0;
+    font-style: normal;
+    color: rgb(229 231 235);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  @media (min-width: 640px) {
+    .blog-article-prose blockquote {
+      font-size: 1.125rem;
+    }
+  }
+  .blog-article-prose blockquote p {
+    margin-bottom: 0;
+  }
+  .blog-article-prose blockquote p + p {
+    margin-top: 1rem;
+  }
+  .blog-article-prose h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .blog-article-prose ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .blog-article-prose li {
+    margin-bottom: 0.75rem;
+  }
 }

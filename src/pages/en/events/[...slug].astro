@@ -108,8 +108,9 @@ const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
     <!-- Top bar -->
     <div class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-end">
       <div class="flex items-center gap-4 text-xs text-gray-500">
-        <a href="/en" class="hover:text-white lg:hidden">home</a>
-        <a href="/en/events" class="hover:text-white lg:hidden">events</a>
+        <a href="/en" class="hover:text-white">home</a>
+        <a href="/en/events" class="hover:text-white">events</a>
+        <a href="/en/blog" class="hover:text-white">blog</a>
         <a href={`/events/${event.slug}`} class="hover:text-502-green border-l border-white/10 pl-4">es</a>
       </div>
     </div>
