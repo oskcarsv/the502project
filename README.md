@@ -40,7 +40,7 @@ src/
 | `/` | Home (español) |
 | `/en` | Home (inglés) |
 | `/events` | Calendario de eventos |
-| `/initiatives` | Iniciativas de la comunidad |
+| `/sponsorship-kit` | Sponsorship kit para marcas aliadas |
 | `/code` | Código de conducta |
 
 ## Comunidad
