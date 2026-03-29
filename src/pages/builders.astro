@@ -1,0 +1,364 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const applyUrl = 'https://theoscarvibes.notion.site/018f2e229ca783d2b95981cb21901e04?pvs=105';
+---
+
+<Layout
+  title="Community Builders Program | the502project"
+  description="el equipo oficial que opera y multiplica el impacto de the502project en Guatemala. aplica y construye comunidad desde adentro."
+  lang="es"
+>
+  <div class="min-h-screen grid-bg">
+    <!-- Side Index Navigation (desktop) -->
+    <nav class="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
+      <a href="/" class="group flex items-center gap-3">
+        <span class="relative w-2 h-2 flex items-center justify-center">
+          <span class="absolute w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:opacity-0 transition-opacity"></span>
+          <svg class="absolute w-3 h-3 text-502-green opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">inicio</span>
+      </a>
+      <a href="#comunidad" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">comunidad</span>
+      </a>
+      <a href="#programa" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">programa</span>
+      </a>
+      <a href="#beneficios" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">beneficios</span>
+      </a>
+      <a href="#reglas" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">reglas</span>
+      </a>
+      <a href="#aplica" class="nav-item group flex items-center gap-3">
+        <span class="nav-indicator"></span>
+        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">aplica</span>
+      </a>
+    </nav>
+
+    <!-- Top bar -->
+    <div class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-end">
+      <div class="flex items-center gap-4 text-xs text-gray-500">
+        <a href="/" class="hover:text-white">inicio</a>
+        <a href="/events" class="hover:text-white">eventos</a>
+        <a href="/blog" class="hover:text-white">blog</a>
+        <a href={applyUrl} target="_blank" rel="noopener noreferrer" class="hover:text-502-green text-white border border-white/20 px-3 py-1 hover:border-502-green transition-colors">aplica →</a>
+        <a href="/en/builders" class="hover:text-502-green border-l border-white/10 pl-4">en</a>
+      </div>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-44 xl:ml-56">
+
+      <!-- Hero Section -->
+      <section id="comunidad" class="min-h-screen flex flex-col justify-center py-20">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-502-green text-xs tracking-wider">COMMUNITY BUILDERS PROGRAM</span>
+          <span class="w-8 h-px bg-502-green/40"></span>
+          <span class="text-xs text-gray-600">by the502project</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6 leading-tight">
+          construí Guatemala<br/>
+          <span class="italic text-502-green">desde adentro</span>
+        </h1>
+
+        <p class="text-gray-400 text-lg max-w-xl mb-10">
+          the502project es una comunidad fundada para acelerar el ecosistema tech y de emprendimiento en Guatemala.
+          conectamos personas, universidades y empresas para crear espacios de aprendizaje, colaboración y construcción.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-0 border border-white/10 mb-12">
+          <div class="p-5 border-r border-white/10">
+            <p class="text-3xl text-502-green mb-1">+450</p>
+            <p class="text-xs text-gray-500">builders activos</p>
+          </div>
+          <div class="p-5 border-r border-white/10">
+            <p class="text-3xl text-502-green mb-1">+10</p>
+            <p class="text-xs text-gray-500">eventos en 4 meses</p>
+          </div>
+          <div class="p-5">
+            <p class="text-3xl text-502-green mb-1">502</p>
+            <p class="text-xs text-gray-500">Guatemala de base</p>
+          </div>
+        </div>
+
+        <p class="text-gray-400 max-w-xl">
+          organizamos meetups, workshops, charlas y programas. conectamos a la comunidad con mentoría, oportunidades y redes de apoyo.
+          <span class="text-white">ahora abrimos el equipo que lo hace posible.</span>
+        </p>
+      </section>
+
+      <!-- Programa Section -->
+      <section id="programa" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">EL PROGRAMA</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-6">
+          no es solo <span class="italic">proponer eventos</span>
+        </h2>
+
+        <p class="text-gray-400 text-lg max-w-xl mb-12">
+          el Community Builders Program es el equipo oficial de miembros que ayuda a operar the502project
+          y a multiplicar su impacto en Guatemala. es tomar <span class="text-white">ownership real</span> de iniciativas.
+        </p>
+
+        <!-- What builders do -->
+        <div class="space-y-0 border-y border-white/10">
+          <div class="stagger-item py-6 border-b border-white/10 group">
+            <div class="flex items-start gap-4">
+              <span class="text-502-green mt-1 text-sm">01</span>
+              <div>
+                <h3 class="text-xl mb-2 group-hover:text-502-green transition-colors">apoya la operación interna</h3>
+                <p class="text-gray-400 text-sm">gestión y ejecución de eventos, iniciativas y programas. no solo proponer, sino hacer que pasen.</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item py-6 border-b border-white/10 group">
+            <div class="flex items-start gap-4">
+              <span class="text-502-green mt-1 text-sm">02</span>
+              <div>
+                <h3 class="text-xl mb-2 group-hover:text-502-green transition-colors">lidera actividades propias</h3>
+                <p class="text-gray-400 text-sm">propone y ejecuta meetups, charlas, workshops y study groups. convierte ideas en realidad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item py-6 border-b border-white/10 group">
+            <div class="flex items-start gap-4">
+              <span class="text-502-green mt-1 text-sm">03</span>
+              <div>
+                <h3 class="text-xl mb-2 group-hover:text-502-green transition-colors">voluntariado en eventos</h3>
+                <p class="text-gray-400 text-sm">staff, logística, registro, foto/video, speakers support en eventos de the502project y aliados.</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item py-6 border-b border-white/10 group">
+            <div class="flex items-start gap-4">
+              <span class="text-502-green mt-1 text-sm">04</span>
+              <div>
+                <h3 class="text-xl mb-2 group-hover:text-502-green transition-colors">activa tu universidad o comunidad</h3>
+                <p class="text-gray-400 text-sm">organiza actividades en tu universidad u otras comunidades usando la red de the502project.</p>
+              </div>
+            </div>
+          </div>
+          <div class="stagger-item py-6 group">
+            <div class="flex items-start gap-4">
+              <span class="text-502-green mt-1 text-sm">05</span>
+              <div>
+                <h3 class="text-xl mb-2 group-hover:text-502-green transition-colors">contribuciones operativas</h3>
+                <p class="text-gray-400 text-sm">coordinación, comunicación, seguimiento, partnerships y mejoras al playbook de la comunidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Beneficios Section -->
+      <section id="beneficios" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">BENEFICIOS</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-6">
+          lo que <span class="italic">ganás</span>
+        </h2>
+
+        <p class="text-gray-400 text-lg max-w-xl mb-12">
+          builders activos reciben exposición dentro del ecosistema y adquieren experiencia práctica en
+          organización, liderazgo y operación de programas.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="stagger-item border border-white/10 p-6 hover:border-502-green/40 transition-colors group">
+            <div class="w-8 h-8 border border-502-green/30 flex items-center justify-center mb-4 group-hover:border-502-green transition-colors">
+              <svg class="w-4 h-4 text-502-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg mb-2">mentorship real</h3>
+            <p class="text-gray-400 text-sm">mentoría de embajadores de Cursor en Guatemala y el equipo fundador de the502project.</p>
+          </div>
+
+          <div class="stagger-item border border-white/10 p-6 hover:border-502-green/40 transition-colors group">
+            <div class="w-8 h-8 border border-502-green/30 flex items-center justify-center mb-4 group-hover:border-502-green transition-colors">
+              <svg class="w-4 h-4 text-502-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-lg mb-2">perks de aliados</h3>
+            <p class="text-gray-400 text-sm">credits y acceso a plataformas de AI y herramientas de empresas aliadas (sujeto a disponibilidad).</p>
+          </div>
+
+          <div class="stagger-item border border-white/10 p-6 hover:border-502-green/40 transition-colors group">
+            <div class="w-8 h-8 border border-502-green/30 flex items-center justify-center mb-4 group-hover:border-502-green transition-colors">
+              <svg class="w-4 h-4 text-502-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg mb-2">red de sponsors</h3>
+            <p class="text-gray-400 text-sm">acceso a la red de sponsors para fondear eventos propios (para eventos aprobados por the502project).</p>
+          </div>
+
+          <div class="stagger-item border border-white/10 p-6 hover:border-502-green/40 transition-colors group">
+            <div class="w-8 h-8 border border-502-green/30 flex items-center justify-center mb-4 group-hover:border-502-green transition-colors">
+              <svg class="w-4 h-4 text-502-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <h3 class="text-lg mb-2">programas de liderazgo</h3>
+            <p class="text-gray-400 text-sm">acompañamiento para aplicar a Cursor Ambassador, Notion Campus Leaders y otros programas.</p>
+          </div>
+
+          <div class="stagger-item border border-white/10 p-6 hover:border-502-green/40 transition-colors group sm:col-span-2">
+            <div class="flex items-start gap-6">
+              <div class="w-8 h-8 border border-502-green/30 flex items-center justify-center flex-shrink-0 mt-1 group-hover:border-502-green transition-colors">
+                <svg class="w-4 h-4 text-502-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg mb-2">equipo oficial + prioridad</h3>
+                <p class="text-gray-400 text-sm">acceso a la red exclusiva de mentores de the502project, prioridad en eventos y programas, y ser parte del equipo que construye la comunidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reglas Section -->
+      <section id="reglas" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">REGLAS</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-6">
+          simple y <span class="italic">claro</span>
+        </h2>
+
+        <p class="text-gray-400 text-lg max-w-xl mb-12">
+          el programa exige compromiso real. no mucho, pero constante.
+        </p>
+
+        <div class="space-y-0 border border-white/10">
+          <div class="stagger-item p-6 border-b border-white/10 flex gap-6">
+            <span class="text-502-green text-xl font-bold flex-shrink-0">1×</span>
+            <div>
+              <h3 class="text-lg mb-1">actividad mínima mensual</h3>
+              <p class="text-gray-400 text-sm">1 aporte al mes: evento, voluntariado u otra contribución acordada con el equipo. simple.</p>
+            </div>
+          </div>
+          <div class="stagger-item p-6 border-b border-white/10 flex gap-6">
+            <span class="text-502-green text-xl flex-shrink-0">✓</span>
+            <div>
+              <h3 class="text-lg mb-1">aprobación de eventos</h3>
+              <p class="text-gray-400 text-sm">para usar el branding de the502project (y/o aliados), el evento debe ser aprobado por el equipo antes.</p>
+            </div>
+          </div>
+          <div class="stagger-item p-6 border-b border-white/10 flex gap-6">
+            <span class="text-502-green text-xl flex-shrink-0">↗</span>
+            <div>
+              <h3 class="text-lg mb-1">estándar de marca</h3>
+              <p class="text-gray-400 text-sm">eventos aprobados deben seguir el código de conducta, lineamientos de marca y logística básica de the502project.</p>
+            </div>
+          </div>
+          <div class="stagger-item p-6 flex gap-6">
+            <span class="text-502-green text-xl flex-shrink-0">⊘</span>
+            <div>
+              <h3 class="text-lg mb-1">inactividad = pausa de beneficios</h3>
+              <p class="text-gray-400 text-sm">sin aporte en el mes, la persona pasa a estado inactivo y pierde prioridad/beneficios hasta reactivarse con un nuevo aporte.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apply Section -->
+      <section id="aplica" class="fade-in min-h-screen flex flex-col justify-center py-24 border-t border-white/5">
+        <span class="text-502-green text-xs tracking-wider mb-8 block">APLICA</span>
+
+        <h2 class="text-4xl sm:text-5xl mb-6">
+          ¿listo/a para<br/><span class="italic">construir desde adentro?</span>
+        </h2>
+
+        <p class="text-gray-400 text-lg max-w-xl mb-4">
+          si te apasiona el ecosistema tech y de emprendimiento de Guatemala, y querés tomar ownership real de algo que importa, este programa es para vos.
+        </p>
+
+        <p class="text-gray-500 text-sm max-w-xl mb-12">
+          si quedás aceptado/a, recibirás el onboarding con el playbook completo: cómo proponer y ejecutar iniciativas, usar el branding y solicitar apoyo de sponsors.
+        </p>
+
+        <!-- CTA box -->
+        <div class="border border-502-green/30 p-8 mb-8 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-502-green/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+          <p class="text-xs text-gray-500 mb-4 tracking-wider">PASO ÚNICO</p>
+          <h3 class="text-2xl mb-6">completa el formulario de aplicación</h3>
+          <a
+            href={applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 px-6 py-3 bg-502-green text-502-black text-sm font-bold hover:bg-white transition-colors"
+          >
+            aplicar al programa
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="text-sm text-gray-500 mb-6">
+          revisamos cada aplicación con cuidado. <span class="text-white">te daremos respuesta en 1 a 2 semanas</span> por whatsapp.
+        </p>
+
+        <p class="text-xs text-gray-600">
+          ¿dudas? escríbenos a <a href="mailto:hello@the502project.com" class="text-gray-400 hover:text-502-green transition-colors">hello@the502project.com</a>
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-16 border-t border-white/5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-502-green" viewBox="0 0 100 100" fill="currentColor">
+              <rect x="10" y="10" width="35" height="35" rx="2"/>
+              <path d="M55 10 Q90 10 90 45 L55 45 Z"/>
+              <path d="M10 55 Q10 90 45 90 L45 55 Z"/>
+              <path d="M55 55 Q90 55 90 90 L55 90 Z"/>
+            </svg>
+            <span class="text-xs text-gray-500">the502project</span>
+          </div>
+
+          <div class="flex flex-wrap gap-4 text-xs text-gray-500">
+            <a href="/code" class="hover:text-502-green">código de conducta</a>
+            <a href="/sponsorship-kit" class="hover:text-502-green">sponsors</a>
+            <a href="mailto:hello@the502project.com" class="hover:text-502-green">contacto</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        if (scrollY >= sectionTop - 300) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</Layout>
