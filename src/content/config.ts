@@ -14,7 +14,7 @@ const events = defineCollection({
     image: z.string().optional(),
     lumaUrl: z.string().optional(),
     customRegistrationUrl: z.string().optional(),
-    status: z.enum(['open', 'waitlist', 'sold-out', 'requires-application', 'past']).default('open'),
+    status: z.enum(['open', 'waitlist', 'sold-out', 'requires-application']).default('open'),
     organizer: z.string().optional(),
     collaboration: z.boolean().default(false),
     collaboratorName: z.string().optional(),

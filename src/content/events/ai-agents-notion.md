@@ -7,7 +7,7 @@ endTime: "9:00 PM"
 type: "presencial"
 description: "Discover how to get the most out of Notion AI and build your first custom agent. Includes hands-on workshop + brunch and networking."
 descriptionEs: "Descubre cómo sacarle el máximo provecho a Notion AI y construye tu primer agente personalizado. Incluye taller hands-on + brunch y networking."
-status: "past"
+status: "open"
 collaboration: true
 collaboratorName: "Notion"
 collaboratorUrl: "https://www.notion.com/"

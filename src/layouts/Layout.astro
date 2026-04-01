@@ -46,12 +46,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <slot />
     <script>
       // Scroll animations
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -66,11 +60,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             });
           }
         });
-      }, observerOptions);
+      }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.05 });
 
-      // Observe all fade-in elements
-      document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
+      // Observe fade-in elements and stagger-item parents
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      // Also observe direct stagger-items that aren't inside a fade-in
+      document.querySelectorAll('.stagger-item').forEach(el => {
+        if (!el.closest('.fade-in')) {
+          observer.observe(el);
+        }
+      });
+
+      // Observe sections that contain stagger-items (so they trigger children)
+      document.querySelectorAll('section').forEach(section => {
+        if (section.querySelectorAll('.stagger-item').length > 0 && !section.classList.contains('fade-in')) {
+          observer.observe(section);
+        }
       });
     </script>
   </body>

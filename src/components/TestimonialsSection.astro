@@ -1,0 +1,99 @@
+---
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+const t = {
+  es: {
+    label: 'VOCES',
+    title: 'Lo que dicen los',
+    titleHighlight: 'builders',
+  },
+  en: {
+    label: 'VOICES',
+    title: 'What the',
+    titleHighlight: 'builders say',
+  }
+};
+
+const text = t[lang];
+
+// Update with real testimonials
+const testimonials = [
+  {
+    quote: lang === 'es'
+      ? 'The 502 Project es exactamente lo que Guatemala necesitaba. Un espacio real para conectar con personas que estan construyendo cosas increibles.'
+      : 'The 502 Project is exactly what Guatemala needed. A real space to connect with people building incredible things.',
+    name: 'Miembro 1',
+    role: 'Founder',
+    image: '',
+  },
+  {
+    quote: lang === 'es'
+      ? 'Los eventos son de otro nivel. No son charlas aburridas, son experiencias donde realmente construyes algo y conoces gente que piensa como tu.'
+      : 'The events are next level. Not boring talks, but experiences where you actually build something and meet like-minded people.',
+    name: 'Miembro 2',
+    role: 'Software Engineer',
+    image: '',
+  },
+  {
+    quote: lang === 'es'
+      ? 'Gracias a esta comunidad encontre co-founder, mentores y amigos. La energia de este grupo es unica en Centroamerica.'
+      : 'Thanks to this community I found a co-founder, mentors, and friends. The energy of this group is unique in Central America.',
+    name: 'Miembro 3',
+    role: 'CEO & Co-Founder',
+    image: '',
+  },
+];
+---
+
+<section class="relative py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="fade-in text-center mb-16">
+      <span class="section-label mb-4 block">{text.label}</span>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+        {text.title}<br/>
+        <span class="italic text-502-green">{text.titleHighlight}</span>
+      </h2>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
+      {testimonials.map((testimonial) => (
+        <div class="stagger-item relative p-6 sm:p-8 rounded-2xl border border-white/5 bg-502-surface/30 flex flex-col">
+          <!-- Quote icon -->
+          <svg class="w-8 h-8 text-502-green/30 mb-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+
+          <!-- Quote text -->
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed flex-1 mb-6">
+            "{testimonial.quote}"
+          </p>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+            {testimonial.image ? (
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-10 h-10 rounded-full object-cover"
+              />
+            ) : (
+              <div class="w-10 h-10 rounded-full bg-502-green/10 flex items-center justify-center text-502-green text-sm font-bold">
+                {testimonial.name.charAt(0)}
+              </div>
+            )}
+            <div>
+              <div class="text-sm font-bold">{testimonial.name}</div>
+              <div class="text-xs text-gray-500">{testimonial.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

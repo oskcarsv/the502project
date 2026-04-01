@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 const applyUrl = 'https://theoscarvibes.notion.site/018f2e229ca783d2b95981cb21901e04?pvs=105';
 ---
@@ -9,52 +11,10 @@ const applyUrl = 'https://theoscarvibes.notion.site/018f2e229ca783d2b95981cb2190
   description="el equipo oficial que opera y multiplica el impacto de the502project en Guatemala. aplica y construye comunidad desde adentro."
   lang="es"
 >
-  <div class="min-h-screen grid-bg">
-    <!-- Side Index Navigation (desktop) -->
-    <nav class="hidden lg:flex fixed left-8 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
-      <a href="/" class="group flex items-center gap-3">
-        <span class="relative w-2 h-2 flex items-center justify-center">
-          <span class="absolute w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:opacity-0 transition-opacity"></span>
-          <svg class="absolute w-3 h-3 text-502-green opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">inicio</span>
-      </a>
-      <a href="#comunidad" class="nav-item group flex items-center gap-3">
-        <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">comunidad</span>
-      </a>
-      <a href="#programa" class="nav-item group flex items-center gap-3">
-        <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">programa</span>
-      </a>
-      <a href="#beneficios" class="nav-item group flex items-center gap-3">
-        <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">beneficios</span>
-      </a>
-      <a href="#reglas" class="nav-item group flex items-center gap-3">
-        <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">reglas</span>
-      </a>
-      <a href="#aplica" class="nav-item group flex items-center gap-3">
-        <span class="nav-indicator"></span>
-        <span class="text-xs text-gray-500 group-hover:text-502-green transition-colors">aplica</span>
-      </a>
-    </nav>
+  <div class="min-h-screen noise-bg">
+    <Navbar lang="es" />
 
-    <!-- Top bar -->
-    <div class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-end">
-      <div class="flex items-center gap-4 text-xs text-gray-500">
-        <a href="/" class="hover:text-white">inicio</a>
-        <a href="/events" class="hover:text-white">eventos</a>
-        <a href="/blog" class="hover:text-white">blog</a>
-        <a href={applyUrl} target="_blank" rel="noopener noreferrer" class="hover:text-502-green text-white border border-white/20 px-3 py-1 hover:border-502-green transition-colors">aplica →</a>
-        <a href="/en/builders" class="hover:text-502-green border-l border-white/10 pl-4">en</a>
-      </div>
-    </div>
-
-    <main class="max-w-3xl mx-auto px-6 lg:px-0 lg:ml-44 xl:ml-56">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Hero Section -->
       <section id="comunidad" class="min-h-screen flex flex-col justify-center py-20">
@@ -316,49 +276,8 @@ const applyUrl = 'https://theoscarvibes.notion.site/018f2e229ca783d2b95981cb2190
         </p>
       </section>
 
-      <!-- Footer -->
-      <footer class="py-16 border-t border-white/5">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-502-green" viewBox="0 0 100 100" fill="currentColor">
-              <rect x="10" y="10" width="35" height="35" rx="2"/>
-              <path d="M55 10 Q90 10 90 45 L55 45 Z"/>
-              <path d="M10 55 Q10 90 45 90 L45 55 Z"/>
-              <path d="M55 55 Q90 55 90 90 L55 90 Z"/>
-            </svg>
-            <span class="text-xs text-gray-500">the502project</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4 text-xs text-gray-500">
-            <a href="/code" class="hover:text-502-green">código de conducta</a>
-            <a href="/sponsorship-kit" class="hover:text-502-green">sponsors</a>
-            <a href="mailto:hello@the502project.com" class="hover:text-502-green">contacto</a>
-          </div>
-        </div>
-      </footer>
-
     </main>
+
+    <Footer lang="es" />
   </div>
-
-  <script>
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-item');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        if (scrollY >= sectionTop - 300) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-
-      navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href') === `#${current}`) {
-          item.classList.add('active');
-        }
-      });
-    });
-  </script>
 </Layout>

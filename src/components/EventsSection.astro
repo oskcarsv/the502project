@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 interface Props {
   lang?: 'es' | 'en';
 }
@@ -7,114 +9,168 @@ const { lang = 'es' } = Astro.props;
 
 const t = {
   es: {
-    title: 'Próximos Eventos',
-    subtitle: 'Conéctate con la comunidad en eventos presenciales y virtuales',
-    viewAll: 'Ver calendario completo',
-    noEvents: 'Próximamente anunciaremos nuevos eventos',
+    label: 'EVENTOS',
+    title: 'Donde la comunidad',
+    titleHighlight: 'se encuentra',
+    subtitle: 'Hackathons, workshops y meetups. Menos slides, mas accion.',
+    viewAll: 'Ver todos los eventos',
+    noEvents: 'Proximamente anunciaremos nuevos eventos',
+    register: 'Registrarse',
     virtual: 'Virtual',
-    inPerson: 'Presencial'
+    inPerson: 'Presencial',
+    hybrid: 'Hibrido',
+    open: 'Registro abierto',
+    waitlist: 'Lista de espera',
+    soldOut: 'Agotado',
+    requiresApp: 'Requiere aplicacion',
+    proposeEvent: 'Quieres proponer un evento?',
+    proposeCta: 'Escríbenos',
   },
   en: {
-    title: 'Upcoming Events',
-    subtitle: 'Connect with the community at in-person and virtual events',
-    viewAll: 'View full calendar',
+    label: 'EVENTS',
+    title: 'Where the community',
+    titleHighlight: 'comes together',
+    subtitle: 'Hackathons, workshops, and meetups. Less slides, more action.',
+    viewAll: 'View all events',
     noEvents: 'New events coming soon',
+    register: 'Register',
     virtual: 'Virtual',
-    inPerson: 'In-Person'
+    inPerson: 'In-Person',
+    hybrid: 'Hybrid',
+    open: 'Registration open',
+    waitlist: 'Waitlist',
+    soldOut: 'Sold out',
+    requiresApp: 'Requires application',
+    proposeEvent: 'Want to propose an event?',
+    proposeCta: 'Contact us',
   }
 };
 
 const text = t[lang];
 
-// Placeholder events - these would come from a CMS or markdown files
-const events = [
-  {
-    id: 1,
-    title: lang === 'es' ? 'Meetup Mensual Guatemala City' : 'Monthly Meetup Guatemala City',
-    date: '2026-02-15',
-    time: '18:00',
-    type: 'in-person',
-    location: 'Guatemala City',
-    description: lang === 'es'
-      ? 'Networking y charlas con la comunidad de builders.'
-      : 'Networking and talks with the builders community.'
-  },
-  {
-    id: 2,
-    title: lang === 'es' ? 'Demo Day: Muestra tu proyecto' : 'Demo Day: Show your project',
-    date: '2026-02-22',
-    time: '19:00',
-    type: 'virtual',
-    location: 'Discord',
-    description: lang === 'es'
-      ? 'Presenta lo que estás construyendo a la comunidad.'
-      : 'Present what you are building to the community.'
-  }
-];
+const allEvents = await getCollection('events');
+const today = new Date().toISOString().split('T')[0];
 
-function formatDate(dateStr: string, lang: string) {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString(lang === 'es' ? 'es-GT' : 'en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric'
-  });
-}
+const upcomingEvents = allEvents
+  .filter(event => event.data.date >= today)
+  .sort((a, b) => a.data.date.localeCompare(b.data.date))
+  .slice(0, 4);
+
+const getTypeLabel = (type: string) => {
+  if (type === 'virtual') return text.virtual;
+  if (type === 'hybrid') return text.hybrid;
+  return text.inPerson;
+};
+
+const getTypeColor = (type: string) => {
+  if (type === 'virtual') return 'bg-purple-500/15 text-purple-400 border-purple-500/20';
+  if (type === 'hybrid') return 'bg-blue-500/15 text-blue-400 border-blue-500/20';
+  return 'bg-502-green/15 text-502-green border-502-green/20';
+};
+
+const getStatusLabel = (status: string) => {
+  if (status === 'waitlist') return text.waitlist;
+  if (status === 'sold-out') return text.soldOut;
+  if (status === 'requires-application') return text.requiresApp;
+  return text.open;
+};
+
+const prefix = lang === 'es' ? '' : '/en';
 ---
 
-<section id="events" class="py-24 bg-502-gray/30 relative">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="text-center mb-16">
-      <h2 class="section-title">{text.title}</h2>
-      <p class="section-subtitle mx-auto">{text.subtitle}</p>
+    <div class="fade-in flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
+      <div>
+        <span class="section-label mb-4 block">{text.label}</span>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+          {text.title}<br/>
+          <span class="italic text-502-green">{text.titleHighlight}</span>
+        </h2>
+        <p class="text-gray-400 mt-4 max-w-md">{text.subtitle}</p>
+      </div>
+      <a
+        href={`${prefix}/events`}
+        class="inline-flex items-center gap-2 text-sm text-502-green hover:text-white transition-colors shrink-0"
+      >
+        {text.viewAll}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </div>
 
-    <!-- Events List -->
-    {events.length > 0 ? (
-      <div class="space-y-4 max-w-3xl mx-auto">
-        {events.map((event) => (
-          <div class="card flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
-            <!-- Date Badge -->
-            <div class="flex-shrink-0 text-center bg-502-green/10 rounded-lg p-3 min-w-[80px]">
-              <div class="text-502-green font-bold text-lg">
-                {new Date(event.date).getDate()}
-              </div>
-              <div class="text-gray-400 text-xs uppercase">
-                {new Date(event.date).toLocaleDateString(lang === 'es' ? 'es-GT' : 'en-US', { month: 'short' })}
-              </div>
-            </div>
+    <!-- Events Grid -->
+    {upcomingEvents.length > 0 ? (
+      <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+        {upcomingEvents.map((event) => {
+          const eventDate = new Date(event.data.date + 'T12:00:00');
+          const day = eventDate.getDate();
+          const month = eventDate.toLocaleDateString(lang === 'es' ? 'es-GT' : 'en-US', { month: 'short' }).toUpperCase();
+          const eventTitle = lang === 'es' ? (event.data.titleEs || event.data.title) : event.data.title;
+          const eventDesc = lang === 'es' ? (event.data.descriptionEs || event.data.description) : event.data.description;
 
-            <!-- Event Info -->
-            <div class="flex-1">
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class:list={[
-                  'text-xs px-2 py-0.5 rounded-full',
-                  event.type === 'virtual' ? 'bg-purple-500/20 text-purple-400' : 'bg-502-green/20 text-502-green'
-                ]}>
-                  {event.type === 'virtual' ? text.virtual : text.inPerson}
-                </span>
-                <span class="text-gray-500 text-sm">
-                  {event.time} · {event.location}
+          return (
+            <a
+              href={`${prefix}/events/${event.slug}`}
+              class="stagger-item group relative p-6 rounded-2xl border border-white/5 bg-502-surface/30 hover:border-502-green/30 transition-all duration-300 glow-hover flex flex-col"
+              data-event-date={event.data.date}
+            >
+              <!-- Top row: date + type badge -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-white font-serif leading-none">{day}</div>
+                    <div class="text-[10px] text-gray-500 tracking-wider">{month}</div>
+                  </div>
+                  <div class="w-px h-8 bg-white/10"></div>
+                  <div class="text-xs text-gray-500">
+                    {event.data.time}{event.data.endTime && ` - ${event.data.endTime}`}
+                  </div>
+                </div>
+                <span class:list={['text-[10px] px-2.5 py-1 rounded-full border', getTypeColor(event.data.type)]}>
+                  {getTypeLabel(event.data.type)}
                 </span>
               </div>
-              <h3 class="text-lg font-semibold mb-1">{event.title}</h3>
-              <p class="text-gray-400 text-sm">{event.description}</p>
-            </div>
-          </div>
-        ))}
+
+              <!-- Title & description -->
+              <h3 class="text-lg sm:text-xl mb-2 group-hover:text-502-green transition-colors leading-snug">
+                {eventTitle}
+              </h3>
+              <p class="text-gray-500 text-sm line-clamp-2 flex-1">
+                {eventDesc}
+              </p>
+
+              <!-- Bottom: status + collaboration -->
+              <div class="flex items-center justify-between mt-4 pt-4 border-t border-white/5">
+                <span class="text-[10px] text-502-green tracking-wider uppercase">
+                  {getStatusLabel(event.data.status)}
+                </span>
+                {event.data.collaboration && event.data.collaboratorName && (
+                  <span class="text-[10px] text-gray-600">
+                    con {event.data.collaboratorName}
+                  </span>
+                )}
+              </div>
+            </a>
+          );
+        })}
       </div>
     ) : (
-      <div class="text-center text-gray-400 py-12">
-        <p>{text.noEvents}</p>
+      <div class="text-center text-gray-500 py-16 border border-white/5 rounded-2xl">
+        <p class="text-lg">{text.noEvents}</p>
       </div>
     )}
 
-    <!-- View All Link -->
-    <div class="text-center mt-12">
-      <a href={lang === 'es' ? '/events' : '/en/events'} class="link">
-        {text.viewAll} →
-      </a>
+    <!-- Propose event -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-500 text-sm">
+        {text.proposeEvent}{' '}
+        <a href="mailto:hello@the502project.com" class="text-502-green hover:text-white transition-colors">
+          {text.proposeCta} &rarr;
+        </a>
+      </p>
     </div>
   </div>
 </section>

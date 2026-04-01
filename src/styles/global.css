@@ -39,7 +39,18 @@
     font-family: 'Space Mono', monospace;
   }
 
-  /* Subtle grid background - different from grain */
+  /* Noise texture overlay */
+  .noise-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Subtle grid background */
   .grid-bg {
     background-image:
       linear-gradient(rgba(86, 239, 159, 0.03) 1px, transparent 1px),
@@ -47,15 +58,10 @@
     background-size: 60px 60px;
   }
 
-  /* Side nav active indicator */
-  .nav-indicator {
-    @apply w-1 h-1 rounded-full bg-502-green;
-    transition: all 0.3s ease;
-  }
-
-  .nav-item:hover .nav-indicator,
-  .nav-item.active .nav-indicator {
-    @apply w-8;
+  /* Dot pattern background */
+  .dot-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(86, 239, 159, 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
   }
 
   /* Scroll animations */
@@ -70,7 +76,6 @@
     transform: translateY(0);
   }
 
-  /* Stagger animation for list items */
   .stagger-item {
     opacity: 0;
     transform: translateY(15px);
@@ -82,7 +87,28 @@
     transform: translateY(0);
   }
 
-  /* Blog article: párrafos bien separados y callouts visibles */
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #56ef9f 0%, #7ff4b8 50%, #56ef9f 100%);
+  }
+
+  /* Glow effect for cards on hover */
+  .glow-hover {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(86, 239, 159, 0.1), inset 0 0 30px rgba(86, 239, 159, 0.03);
+    border-color: rgba(86, 239, 159, 0.3);
+  }
+
+  /* Section label style (like ailabs.sv) */
+  .section-label {
+    @apply text-502-green text-xs tracking-[0.2em] uppercase font-bold;
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Blog styles */
   .blog-article-prose p {
     margin-bottom: 2rem;
   }
@@ -92,7 +118,7 @@
   .blog-article-prose blockquote {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem;
     border-left: 4px solid #56ef9f;
     background: rgba(86, 239, 159, 0.1);
     border-radius: 0 8px 8px 0;
