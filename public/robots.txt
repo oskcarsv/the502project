@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the502project.com/sitemap-index.xml

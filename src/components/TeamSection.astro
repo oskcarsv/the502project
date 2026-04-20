@@ -73,14 +73,14 @@ const team = [
               />
 
               <!-- Social overlay on hover -->
-              <div class="absolute inset-0 bg-gradient-to-t from-502-black/80 via-502-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5">
+              <div class="absolute inset-0 bg-gradient-to-t from-502-black/80 via-502-black/20 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5">
                 <div class="flex gap-2">
                   {member.socials.map((social) => (
                     <a
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="p-2.5 bg-white/10 backdrop-blur-sm rounded-full hover:bg-502-green/30 transition-colors"
+                      class="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-502-green/30 transition-colors"
                       aria-label={social.name}
                     >
                       <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">

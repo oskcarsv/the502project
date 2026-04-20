@@ -15,6 +15,7 @@ const t = {
     subtitle: 'Hackathons, workshops y meetups. Menos slides, mas accion.',
     viewAll: 'Ver todos los eventos',
     noEvents: 'Proximamente anunciaremos nuevos eventos',
+    with: 'con',
     register: 'Registrarse',
     virtual: 'Virtual',
     inPerson: 'Presencial',
@@ -33,6 +34,7 @@ const t = {
     subtitle: 'Hackathons, workshops, and meetups. Less slides, more action.',
     viewAll: 'View all events',
     noEvents: 'New events coming soon',
+    with: 'with',
     register: 'Register',
     virtual: 'Virtual',
     inPerson: 'In-Person',
@@ -149,7 +151,7 @@ const prefix = lang === 'es' ? '' : '/en';
                 </span>
                 {event.data.collaboration && event.data.collaboratorName && (
                   <span class="text-[10px] text-gray-600">
-                    con {event.data.collaboratorName}
+                    {text.with} {event.data.collaboratorName}
                   </span>
                 )}
               </div>
