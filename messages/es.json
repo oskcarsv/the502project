@@ -1,0 +1,125 @@
+{
+  "Hero": {
+    "title": "Builders, founders, ambiciosos.",
+    "subline": "La comunidad para los que están construyendo empresas y tecnología de clase mundial desde Guatemala.",
+    "cta_primary": "Únete a la comunidad",
+    "cta_follow": "síguenos"
+  },
+  "Nav": {
+    "events": "Eventos",
+    "blog": "Blog",
+    "partners": "Partners",
+    "jobs": "Jobs"
+  },
+  "Pillars": {
+    "build": "Construye",
+    "connect": "Conecta",
+    "grow": "Crece"
+  },
+  "Stats": {
+    "title": "Una comunidad que crece todos los días.",
+    "members": {
+      "value": "+550",
+      "label": "Miembros",
+      "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
+    },
+    "events": {
+      "value": "+12",
+      "label": "Eventos",
+      "description": "Hackathons, workshops y charlas realizados con líderes del ecosistema."
+    },
+    "sponsors": {
+      "value": "+6",
+      "label": "Sponsors",
+      "description": "Empresas y partners apoyando el crecimiento de la comunidad 502."
+    }
+  },
+  "About": {
+    "eyebrow": "Quiénes somos",
+    "title": "Menos charlas motivacionales. Más construir y conectar.",
+    "body": "Nacimos en noviembre de 2025 con el propósito de impulsar el ecosistema de emprendimiento y tecnología en Guatemala. Una comunidad creada de la necesidad de tener espacios de alto valor.",
+    "visibility": {
+      "title": "Visibilidad",
+      "description": "Damos visibilidad a las startups que están construyendo desde Guatemala."
+    },
+    "investment": {
+      "title": "Inversión",
+      "description": "Conectamos inversionistas con founders y startups del ecosistema."
+    },
+    "education": {
+      "title": "Educación",
+      "description": "Educamos al ecosistema con eventos, recursos y conexiones reales."
+    }
+  },
+  "Sponsors": {
+    "eyebrow": "Quienes confían en nosotros"
+  },
+  "Gallery": {
+    "eyebrow": "Lo que ha pasado",
+    "title": "Eventos que han pasado en 502.",
+    "subline": "Hackathons, workshops y charlas reales con builders del ecosistema.",
+    "cta": "Ver todos los eventos",
+    "types": {
+      "hackathon": "Hackathon",
+      "workshop": "Workshop",
+      "talk": "Charla",
+      "mentorship": "Mentoría",
+      "meetup": "Convivio"
+    }
+  },
+  "Team": {
+    "eyebrow": "El equipo",
+    "title": "Las personas detrás del 502.",
+    "subline": "Builders y operators construyendo el ecosistema con la comunidad.",
+    "builders_label": "Community Builders"
+  },
+  "FinalCTA": {
+    "eyebrow": "Únete",
+    "title": "Construyamos juntos.",
+    "subline": "+550 builders, founders y operators ya están en la comunidad. Te están esperando.",
+    "cta_primary": "Únete a la comunidad",
+    "cta_secondary": "Síguenos"
+  },
+  "CodeOfConduct": {
+    "title": "Código de conducta",
+    "intro_eyebrow": "Las reglas",
+    "intro_body": "Sé la persona que suma, no la que resta. En the502project construimos juntos un espacio donde todos se sientan seguros, respetados y motivados para crear. Tratá a los demás como te gustaría ser tratado: con respeto, empatía y profesionalismo.",
+    "section1_title": "Acá todas las personas son bienvenidas",
+    "section1_body": "En the502project creemos que la diversidad nos hace más fuertes. No importa tu género, raza, orientación sexual, capacidades, apariencia física o creencias. Este es tu espacio para aprender, crear y crecer.",
+    "section2_title": "Nos tratamos con respeto",
+    "section2_body": "Ya sea en eventos presenciales, en WhatsApp o en cualquier otro canal de la comunidad, buscamos un ambiente de colaboración constructiva. Las diferencias de opinión son bienvenidas, pero siempre las expresamos con profesionalismo.",
+    "section3_title": "Cero tolerancia a comportamientos que excluyan",
+    "section3_body": "No aceptamos ninguna forma de discriminación, acoso, intimidación o conducta que haga que alguien se sienta inseguro o no bienvenido.",
+    "forbidden_eyebrow": "No aceptamos",
+    "forbidden_title": "Comportamientos que no toleramos",
+    "forbidden_lang_title": "Lenguaje y contenido ofensivo",
+    "forbidden_lang_1": "Comentarios discriminatorios de cualquier tipo",
+    "forbidden_lang_2": "Lenguaje sexual explícito o contenido inapropiado",
+    "forbidden_lang_3": "Contenido violento, amenazas o lenguaje intimidante",
+    "forbidden_lang_4": "Insultos personales o ataques dirigidos",
+    "forbidden_harass_title": "Acoso e intimidación",
+    "forbidden_harass_1": "Acoso de cualquier tipo, ya sea en persona o en línea",
+    "forbidden_harass_2": "Atención sexual no deseada o avances inapropiados",
+    "forbidden_harass_3": "Intimidación deliberada, stalking o seguimiento",
+    "forbidden_harass_4": "Fotografía o grabación sin consentimiento",
+    "forbidden_misuse_title": "Uso inadecuado de canales",
+    "forbidden_misuse_1": "Spam o publicaciones repetitivas sin valor",
+    "forbidden_misuse_2": "Publicidad o ventas no solicitadas",
+    "forbidden_misuse_3": "Compartir información privada de otros",
+    "forbidden_misuse_4": "Trolling o provocación deliberada",
+    "report_eyebrow": "Reportar",
+    "report_title": "¿Fuiste víctima o testigo?",
+    "report_body": "Tu seguridad y bienestar son nuestra prioridad. Si experimentás o ves cualquier comportamiento que viole este código de conducta, contactá a los representantes de the502project de inmediato. Tu reporte será tratado con confidencialidad."
+  },
+  "Footer": {
+    "tagline": "La comunidad para builders y founders construyendo empresas y tecnología desde Guatemala.",
+    "site": "Sitio",
+    "community": "Comunidad",
+    "follow": "Síguenos",
+    "join": "Únete",
+    "code_of_conduct": "Código de conducta",
+    "about": "Sobre nosotros",
+    "copyright": "© {year} The 502 Project",
+    "made_in": "Hecho con ♥ en Guatemala"
+  }
+}
