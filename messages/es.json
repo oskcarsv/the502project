@@ -111,6 +111,17 @@
     "report_title": "¿Fuiste víctima o testigo?",
     "report_body": "Tu seguridad y bienestar son nuestra prioridad. Si experimentás o ves cualquier comportamiento que viole este código de conducta, contactá a los representantes de the502project de inmediato. Tu reporte será tratado con confidencialidad."
   },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Lo que estamos pensando.",
+    "subline": "Reflexiones, lecciones y conversaciones desde el ecosistema 502.",
+    "read": "lectura",
+    "back": "Volver al blog",
+    "empty": "Pronto publicaremos los primeros artículos.",
+    "about_author": "Sobre la autora",
+    "keep_reading_eyebrow": "Sigue leyendo",
+    "keep_reading_title": "Otros artículos."
+  },
   "Footer": {
     "tagline": "La comunidad para builders y founders construyendo empresas y tecnología desde Guatemala.",
     "site": "Sitio",

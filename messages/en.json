@@ -111,6 +111,17 @@
     "report_title": "Were you a victim or witness?",
     "report_body": "Your safety and wellbeing are our priority. If you experience or witness any behavior that violates this code of conduct, contact the502project representatives immediately. Your report will be treated with confidentiality."
   },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "What we're thinking about.",
+    "subline": "Reflections, lessons, and conversations from the 502 ecosystem.",
+    "read": "read",
+    "back": "Back to blog",
+    "empty": "We'll be publishing the first posts soon.",
+    "about_author": "About the author",
+    "keep_reading_eyebrow": "Keep reading",
+    "keep_reading_title": "Other articles."
+  },
   "Footer": {
     "tagline": "The community for builders and founders building world-class companies and technology from Guatemala.",
     "site": "Site",
