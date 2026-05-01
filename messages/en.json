@@ -1,0 +1,216 @@
+{
+  "Hero": {
+    "title": "Builders, founders, ambitious.",
+    "subline": "The community for those building world-class companies and technology from Guatemala.",
+    "cta_primary": "Join the community",
+    "cta_follow": "follow"
+  },
+  "Nav": {
+    "events": "Events",
+    "blog": "Blog",
+    "partners": "Partners"
+  },
+  "Pillars": {
+    "build": "Build",
+    "connect": "Connect",
+    "grow": "Grow"
+  },
+  "Stats": {
+    "title": "A community growing every day.",
+    "members": {
+      "value": "+550",
+      "label": "Members",
+      "description": "Builders and founders sharing knowledge, opportunities, and projects."
+    },
+    "events": {
+      "value": "+12",
+      "label": "Events",
+      "description": "Hackathons, workshops, and talks hosted with leaders of the ecosystem."
+    },
+    "sponsors": {
+      "value": "+6",
+      "label": "Sponsors",
+      "description": "Companies and partners supporting the growth of the 502 community."
+    }
+  },
+  "About": {
+    "eyebrow": "About us",
+    "title": "Less motivational talks. More building and connecting.",
+    "body": "Born in November 2025 with the purpose of fueling the entrepreneurship and technology ecosystem in Guatemala. A community created from the need for high-value spaces.",
+    "visibility": {
+      "title": "Visibility",
+      "description": "We spotlight the startups being built from Guatemala."
+    },
+    "investment": {
+      "title": "Investment",
+      "description": "We connect investors with founders and startups in the ecosystem."
+    },
+    "education": {
+      "title": "Education",
+      "description": "We educate the ecosystem through events, resources, and real connections."
+    }
+  },
+  "Sponsors": {
+    "eyebrow": "Trusted by"
+  },
+  "Gallery": {
+    "eyebrow": "What's happened",
+    "title": "Events that have happened at 502.",
+    "subline": "Hackathons, workshops, and talks with real builders from the ecosystem.",
+    "cta": "See all events",
+    "types": {
+      "hackathon": "Hackathon",
+      "workshop": "Workshop",
+      "talk": "Talk",
+      "mentorship": "Mentorship",
+      "meetup": "Meetup"
+    }
+  },
+  "Team": {
+    "eyebrow": "The team",
+    "title": "The people behind 502.",
+    "subline": "Builders and operators shaping the ecosystem with the community.",
+    "builders_label": "Community Builders"
+  },
+  "FinalCTA": {
+    "eyebrow": "Join",
+    "title": "Let's build together.",
+    "subline": "+550 builders, founders, and operators are already in the community. They're waiting for you.",
+    "cta_primary": "Join the community",
+    "cta_secondary": "Follow"
+  },
+  "CodeOfConduct": {
+    "title": "Code of conduct",
+    "intro_eyebrow": "The rules",
+    "intro_body": "Be the person who adds, not the one who takes away. At the502project we build a space where everyone feels safe, respected, and motivated to create. Treat others how you'd want to be treated: with respect, empathy, and professionalism.",
+    "section1_title": "Everyone is welcome here",
+    "section1_body": "At the502project we believe diversity makes us stronger. Regardless of your gender, race, sexual orientation, abilities, physical appearance, or beliefs. This is your space to learn, create, and grow.",
+    "section2_title": "We treat each other with respect",
+    "section2_body": "Whether at in-person events, on WhatsApp, or any other community channel, we aim for an environment of constructive collaboration. Differences of opinion are welcome, but we always express them with professionalism.",
+    "section3_title": "Zero tolerance for excluding behavior",
+    "section3_body": "We do not accept any form of discrimination, harassment, intimidation, or behavior that makes anyone feel unsafe or unwelcome.",
+    "forbidden_eyebrow": "Not accepted",
+    "forbidden_title": "Behaviors we don't tolerate",
+    "forbidden_lang_title": "Offensive language and content",
+    "forbidden_lang_1": "Discriminatory comments of any kind",
+    "forbidden_lang_2": "Explicit sexual language or inappropriate content",
+    "forbidden_lang_3": "Violent content, threats, or intimidating language",
+    "forbidden_lang_4": "Personal insults or targeted attacks",
+    "forbidden_harass_title": "Harassment and intimidation",
+    "forbidden_harass_1": "Harassment of any kind, in person or online",
+    "forbidden_harass_2": "Unwanted sexual attention or inappropriate advances",
+    "forbidden_harass_3": "Deliberate intimidation, stalking, or following",
+    "forbidden_harass_4": "Photography or recording without consent",
+    "forbidden_misuse_title": "Misuse of channels",
+    "forbidden_misuse_1": "Spam or repetitive low-value posts",
+    "forbidden_misuse_2": "Unsolicited advertising or sales",
+    "forbidden_misuse_3": "Sharing private information about others",
+    "forbidden_misuse_4": "Trolling or deliberate provocation",
+    "report_eyebrow": "Report",
+    "report_title": "Were you a victim or witness?",
+    "report_body": "Your safety and wellbeing are our priority. If you experience or witness any behavior that violates this code of conduct, contact the502project representatives immediately. Your report will be treated with confidentiality."
+  },
+  "Partners": {
+    "eyebrow": "Partners",
+    "title": "Build with the largest builder community in Guatemala.",
+    "subline": "Connect your brand, your product or your talent with +550 active builders and founders from the 502 ecosystem.",
+    "cta_primary": "Let's talk",
+    "cta_secondary": "Meet the community",
+    "email_subject": "I want to be a partner of The 502 Project",
+    "stats_eyebrow": "Why partner",
+    "stats_title": "The ecosystem in numbers.",
+    "stats": {
+      "members": {
+        "value": "+550",
+        "label": "Active builders",
+        "description": "Founders, engineers, designers and entrepreneurs building from Guatemala."
+      },
+      "events": {
+        "value": "+12",
+        "label": "Events in 5 months",
+        "description": "Hackathons, workshops, talks and meetups with guaranteed in-person attendance."
+      },
+      "sponsors": {
+        "value": "+6",
+        "label": "Current sponsors",
+        "description": "Companies and partners already connected with the ecosystem."
+      }
+    },
+    "collab_eyebrow": "Ways to collaborate",
+    "collab_title": "How we can work together.",
+    "collab_subline": "We design each partnership so your brand has real impact on the community, and the community has real impact on your business.",
+    "collab": {
+      "sponsor_event": {
+        "title": "Sponsor an event",
+        "description": "Your brand present at a hackathon, workshop or talk. Direct access to active builders, branding across assets, mention in communications and the chance to speak to the audience. Ideal for launches, hiring or awareness."
+      },
+      "year_partner": {
+        "title": "Become year partner",
+        "description": "Recurring partnership with presence at every event of the year, co-created content, shared branding and priority access to initiatives. For companies that want to build long-term relationships with the ecosystem."
+      },
+      "talent": {
+        "title": "Access to talent",
+        "description": "Connect with the next generation of builders. Job board, referrals, talent pipeline and exclusive hiring events. The community is already building — you can meet them while they ship, not in an interview."
+      },
+      "co_create": {
+        "title": "Co-create with the community",
+        "description": "Workshops, educational programs, co-built products or joint content. If you have a tool or initiative, the community can test it, validate it and amplify it."
+      }
+    },
+    "trusted_eyebrow": "Trusted by",
+    "trusted_title": "Companies that are already part.",
+    "contact_eyebrow": "Let's talk",
+    "contact_title": "Let's talk about building together.",
+    "contact_subline": "Tell us what you have in mind: sponsorship, launch, hiring, content or something else. We respond in under 48 hours.",
+    "contact_email_label": "Email",
+    "contact_email_cta": "Send email",
+    "contact_community_label": "WhatsApp",
+    "contact_community_value": "The 502 Project Community",
+    "contact_community_cta": "Join the group"
+  },
+  "Events": {
+    "eyebrow": "Events",
+    "title": "Where the community is built.",
+    "subline": "Hackathons, workshops, talks and meetups with builders and founders from the 502 ecosystem.",
+    "next_label": "Next event",
+    "upcoming_label": "Upcoming",
+    "past_label": "Past",
+    "upcoming_title": "Upcoming events.",
+    "past_title": "Past events.",
+    "events_count": "events",
+    "register": "Reserve my spot",
+    "watch_recording": "Watch recording",
+    "view_event": "View event page",
+    "back": "Back to events",
+    "with": "with",
+    "sponsors_label": "Sponsors",
+    "dont_miss": "Don't miss it. Reserve your spot.",
+    "more_upcoming_eyebrow": "Also coming up",
+    "more_upcoming_title": "Other upcoming events.",
+    "more_past_eyebrow": "Also happened",
+    "more_past_title": "Other past events.",
+    "empty": "We'll be publishing the next events soon."
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "What we're thinking about.",
+    "subline": "Reflections, lessons, and conversations from the 502 ecosystem.",
+    "read": "read",
+    "back": "Back to blog",
+    "empty": "We'll be publishing the first posts soon.",
+    "about_author": "About the author",
+    "keep_reading_eyebrow": "Keep reading",
+    "keep_reading_title": "Other articles."
+  },
+  "Footer": {
+    "tagline": "The community for builders and founders building world-class companies and technology from Guatemala.",
+    "site": "Site",
+    "community": "Community",
+    "follow": "Follow",
+    "join": "Join",
+    "code_of_conduct": "Code of conduct",
+    "about": "About",
+    "copyright": "© {year} The 502 Project",
+    "made_in": "Made with ♥ in Guatemala"
+  }
+}
