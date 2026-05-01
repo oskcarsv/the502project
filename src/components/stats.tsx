@@ -25,13 +25,13 @@ export function Stats() {
 
   return (
     <section ref={ref} className="bg-background">
-      <div className="container mx-auto px-4 py-24 sm:py-32">
+      <div className="container mx-auto px-4 py-20 sm:py-32">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
           variants={{ visible: { opacity: 1, y: 0 } }}
           transition={{ duration: 0.6 }}
-          className="mb-12 text-center font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl"
+          className="mb-12 text-center font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl"
         >
           {t("title")}
         </motion.h2>
@@ -57,20 +57,24 @@ export function Stats() {
                   stiffness: 100,
                   damping: 12,
                 }}
-                className="group flex flex-col items-center border border-foreground/10 bg-background p-10 text-center"
+                className="group flex flex-row items-center gap-5 border border-foreground/10 bg-background p-6 sm:flex-col sm:items-center sm:p-10 sm:text-center"
               >
-                <div className="mb-6 rounded-full bg-brand-dark p-4 transition-transform group-hover:scale-105">
-                  <Icon className="size-8 text-brand-green" />
+                <div className="shrink-0 rounded-full bg-brand-dark p-3 transition-transform group-hover:scale-105 sm:mb-6 sm:p-4">
+                  <Icon className="size-6 text-brand-green sm:size-8" />
                 </div>
-                <div className="mb-2 font-display text-5xl font-bold leading-none tracking-tight text-brand-dark sm:text-6xl">
-                  {t(`${key}.value`)}
+                <div className="flex flex-1 flex-col gap-1.5 sm:items-center sm:gap-0">
+                  <div className="flex items-baseline gap-3 sm:flex-col sm:gap-2">
+                    <div className="font-display text-4xl font-bold leading-none tracking-tight text-brand-dark sm:text-6xl">
+                      {t(`${key}.value`)}
+                    </div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/80 sm:mb-4 sm:text-sm">
+                      {t(`${key}.label`)}
+                    </div>
+                  </div>
+                  <p className="text-sm leading-relaxed text-foreground/65 sm:mt-0">
+                    {t(`${key}.description`)}
+                  </p>
                 </div>
-                <div className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-foreground/80">
-                  {t(`${key}.label`)}
-                </div>
-                <p className="text-sm leading-relaxed text-foreground/65">
-                  {t(`${key}.description`)}
-                </p>
               </motion.div>
             );
           })}

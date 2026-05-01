@@ -26,7 +26,7 @@ export function About() {
 
   return (
     <section ref={ref} className="bg-background">
-      <div className="container mx-auto px-4 py-24 sm:py-32">
+      <div className="container mx-auto px-4 py-20 sm:py-32">
         {/* Header block */}
         <div className="mx-auto max-w-3xl text-center">
           <motion.span
@@ -44,7 +44,7 @@ export function About() {
             animate={controls}
             variants={{ visible: { opacity: 1, y: 0 } }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl"
+            className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl"
           >
             {t("title")}
           </motion.h2>
@@ -54,14 +54,14 @@ export function About() {
             animate={controls}
             variants={{ visible: { opacity: 1, y: 0 } }}
             transition={{ delay: 0.25, duration: 0.6 }}
-            className="mt-6 text-base leading-relaxed text-foreground/70 sm:text-lg"
+            className="mt-5 text-base leading-relaxed text-foreground/70 sm:mt-6 sm:text-lg"
           >
             {t("body")}
           </motion.p>
         </div>
 
         {/* Mission pillars */}
-        <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:gap-12 md:grid-cols-3 sm:mt-20">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-8 sm:mt-20 sm:gap-12 md:grid-cols-3">
           {MISSION_KEYS.map((key, i) => {
             const Icon = MISSION_ICONS[key];
             return (
@@ -77,17 +77,19 @@ export function About() {
                   stiffness: 100,
                   damping: 12,
                 }}
-                className="flex flex-col items-start gap-4"
+                className="flex flex-row items-start gap-5 sm:flex-col sm:gap-4"
               >
-                <div className="flex size-12 items-center justify-center rounded-md bg-brand-green/15">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-md bg-brand-green/15">
                   <Icon className="size-6 text-brand-green" />
                 </div>
-                <h3 className="font-display text-xl font-bold leading-tight tracking-tight">
-                  {t(`${key}.title`)}
-                </h3>
-                <p className="text-sm leading-relaxed text-foreground/65">
-                  {t(`${key}.description`)}
-                </p>
+                <div className="flex flex-1 flex-col gap-3 sm:gap-4">
+                  <h3 className="font-display text-xl font-bold leading-tight tracking-tight">
+                    {t(`${key}.title`)}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-foreground/65 sm:text-base">
+                    {t(`${key}.description`)}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

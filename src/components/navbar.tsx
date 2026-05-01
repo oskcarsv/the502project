@@ -71,36 +71,44 @@ export function Navbar() {
               <Menu className="size-5" />
               <span className="sr-only">Toggle menu</span>
             </SheetTrigger>
-            <SheetContent>
-              <SheetTitle className="font-display text-xl font-bold tracking-tight">
-                The 502 Project
-              </SheetTitle>
-              <SheetDescription className="sr-only">
-                {t("subline")}
-              </SheetDescription>
-              <nav className="mt-8 flex flex-col gap-5 px-4">
-                {NAV_KEYS.map((key) => (
-                  <a
-                    key={key}
-                    href={NAV_HREFS[key]}
-                    className="text-sm font-medium uppercase tracking-[0.18em] text-foreground/80 hover:text-brand-dark"
-                  >
-                    {tNav(key)}
-                  </a>
-                ))}
-                <a
-                  href={WHATSAPP_INVITE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex h-11 items-center gap-2 rounded-md bg-brand-green px-5 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-green/85"
-                >
-                  {t("cta_primary")}
-                  <ArrowRight className="size-4" />
-                </a>
-                <div className="mt-2">
-                  <LanguageSwitcher tone="light" />
+            <SheetContent className="w-full p-0 sm:max-w-sm">
+              <div className="flex h-full flex-col">
+                <div className="flex items-center justify-between border-b border-foreground/10 px-6 py-5">
+                  <SheetTitle className="font-display text-lg font-bold tracking-tight">
+                    The 502 Project
+                  </SheetTitle>
+                  <SheetDescription className="sr-only">
+                    {t("subline")}
+                  </SheetDescription>
                 </div>
-              </nav>
+
+                <nav className="flex flex-1 flex-col gap-1 px-4 py-6">
+                  {NAV_KEYS.map((key) => (
+                    <a
+                      key={key}
+                      href={NAV_HREFS[key]}
+                      className="rounded-md px-3 py-3 text-sm font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:bg-foreground/5 hover:text-brand-dark"
+                    >
+                      {tNav(key)}
+                    </a>
+                  ))}
+                </nav>
+
+                <div className="flex flex-col gap-4 border-t border-foreground/10 px-6 py-6">
+                  <a
+                    href={WHATSAPP_INVITE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-brand-green px-5 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-green/85"
+                  >
+                    {t("cta_primary")}
+                    <ArrowRight className="size-4" />
+                  </a>
+                  <div className="flex justify-center">
+                    <LanguageSwitcher tone="light" />
+                  </div>
+                </div>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
