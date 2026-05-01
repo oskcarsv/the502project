@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { LinkedinIcon } from "@/components/social-icons";
 
@@ -29,7 +29,7 @@ const BUILDERS: Member[] = [
   { id: "eunice", name: "Eunice", role: "Community Builder" },
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
