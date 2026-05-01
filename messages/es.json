@@ -8,8 +8,7 @@
   "Nav": {
     "events": "Eventos",
     "blog": "Blog",
-    "partners": "Partners",
-    "jobs": "Jobs"
+    "partners": "Partners"
   },
   "Pillars": {
     "build": "Construye",
@@ -110,6 +109,87 @@
     "report_eyebrow": "Reportar",
     "report_title": "¿Fuiste víctima o testigo?",
     "report_body": "Tu seguridad y bienestar son nuestra prioridad. Si experimentás o ves cualquier comportamiento que viole este código de conducta, contactá a los representantes de the502project de inmediato. Tu reporte será tratado con confidencialidad."
+  },
+  "Partners": {
+    "eyebrow": "Partners",
+    "title": "Construye con la comunidad de builders más grande de Guatemala.",
+    "subline": "Conecta tu marca, tu producto o tu talento con +550 builders y founders activos del ecosistema 502.",
+    "cta_primary": "Hablemos",
+    "cta_secondary": "Conoce la comunidad",
+    "email_subject": "Quiero ser partner de The 502 Project",
+    "stats_eyebrow": "Por qué partner",
+    "stats_title": "El ecosistema en números.",
+    "stats": {
+      "members": {
+        "value": "+550",
+        "label": "Builders activos",
+        "description": "Founders, ingenieros, diseñadores y emprendedores construyendo desde Guatemala."
+      },
+      "events": {
+        "value": "+12",
+        "label": "Eventos en 5 meses",
+        "description": "Hackathons, workshops, talks y meetups con asistencia presencial garantizada."
+      },
+      "sponsors": {
+        "value": "+6",
+        "label": "Sponsors actuales",
+        "description": "Empresas y partners que ya están conectados con el ecosistema."
+      }
+    },
+    "collab_eyebrow": "Formas de colaborar",
+    "collab_title": "Cómo podemos trabajar juntos.",
+    "collab_subline": "Diseñamos cada partnership para que tu marca tenga impacto real en la comunidad y la comunidad tenga impacto real en tu negocio.",
+    "collab": {
+      "sponsor_event": {
+        "title": "Sponsorea un evento",
+        "description": "Tu marca presente en un hackathon, workshop o talk. Acceso directo a builders activos, branding en piezas, mención en comunicación y posibilidad de hablar a la audiencia. Ideal para lanzamientos, hiring o awareness."
+      },
+      "year_partner": {
+        "title": "Sé partner del año",
+        "description": "Partnership recurrente con presencia en todos los eventos del año, contenido co-creado, branding compartido y acceso prioritario a iniciativas. Para empresas que quieren construir relación a largo plazo con el ecosistema."
+      },
+      "talent": {
+        "title": "Acceso al talento",
+        "description": "Conecta con la próxima generación de builders. Job board, referrals, talent pipeline y eventos de hiring exclusivos. La comunidad ya está construyendo — los podés conocer trabajando, no en una entrevista."
+      },
+      "co_create": {
+        "title": "Co-crea con la comunidad",
+        "description": "Workshops, programas educativos, productos co-construidos o contenido en conjunto. Si tienes una herramienta o iniciativa, la comunidad puede testearla, validarla y amplificarla."
+      }
+    },
+    "trusted_eyebrow": "Quienes confían en nosotros",
+    "trusted_title": "Empresas que ya son parte.",
+    "contact_eyebrow": "Conversemos",
+    "contact_title": "Hablemos de cómo construir juntos.",
+    "contact_subline": "Cuéntanos qué tienes en mente: sponsorship, lanzamiento, hiring, contenido o algo distinto. Te respondemos en menos de 48 horas.",
+    "contact_email_label": "Email",
+    "contact_email_cta": "Enviar correo",
+    "contact_community_label": "WhatsApp",
+    "contact_community_value": "Comunidad The 502 Project",
+    "contact_community_cta": "Únete al grupo"
+  },
+  "Events": {
+    "eyebrow": "Eventos",
+    "title": "Donde la comunidad se construye.",
+    "subline": "Hackathons, workshops, talks y meetups con builders y founders del ecosistema 502.",
+    "next_label": "Próximo evento",
+    "upcoming_label": "Próximo",
+    "past_label": "Realizado",
+    "upcoming_title": "Próximos eventos.",
+    "past_title": "Eventos anteriores.",
+    "events_count": "eventos",
+    "register": "Reservar mi lugar",
+    "watch_recording": "Ver grabación",
+    "view_event": "Ver página del evento",
+    "back": "Volver a eventos",
+    "with": "con",
+    "sponsors_label": "Sponsors",
+    "dont_miss": "No te lo pierdas. Reserva tu lugar.",
+    "more_upcoming_eyebrow": "También vienen",
+    "more_upcoming_title": "Otros próximos eventos.",
+    "more_past_eyebrow": "También pasaron",
+    "more_past_title": "Otros eventos anteriores.",
+    "empty": "Pronto publicaremos los próximos eventos."
   },
   "Blog": {
     "eyebrow": "Blog",

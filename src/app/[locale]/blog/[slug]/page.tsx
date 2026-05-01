@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
@@ -7,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { BlogContent } from "@/components/blog-content";
 import { LinkedinIcon } from "@/components/social-icons";
 import { getAllSlugs, getAllPosts, getPostBySlug } from "@/lib/blog";
+import { SITE } from "@/lib/site";
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
@@ -14,6 +16,38 @@ export async function generateStaticParams() {
     { locale: "es", slug },
     { locale: "en", slug },
   ]);
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = await getPostBySlug(slug);
+  if (!post) return {};
+
+  const url = `${locale === "es" ? "" : "/en"}/blog/${slug}`;
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      url: `${SITE.url}${url}`,
+      images: [{ url: post.image, width: 1200, height: 630, alt: post.title }],
+      publishedTime: post.pubDate,
+      authors: [post.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.image],
+    },
+  };
 }
 
 function formatDate(iso: string, locale: string) {

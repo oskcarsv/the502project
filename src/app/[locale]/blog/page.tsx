@@ -1,8 +1,25 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getAllPosts, type BlogPost } from "@/lib/blog";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Blog" });
+  return {
+    title: t("title"),
+    description: t("subline"),
+    alternates: { canonical: locale === "es" ? "/blog" : "/en/blog" },
+    openGraph: { title: t("title"), description: t("subline"), type: "website" },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("subline") },
+  };
+}
 
 function formatDate(iso: string, locale: string) {
   return new Date(iso).toLocaleDateString(

@@ -12,7 +12,6 @@ const SITE_LINKS = [
   { key: "events", href: "/eventos" },
   { key: "blog", href: "/blog" },
   { key: "partners", href: "/partners" },
-  { key: "jobs", href: "/jobs" },
 ] as const;
 
 const COMMUNITY_LINKS = [

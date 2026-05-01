@@ -8,8 +8,7 @@
   "Nav": {
     "events": "Events",
     "blog": "Blog",
-    "partners": "Partners",
-    "jobs": "Jobs"
+    "partners": "Partners"
   },
   "Pillars": {
     "build": "Build",
@@ -110,6 +109,87 @@
     "report_eyebrow": "Report",
     "report_title": "Were you a victim or witness?",
     "report_body": "Your safety and wellbeing are our priority. If you experience or witness any behavior that violates this code of conduct, contact the502project representatives immediately. Your report will be treated with confidentiality."
+  },
+  "Partners": {
+    "eyebrow": "Partners",
+    "title": "Build with the largest builder community in Guatemala.",
+    "subline": "Connect your brand, your product or your talent with +550 active builders and founders from the 502 ecosystem.",
+    "cta_primary": "Let's talk",
+    "cta_secondary": "Meet the community",
+    "email_subject": "I want to be a partner of The 502 Project",
+    "stats_eyebrow": "Why partner",
+    "stats_title": "The ecosystem in numbers.",
+    "stats": {
+      "members": {
+        "value": "+550",
+        "label": "Active builders",
+        "description": "Founders, engineers, designers and entrepreneurs building from Guatemala."
+      },
+      "events": {
+        "value": "+12",
+        "label": "Events in 5 months",
+        "description": "Hackathons, workshops, talks and meetups with guaranteed in-person attendance."
+      },
+      "sponsors": {
+        "value": "+6",
+        "label": "Current sponsors",
+        "description": "Companies and partners already connected with the ecosystem."
+      }
+    },
+    "collab_eyebrow": "Ways to collaborate",
+    "collab_title": "How we can work together.",
+    "collab_subline": "We design each partnership so your brand has real impact on the community, and the community has real impact on your business.",
+    "collab": {
+      "sponsor_event": {
+        "title": "Sponsor an event",
+        "description": "Your brand present at a hackathon, workshop or talk. Direct access to active builders, branding across assets, mention in communications and the chance to speak to the audience. Ideal for launches, hiring or awareness."
+      },
+      "year_partner": {
+        "title": "Become year partner",
+        "description": "Recurring partnership with presence at every event of the year, co-created content, shared branding and priority access to initiatives. For companies that want to build long-term relationships with the ecosystem."
+      },
+      "talent": {
+        "title": "Access to talent",
+        "description": "Connect with the next generation of builders. Job board, referrals, talent pipeline and exclusive hiring events. The community is already building — you can meet them while they ship, not in an interview."
+      },
+      "co_create": {
+        "title": "Co-create with the community",
+        "description": "Workshops, educational programs, co-built products or joint content. If you have a tool or initiative, the community can test it, validate it and amplify it."
+      }
+    },
+    "trusted_eyebrow": "Trusted by",
+    "trusted_title": "Companies that are already part.",
+    "contact_eyebrow": "Let's talk",
+    "contact_title": "Let's talk about building together.",
+    "contact_subline": "Tell us what you have in mind: sponsorship, launch, hiring, content or something else. We respond in under 48 hours.",
+    "contact_email_label": "Email",
+    "contact_email_cta": "Send email",
+    "contact_community_label": "WhatsApp",
+    "contact_community_value": "The 502 Project Community",
+    "contact_community_cta": "Join the group"
+  },
+  "Events": {
+    "eyebrow": "Events",
+    "title": "Where the community is built.",
+    "subline": "Hackathons, workshops, talks and meetups with builders and founders from the 502 ecosystem.",
+    "next_label": "Next event",
+    "upcoming_label": "Upcoming",
+    "past_label": "Past",
+    "upcoming_title": "Upcoming events.",
+    "past_title": "Past events.",
+    "events_count": "events",
+    "register": "Reserve my spot",
+    "watch_recording": "Watch recording",
+    "view_event": "View event page",
+    "back": "Back to events",
+    "with": "with",
+    "sponsors_label": "Sponsors",
+    "dont_miss": "Don't miss it. Reserve your spot.",
+    "more_upcoming_eyebrow": "Also coming up",
+    "more_upcoming_title": "Other upcoming events.",
+    "more_past_eyebrow": "Also happened",
+    "more_past_title": "Other past events.",
+    "empty": "We'll be publishing the next events soon."
   },
   "Blog": {
     "eyebrow": "Blog",
