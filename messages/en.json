@@ -347,6 +347,17 @@
 
     "closing_body": "If you have questions before confirming, message me on WhatsApp. This is an invitation, not a funnel. I'd rather answer you myself.",
     "closing_signoff": "Oscar",
-    "closing_whatsapp_label": "Message on WhatsApp"
+    "signoff_role": "Founder, The 502 Project",
+    "closing_whatsapp_label": "Message on WhatsApp",
+
+    "confirmed_eyebrow": "AI Build Lab #1",
+    "confirmed_title": "Done.",
+    "confirmed_subtitle": "Your seat is confirmed.",
+    "confirmed_next_eyebrow": "What's next",
+    "confirmed_next_p1": "Within the next few hours, you'll get an email with the address, the agenda, and the link to the cohort's private group.",
+    "confirmed_next_p2": "If you don't see it within the day, check your spam folder. Any questions, message me on WhatsApp.",
+    "confirmed_closing_p1": "See you on May 21.",
+    "confirmed_closing_signoff": "Oscar",
+    "confirmed_back": "Back to Labs"
   }
 }

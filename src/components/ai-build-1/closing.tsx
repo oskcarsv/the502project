@@ -27,15 +27,20 @@ export function AiBuild1Closing({ whatsappUrl }: Props) {
               {t("closing_body")}
             </motion.p>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-base text-[color:var(--labs-muted)] sm:text-lg"
+              className="flex flex-col gap-1"
             >
-              {t("closing_signoff")}
-            </motion.p>
+              <span className="font-display text-base font-bold tracking-tight text-[color:var(--labs-fg)] sm:text-lg">
+                {t("closing_signoff")}
+              </span>
+              <span className="text-sm text-[color:var(--labs-muted)] sm:text-base">
+                {t("signoff_role")}
+              </span>
+            </motion.div>
 
             <motion.a
               initial={{ opacity: 0, y: 8 }}
