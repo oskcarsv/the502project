@@ -5,8 +5,9 @@ import { getLabsEvent } from "@/lib/labs-events";
 import { AiBuild1Hero } from "@/components/ai-build-1/hero";
 import { AiBuild1Invitation } from "@/components/ai-build-1/invitation";
 import { AiBuild1Outcome } from "@/components/ai-build-1/outcome";
-import { AiBuild1Filter } from "@/components/ai-build-1/filter";
+import { AiBuild1WhyYou } from "@/components/ai-build-1/why-you";
 import { AiBuild1Facilitator } from "@/components/ai-build-1/facilitator";
+import { AiBuild1Transformation } from "@/components/ai-build-1/transformation";
 import { AiBuild1Practical } from "@/components/ai-build-1/practical";
 import { AiBuild1Closing } from "@/components/ai-build-1/closing";
 
@@ -52,8 +53,9 @@ export default async function LabsEventPage({
       <AiBuild1Hero />
       <AiBuild1Invitation />
       <AiBuild1Outcome />
-      <AiBuild1Filter />
+      <AiBuild1WhyYou />
       <AiBuild1Facilitator />
+      <AiBuild1Transformation />
       <AiBuild1Practical
         recurrenteUrl={event.recurrenteUrl}
         availablePercent={event.availablePercent}
