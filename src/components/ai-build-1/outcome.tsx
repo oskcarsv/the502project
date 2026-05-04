@@ -1,0 +1,46 @@
+"use client";
+
+import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
+
+export function AiBuild1Outcome() {
+  const t = useTranslations("AiBuild1");
+
+  return (
+    <section className="relative border-t border-[color:var(--labs-line)]">
+      <div className="container mx-auto px-4 py-20 sm:py-24 md:py-28">
+        <div className="mx-auto max-w-3xl">
+          <motion.span
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green"
+          >
+            {t("session_eyebrow")}
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight text-[color:var(--labs-fg)] sm:text-4xl md:text-5xl"
+          >
+            {t("session_intro")}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-8 max-w-2xl text-base leading-relaxed text-[color:var(--labs-muted)] sm:text-lg"
+          >
+            {t("session_close")}
+          </motion.p>
+        </div>
+      </div>
+    </section>
+  );
+}

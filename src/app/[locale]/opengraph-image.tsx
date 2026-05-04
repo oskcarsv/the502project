@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "The 502 Project — La comunidad de builders y founders en Guatemala";
+export const alt = "The 502 Project · La comunidad de builders y founders en Guatemala";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -8,7 +8,8 @@
   "Nav": {
     "events": "Events",
     "blog": "Blog",
-    "partners": "Partners"
+    "partners": "Partners",
+    "labs": "Labs"
   },
   "Pillars": {
     "build": "Build",
@@ -150,7 +151,7 @@
       },
       "talent": {
         "title": "Access to talent",
-        "description": "Connect with the next generation of builders. Job board, referrals, talent pipeline and exclusive hiring events. The community is already building — you can meet them while they ship, not in an interview."
+        "description": "Connect with the next generation of builders. Job board, referrals, talent pipeline and exclusive hiring events. The community is already building. You can meet them while they ship, not in an interview."
       },
       "co_create": {
         "title": "Co-create with the community",
@@ -212,5 +213,151 @@
     "about": "About",
     "copyright": "© {year} The 502 Project",
     "made_in": "Made with ♥ in Guatemala"
+  },
+  "Labs": {
+    "eyebrow": "/labs",
+    "title": "Labs",
+    "subline": "Small sessions. Real building. Direct follow-up.",
+    "scroll_hint": "How it works",
+    "hero_caption": "A vertical of the502project",
+    "hero_meta_left": "Generation 01",
+    "hero_meta_right": "Guatemala",
+    "hero_open_teaser": "Curated cohorts, open to builders in the community.",
+    "hero_corporate_teaser": "Tailored programs for company teams.",
+    "hero_open_action": "About Open Labs",
+    "hero_corporate_action": "About Corporate Labs",
+
+    "problem_eyebrow": "Why Labs",
+    "problem_p1": "At the502project we run mass events. We fill rooms, gather a lot of people, bring great speakers, build community.",
+    "problem_p2": "But there's something a large event can't deliver: personalized attention. Real time with people who've already built. Space for your question, not the average question.",
+    "problem_p3": "Labs exists to solve that.",
+
+    "principles_eyebrow": "How it works",
+    "principles_title": "Four principles.",
+    "principle_1_title": "Small groups",
+    "principle_1_body": "Intimate sessions. Everyone has room to participate.",
+    "principle_2_title": "Hands-on",
+    "principle_2_body": "We're not here to listen. We're here to build.",
+    "principle_3_title": "Individual attention",
+    "principle_3_body": "Each person gets the time and direction they need.",
+    "principle_4_title": "Real filter",
+    "principle_4_body": "Labs isn't for the curious. It's for builders.",
+
+    "formats_eyebrow": "Two formats",
+    "formats_title": "Open Labs and Corporate Labs.",
+    "open_label": "Open Labs",
+    "open_p1": "Cohorts designed by us, open to builders in the community. Each edition has a specific focus: building with AI, launching your first product, setting up infrastructure.",
+    "open_p2": "Editions are announced by direct invitation to active builders. If you want to be on the radar for upcoming editions, leave us your email.",
+    "open_cta": "Request consideration",
+    "corporate_label": "Corporate Labs",
+    "corporate_p1": "Does your company want to accelerate its team on AI, building, or product launches? We design a Lab tailored for you: specific roadmap, personalized follow-up, sessions built for your context.",
+    "corporate_p2": "It's not a generic workshop. It's a program made for your team and your goals.",
+    "corporate_cta": "Book a meeting",
+
+    "facilitators_eyebrow": "Facilitators",
+    "facilitators_body": "Each Lab is led by experts: builders and operators with proven track records, already shipping at the level you're aiming for. We don't bring speakers. We bring the people who've done the work.",
+
+    "status_label": "Current status",
+    "status_body": "Labs is in its first generation. Current editions run by direct invitation to selected builders. In 2026 we open public applications.",
+
+    "form_eyebrow": "Open Labs",
+    "form_title": "Request to be considered.",
+    "form_subtitle": "If your profile fits the next edition, we'll reach out directly.",
+    "form_name": "Name",
+    "form_name_placeholder": "Your name",
+    "form_email": "Email",
+    "form_email_placeholder": "you@email.com",
+    "form_building": "What are you building?",
+    "form_building_placeholder": "One line is enough.",
+    "form_submit": "Request",
+    "form_submitting": "Sending…",
+    "form_back": "Back",
+    "form_success_title": "Received.",
+    "form_success_body": "If your profile fits the next edition, we'll reach out directly.",
+    "form_error": "Something failed. Try again in a moment."
+  },
+  "AiBuild1": {
+    "nav_back": "Back to Labs",
+
+    "hero_to_label": "To",
+    "hero_to_value": "Builders from the502project",
+    "hero_from_label": "From",
+    "hero_from_value": "Oscar Morales",
+    "hero_edition_mark": "Edition 01 · Private session",
+    "what_is_labs": "What is Labs?",
+    "title": "AI Build Lab #1",
+    "subline": "Build and ship your first AI tool in a guided four-hour session.",
+
+    "invitation_salutation": "Hi.",
+    "invitation_p1": "If you landed on this page, it's because you received the link directly.",
+    "invitation_p2": "AI Build Lab #1 is a private session. We're not promoting it publicly. We're inviting 15 specific people from the community, chosen with care, for the first edition of Labs.",
+    "invitation_p3": "Here's what we're going to do together.",
+
+    "outcome_eyebrow": "What we'll build",
+    "outcome_p1": "You'll leave the session with a working tool.",
+    "outcome_p2": "Not a demo. Not a half-built prototype. Something that works, that you can show, that you can keep building afterward.",
+    "outcome_p3": "In 4 hours you'll use AI as leverage to build faster than you thought possible. You'll learn the criteria for deciding what to build, how to iterate, and when to cut. We don't teach tools. We teach you how to build.",
+
+    "session_eyebrow": "How the session works",
+    "session_intro": "4 hours. 15 people. One room.",
+    "session_block_1": "We start with quick context: what we're building and why this approach.",
+    "session_block_2": "Then we build. Most of the session is hands-on with direct support.",
+    "session_block_3": "We close with short demos: each person shows what they built.",
+    "session_close": "No long slides. No unnecessary theory. Real building, with support when you need it.",
+
+    "filter_eyebrow": "Filter",
+    "filter_yes_title": "This is for you if:",
+    "filter_yes_1": "You already build (or you're ready to start)",
+    "filter_yes_2": "You want criteria to use AI as real leverage",
+    "filter_yes_3": "You learn by doing, not by listening",
+    "filter_yes_4": "You're willing to leave with something shipped, not just notes",
+    "filter_no_title": "This is NOT for you if:",
+    "filter_no_1": "You're looking for a general intro to AI",
+    "filter_no_2": "You'd rather listen to a speaker panel",
+    "filter_no_3": "You don't intend to keep building afterward",
+    "filter_no_4": "You're looking for passive networking",
+
+    "facilitator_eyebrow": "Who's facilitating",
+    "facilitator_name": "Oscar Morales",
+    "facilitator_credentials_1": "Founder of the502project. Cursor Ambassador. Notion Ambassador. Firecrawl Creator.",
+    "facilitator_credentials_2": "Founding AI Engineer at Finny.",
+
+    "includes_eyebrow": "What's included",
+    "includes_1": "4-hour session with direct support",
+    "includes_2": "$20 USD in AI credits",
+    "includes_3": "3 months of Notion AI",
+    "includes_4": "Coffee break",
+    "includes_5": "Access to the cohort's private group",
+
+    "details_eyebrow": "Details",
+    "detail_date_label": "Date",
+    "detail_date_value": "May 21",
+    "detail_location_label": "Location",
+    "detail_location_value": "Sent to you by email",
+    "detail_capacity_label": "Capacity",
+    "detail_capacity_value": "15 people",
+    "detail_price_label": "Investment",
+    "detail_price_value": "Q375",
+    "capacity_label": "Seats available",
+    "details_note": "We'll send the address by email once your seat is confirmed.",
+
+    "cta_eyebrow": "Reserve your seat",
+    "cta_button": "Confirm my seat · Q375",
+    "cta_disclaimer": "Secure payment via Recurrente. You'll get instant confirmation by email.",
+
+    "closing_body": "If you have questions before confirming, message me on WhatsApp. This is an invitation, not a funnel. I'd rather answer you myself.",
+    "closing_signoff": "Oscar",
+    "signoff_role": "Founder, The 502 Project",
+    "closing_whatsapp_label": "Message on WhatsApp",
+
+    "confirmed_eyebrow": "AI Build Lab #1",
+    "confirmed_title": "Done.",
+    "confirmed_subtitle": "Your seat is confirmed.",
+    "confirmed_next_eyebrow": "What's next",
+    "confirmed_next_p1": "Within the next few hours, you'll get an email with the address, the agenda, and the link to the cohort's private group.",
+    "confirmed_next_p2": "If you don't see it within the day, check your spam folder. Any questions, message me on WhatsApp.",
+    "confirmed_closing_p1": "See you on May 21.",
+    "confirmed_closing_signoff": "Oscar",
+    "confirmed_back": "Back to Labs"
   }
 }

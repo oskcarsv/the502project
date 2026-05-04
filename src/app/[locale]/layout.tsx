@@ -37,8 +37,8 @@ export async function generateMetadata({
   const isEs = locale === "es";
 
   const title = isEs
-    ? "The 502 Project — La comunidad de builders y founders en Guatemala"
-    : "The 502 Project — The community of builders and founders in Guatemala";
+    ? "The 502 Project · La comunidad de builders y founders en Guatemala"
+    : "The 502 Project · The community of builders and founders in Guatemala";
 
   const description = isEs
     ? "La comunidad para los que están construyendo empresas y tecnología de clase mundial desde Guatemala."
@@ -48,7 +48,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE.url),
     title: {
       default: title,
-      template: `%s — ${SITE.name}`,
+      template: `%s · ${SITE.name}`,
     },
     description,
     applicationName: SITE.name,
