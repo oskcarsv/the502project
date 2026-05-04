@@ -276,6 +276,50 @@
     "form_success_body": "If your profile fits the next edition, we'll reach out directly.",
     "form_error": "Something failed. Try again in a moment."
   },
+  "LabsTerms": {
+    "nav_back": "Back to Labs",
+    "eyebrow": "Labs",
+    "title": "Terms and conditions",
+    "intro": "These apply to every edition of Labs (Open Labs, Corporate Labs, and future verticals). Read carefully. By confirming your seat in any edition, you accept these terms.",
+    "updated": "Last updated: May 3, 2026.",
+
+    "section_1_title": "Agreement between the parties",
+    "section_1_body": "These terms constitute an agreement between Nura Labs, an Individual Mercantile Company registered in the Mercantile Registry of the Republic of Guatemala, operator of The 502 Project brand (hereafter, The 502 Project), and the person or company who confirms a seat in an edition of Labs (hereafter, the participant). By completing payment, the participant accepts these terms in full.",
+
+    "section_2_title": "Investment and agreed price",
+    "section_2_body": "The investment for each edition of Labs is published explicitly before payment and processed through the secure payment gateway indicated for each edition. The price confirmed at the time of payment is the agreed price for that specific edition and is not subject to later change.",
+
+    "section_3_title": "No refunds",
+    "section_3_body": "No refunds are issued under any circumstance once payment is confirmed. The investment secures the participant's seat within the edition's curated places and covers session operations, digital materials, and benefits included in each format.",
+
+    "section_4_title": "No-shows",
+    "section_4_body": "If the participant does not attend the session on the scheduled date, no refund, credit, or rescheduling to a later edition applies. The reserved seat cannot be reassigned to another event or transferred to another cohort.",
+
+    "section_5_title": "Seat transfer",
+    "section_5_body": "The participant may transfer their seat to another person by notifying us at least 24 hours in advance through the indicated contact channel. The 502 Project reserves the right to approve the replacement in order to preserve the curation and profile of the cohort.",
+
+    "section_6_title": "Cancellation or rescheduling on our side",
+    "section_6_body": "The 502 Project may reschedule an edition. In case of rescheduling, the participant keeps their seat on the new date; if that date does not work for them, the seat is transferred to a later edition. Rescheduling does not entitle the participant to a refund. A 100% refund only applies if The 502 Project definitively cancels the edition with no possibility of rescheduling.",
+
+    "section_7_title": "Intellectual property and content",
+    "section_7_body": "All material, content, exercises, frameworks, templates, presentations, and discussions in Labs are the intellectual property of The 502 Project, its facilitators, or its partners. The participant may use what they learn in their own personal or professional projects, but may not record, transmit, or redistribute the session without explicit authorization; share specific Lab materials outside the cohort; or reproduce, replicate, or sell the Labs format as their own product.",
+
+    "section_8_title": "Confidentiality",
+    "section_8_body": "What each participant shares during the session stays within the cohort. Sessions are not recorded without the explicit consent of those present. The participant agrees to keep confidential any information voluntarily shared by other participants.",
+
+    "section_9_title": "Code of conduct",
+    "section_9_body": "The 502 Project's code of conduct applies, available at the502project.com/code-of-conduct. A violation of the code may result in immediate removal from the session or cohort, with no right to refund.",
+
+    "section_10_title": "Image and personal data",
+    "section_10_body": "The 502 Project may share general event photos on its public communication channels. If the participant prefers not to appear, they must notify us at the start of the session. The participant's personal data (name, email, occupation, what they are building) is processed by The 502 Project and used exclusively for Labs operations and public communications. It is not shared with third parties without consent.",
+
+    "section_11_title": "Changes and jurisdiction",
+    "section_11_body": "The 502 Project may update these terms for future editions; the version in effect at the time of payment is the one that applies to that participant. These terms are governed by the laws of the Republic of Guatemala.",
+
+    "contact_eyebrow": "Questions?",
+    "contact_body": "If you have questions about these terms before confirming your seat, message me on WhatsApp.",
+    "contact_cta": "Message on WhatsApp"
+  },
   "AiBuild1": {
     "nav_back": "Back to Labs",
 
@@ -374,6 +418,7 @@
     "cta_eyebrow": "Reserve your seat",
     "cta_button": "Confirm my seat · Q375",
     "cta_disclaimer": "Secure payment via Recurrente. You'll get instant confirmation by email.",
+    "cta_terms": "By confirming, you agree to the Labs <link>terms and conditions</link>.",
 
     "closing_body": "If you have questions before confirming, message me on WhatsApp. This is an invitation, not a funnel. I'd rather answer you myself.",
     "closing_signoff": "Oscar",

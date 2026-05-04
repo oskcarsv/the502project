@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const INCLUDES = [1, 2, 3, 4, 5] as const;
 
@@ -121,6 +122,18 @@ export function AiBuild1Practical({ recurrenteUrl, availablePercent }: Props) {
               </a>
               <p className="text-sm leading-relaxed text-[color:var(--labs-muted)] sm:text-base">
                 {t("cta_disclaimer")}
+              </p>
+              <p className="text-xs leading-relaxed text-[color:var(--labs-muted)] sm:text-sm">
+                {t.rich("cta_terms", {
+                  link: (chunks) => (
+                    <Link
+                      href="/labs/terminos"
+                      className="underline underline-offset-2 transition-colors hover:text-brand-green"
+                    >
+                      {chunks}
+                    </Link>
+                  ),
+                })}
               </p>
             </motion.div>
           </div>
