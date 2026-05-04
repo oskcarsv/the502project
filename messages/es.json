@@ -276,6 +276,50 @@
     "form_success_body": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
     "form_error": "Algo falló. Prueba de nuevo en un momento."
   },
+  "LabsTerms": {
+    "nav_back": "Volver a Labs",
+    "eyebrow": "Labs",
+    "title": "Términos y condiciones",
+    "intro": "Aplican a todas las ediciones de Labs (Open Labs, Corporate Labs y futuras verticales). Léelas con calma. Al confirmar tu lugar en cualquier edición aceptas estos términos.",
+    "updated": "Última actualización: 3 de mayo de 2026.",
+
+    "section_1_title": "Acuerdo entre las partes",
+    "section_1_body": "Estos términos constituyen un acuerdo entre Nura Labs, Empresa Mercantil Individual inscrita en el Registro Mercantil de la República de Guatemala, operadora de la marca The 502 Project (en adelante, The 502 Project), y la persona o empresa que confirma su lugar en una edición de Labs (en adelante, el participante). Al completar el pago, el participante acepta estos términos en su totalidad.",
+
+    "section_2_title": "Inversión y precio acordado",
+    "section_2_body": "La inversión de cada edición de Labs se publica de forma explícita antes del pago y se procesa a través de la pasarela de pagos segura indicada en cada edición. El precio confirmado al momento del pago es el precio acordado para esa edición específica y no está sujeto a cambios posteriores.",
+
+    "section_3_title": "Sin reembolsos",
+    "section_3_body": "No hay devoluciones bajo ninguna circunstancia una vez confirmado el pago. La inversión asegura el lugar del participante dentro de las plazas curadas de la edición y cubre la operación de la sesión, los materiales digitales y los beneficios incluidos en cada formato.",
+
+    "section_4_title": "No asistencia",
+    "section_4_body": "Si el participante no asiste a la sesión en la fecha programada, no aplica reembolso, crédito ni reprogramación a una edición posterior. El lugar reservado no se puede reasignar a otro evento ni transferir a otra cohort.",
+
+    "section_5_title": "Transferencia de lugar",
+    "section_5_body": "El participante puede ceder su lugar a otra persona avisando con al menos 24 horas de anticipación a través del canal de contacto indicado. The 502 Project se reserva el derecho de aprobar al reemplazo para mantener la curaduría y el perfil de la cohort.",
+
+    "section_6_title": "Cancelación o reagendamiento por nuestra parte",
+    "section_6_body": "The 502 Project puede reagendar una edición. En caso de reagendamiento, el participante mantiene su lugar en la nueva fecha; si esa fecha no le funciona, se transfiere a una edición posterior. El reagendamiento no implica derecho a reembolso. El reembolso del 100% solo aplica si The 502 Project cancela la edición de forma definitiva sin posibilidad de reagendamiento.",
+
+    "section_7_title": "Propiedad intelectual y contenido",
+    "section_7_body": "Todo el material, contenido, ejercicios, marcos, plantillas, presentaciones y discusiones de Labs son propiedad intelectual de The 502 Project, sus facilitadores o sus partners. El participante puede usar lo aprendido en sus propios proyectos personales o profesionales, pero no puede grabar, transmitir o redistribuir la sesión sin autorización explícita; tampoco puede compartir materiales específicos del Lab fuera de la cohort, ni reproducir, replicar o vender el formato de Labs como producto propio.",
+
+    "section_8_title": "Confidencialidad",
+    "section_8_body": "Lo que cada participante comparta durante la sesión queda dentro de la cohort. Las sesiones no se graban sin consentimiento explícito de los presentes. El participante se compromete a mantener la confidencialidad de la información que otros participantes compartan voluntariamente.",
+
+    "section_9_title": "Código de conducta",
+    "section_9_body": "Aplica el código de conducta de The 502 Project, disponible en the502project.com/code-of-conduct. Una violación al código puede resultar en expulsión inmediata de la sesión o la cohort, sin derecho a reembolso.",
+
+    "section_10_title": "Imagen y datos personales",
+    "section_10_body": "The 502 Project puede compartir fotografías generales del evento en sus canales de comunicación pública. Si el participante prefiere no aparecer, debe notificarlo al inicio de la sesión. Los datos personales del participante (nombre, correo, ocupación, lo que está construyendo) son tratados por The 502 Project y se utilizan exclusivamente para la operación de Labs y la comunicación pública. No se comparten con terceros sin consentimiento.",
+
+    "section_11_title": "Modificaciones y jurisdicción",
+    "section_11_body": "The 502 Project puede actualizar estos términos para futuras ediciones; la versión vigente al momento del pago es la que aplica al participante de esa edición. Estos términos se rigen por las leyes de la República de Guatemala.",
+
+    "contact_eyebrow": "¿Dudas?",
+    "contact_body": "Si tienes preguntas sobre estos términos antes de confirmar tu lugar, escríbeme por WhatsApp.",
+    "contact_cta": "Escribir por WhatsApp"
+  },
   "AiBuild1": {
     "nav_back": "Volver a Labs",
 
@@ -373,7 +417,8 @@
 
     "cta_eyebrow": "Reservá tu cupo",
     "cta_button": "Confirmar mi lugar · Q375",
-    "cta_disclaimer": "Pago seguro vía Recurrente. Recibirás confirmación inmediata por correo.",
+    "cta_disclaimer": "Pago seguro a través de pasarela acreditada. Recibirás confirmación inmediata por correo.",
+    "cta_terms": "Al confirmar aceptas los <link>términos y condiciones</link> de Labs.",
 
     "closing_body": "Si tienes dudas antes de confirmar, escríbeme por WhatsApp. Esto es una invitación, no un funnel: prefiero responderte yo mismo.",
     "closing_signoff": "Oscar",
