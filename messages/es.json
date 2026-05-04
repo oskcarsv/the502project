@@ -151,7 +151,7 @@
       },
       "talent": {
         "title": "Acceso al talento",
-        "description": "Conecta con la próxima generación de builders. Job board, referrals, talent pipeline y eventos de hiring exclusivos. La comunidad ya está construyendo — los podés conocer trabajando, no en una entrevista."
+        "description": "Conecta con la próxima generación de builders. Job board, referrals, talent pipeline y eventos de hiring exclusivos. La comunidad ya está construyendo. Los puedes conocer trabajando, no en una entrevista."
       },
       "co_create": {
         "title": "Co-crea con la comunidad",
@@ -247,7 +247,7 @@
     "formats_title": "Open Labs y Corporate Labs.",
     "open_label": "Open Labs",
     "open_p1": "Cohorts diseñados por nosotros, abiertos a builders de la comunidad. Cada edición tiene un foco específico: construir con AI, lanzar tu primer producto, montar infraestructura.",
-    "open_p2": "Las ediciones se anuncian por invitación directa a builders activos. Si querés estar en el radar para próximas ediciones, dejanos tu correo.",
+    "open_p2": "Las ediciones se anuncian por invitación directa a builders activos. Si quieres estar en el radar para próximas ediciones, déjanos tu correo.",
     "open_cta": "Solicitar consideración",
     "corporate_label": "Corporate Labs",
     "corporate_p1": "¿Tu empresa quiere acelerar a su equipo en AI, building, o lanzamiento de producto? Diseñamos un Lab a la medida: roadmap específico, seguimiento personalizado, sesiones diseñadas para tu contexto.",
@@ -255,13 +255,13 @@
     "corporate_cta": "Agendar reunión",
 
     "facilitators_eyebrow": "Facilitadores",
-    "facilitators_body": "Cada Lab está facilitado por expertos: builders y operadores con experiencia probada, ya construyeron al nivel al que querés llegar. No traemos speakers — traemos a quienes ya hicieron el trabajo.",
+    "facilitators_body": "Cada Lab está facilitado por expertos: builders y operadores con experiencia probada, ya construyeron al nivel al que quieres llegar. No traemos speakers. Traemos a quienes ya hicieron el trabajo.",
 
     "status_label": "Estado actual",
     "status_body": "Labs está en su primera generación. Las ediciones actuales corren por invitación directa a builders seleccionados. En 2026 abrimos aplicaciones públicas.",
 
     "form_eyebrow": "Open Labs",
-    "form_title": "Solicitá ser considerado.",
+    "form_title": "Solicita ser considerado.",
     "form_subtitle": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
     "form_name": "Nombre",
     "form_name_placeholder": "Tu nombre",
@@ -274,6 +274,79 @@
     "form_back": "Volver",
     "form_success_title": "Recibido.",
     "form_success_body": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
-    "form_error": "Algo falló. Probá de nuevo en un momento."
+    "form_error": "Algo falló. Prueba de nuevo en un momento."
+  },
+  "AiBuild1": {
+    "nav_back": "Volver a Labs",
+
+    "hero_to_label": "Para",
+    "hero_to_value": "Builders de the502project",
+    "hero_from_label": "De",
+    "hero_from_value": "Oscar Morales",
+    "hero_edition_mark": "Edición 01 · Sesión privada",
+    "what_is_labs": "¿Qué es Labs?",
+    "title": "AI Build Lab #1",
+    "subline": "Construye y lanza tu primera herramienta con AI en una sesión guiada de 4 horas.",
+
+    "invitation_salutation": "Hola.",
+    "invitation_p1": "Si llegaste a esta página, es porque recibiste el link directamente.",
+    "invitation_p2": "AI Build Lab #1 es una sesión privada. No la estamos promocionando públicamente. Estamos invitando a 15 personas específicas de la comunidad, elegidas con cuidado, para la primera edición de Labs.",
+    "invitation_p3": "Esto es lo que vamos a hacer juntos.",
+
+    "outcome_eyebrow": "Qué vamos a construir",
+    "outcome_p1": "Vas a salir de la sesión con una herramienta funcional.",
+    "outcome_p2": "No una demo. No un prototipo a medias. Algo que funciona, que puedes enseñar, que puedes seguir construyendo después.",
+    "outcome_p3": "En 4 horas vas a usar AI como palanca para construir más rápido de lo que creías posible. Vas a aprender el criterio para decidir qué construir, cómo iterar, y cuándo cortar. No te vamos a enseñar herramientas. Te vamos a enseñar a construir.",
+
+    "session_eyebrow": "Cómo funciona la sesión",
+    "session_intro": "4 horas. 15 personas. Una sala.",
+    "session_block_1": "Arrancamos con contexto rápido: qué vamos a construir y por qué este enfoque.",
+    "session_block_2": "Después construimos. La mayor parte de la sesión es building con acompañamiento directo.",
+    "session_block_3": "Cerramos con demos cortas: cada quien muestra qué construyó.",
+    "session_close": "No hay slides extensos. No hay teoría innecesaria. Hay construcción real con soporte cuando lo necesites.",
+
+    "filter_eyebrow": "Filtro",
+    "filter_yes_title": "Esto es para ti si:",
+    "filter_yes_1": "Ya construyes (o estás listo para empezar)",
+    "filter_yes_2": "Quieres ganar criterio para usar AI como palanca real",
+    "filter_yes_3": "Te gusta aprender haciendo, no escuchando",
+    "filter_yes_4": "Estás dispuesto a salir con algo lanzado, no solo con notas",
+    "filter_no_title": "Esto NO es para ti si:",
+    "filter_no_1": "Buscas una intro general a AI",
+    "filter_no_2": "Prefieres escuchar a un panel de speakers",
+    "filter_no_3": "No tienes intención de seguir construyendo después",
+    "filter_no_4": "Estás buscando networking pasivo",
+
+    "facilitator_eyebrow": "Quién facilita",
+    "facilitator_name": "Oscar Morales",
+    "facilitator_credentials_1": "Founder de the502project. Cursor Ambassador. Notion Ambassador. Firecrawl Creator.",
+    "facilitator_credentials_2": "Founding AI Engineer en Finny.",
+
+    "includes_eyebrow": "Qué incluye",
+    "includes_1": "Sesión de 4 horas con acompañamiento directo",
+    "includes_2": "$20 USD en créditos de AI",
+    "includes_3": "3 meses de Notion AI",
+    "includes_4": "Coffee break",
+    "includes_5": "Acceso al grupo privado de la cohort",
+
+    "details_eyebrow": "Detalles",
+    "detail_date_label": "Fecha",
+    "detail_date_value": "21 de mayo",
+    "detail_location_label": "Lugar",
+    "detail_location_value": "Te llega por correo",
+    "detail_capacity_label": "Cupo",
+    "detail_capacity_value": "15 personas",
+    "detail_price_label": "Inversión",
+    "detail_price_value": "Q375",
+    "capacity_label": "Cupos disponibles",
+    "details_note": "Te enviamos la dirección por correo después de confirmar tu lugar.",
+
+    "cta_eyebrow": "Reservá tu cupo",
+    "cta_button": "Confirmar mi lugar · Q375",
+    "cta_disclaimer": "Pago seguro vía Recurrente. Recibirás confirmación inmediata por correo.",
+
+    "closing_body": "Si tienes dudas antes de confirmar, escríbeme por WhatsApp. Esto es una invitación, no un funnel: prefiero responderte yo mismo.",
+    "closing_signoff": "Oscar",
+    "closing_whatsapp_label": "Escribir por WhatsApp"
   }
 }

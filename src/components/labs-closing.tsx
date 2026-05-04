@@ -56,7 +56,7 @@ export function LabsClosing() {
       <div className="border-t border-[color:var(--labs-line)]">
         <div className="container mx-auto flex flex-col gap-2 px-4 py-10 font-mono text-[10px] uppercase tracking-[0.28em] text-[color:var(--labs-muted)] sm:flex-row sm:items-center sm:justify-between">
           <span>The 502 Project / Labs</span>
-          <span>{t("hero_meta_left")} — {t("hero_meta_right")}</span>
+          <span>{t("hero_meta_left")} · {t("hero_meta_right")}</span>
         </div>
       </div>
     </section>

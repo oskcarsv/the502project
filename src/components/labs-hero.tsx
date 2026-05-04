@@ -106,7 +106,7 @@ export function LabsHero() {
             >
               <span>{t("hero_caption")}</span>
               <span>
-                {t("hero_meta_left")} — {t("hero_meta_right")}
+                {t("hero_meta_left")} · {t("hero_meta_right")}
               </span>
             </motion.div>
           </section>
