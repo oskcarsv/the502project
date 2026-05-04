@@ -18,6 +18,12 @@
   --font-display: var(--font-bricolage);
   --font-heading: var(--font-bricolage);
 
+  --color-labs-bg: var(--labs-bg);
+  --color-labs-bg-elevated: var(--labs-bg-elevated);
+  --color-labs-fg: var(--labs-fg);
+  --color-labs-muted: var(--labs-muted);
+  --color-labs-line: var(--labs-line);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -63,6 +69,13 @@
   --brand-dark: #000000;
   --brand-dark-deep: #000000;
   --brand-white: #ffffff;
+
+  /* Labs sub-brand — premium dark surface. */
+  --labs-bg: #000000;
+  --labs-bg-elevated: #0a0a0a;
+  --labs-fg: #ffffff;
+  --labs-muted: rgba(255, 255, 255, 0.55);
+  --labs-line: rgba(255, 255, 255, 0.08);
 
   /* Light theme — default. White-forward, black text, green accent. */
   --background: #ffffff;
@@ -153,3 +166,16 @@
     transform: translateX(-50%);
   }
 }
+
+/* Labs sub-brand surface — used by the /labs route. */
+.labs-surface {
+  background-color: var(--labs-bg);
+  color: var(--labs-fg);
+  color-scheme: dark;
+}
+
+.labs-surface ::selection {
+  background-color: var(--brand-green);
+  color: var(--labs-bg);
+}
+

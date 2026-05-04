@@ -8,7 +8,8 @@
   "Nav": {
     "events": "Eventos",
     "blog": "Blog",
-    "partners": "Partners"
+    "partners": "Partners",
+    "labs": "Labs"
   },
   "Pillars": {
     "build": "Construye",
@@ -212,5 +213,67 @@
     "about": "Sobre nosotros",
     "copyright": "© {year} The 502 Project",
     "made_in": "Hecho con ♥ en Guatemala"
+  },
+  "Labs": {
+    "eyebrow": "/labs",
+    "title": "Labs",
+    "subline": "Sesiones pequeñas. Construcción real. Seguimiento directo.",
+    "scroll_hint": "Cómo funciona",
+    "hero_caption": "Una vertical de the502project",
+    "hero_meta_left": "Generación 01",
+    "hero_meta_right": "Guatemala",
+    "hero_open_teaser": "Cohorts curados, abiertos a builders de la comunidad.",
+    "hero_corporate_teaser": "Programas a la medida para equipos de empresa.",
+    "hero_open_action": "Conocer Open Labs",
+    "hero_corporate_action": "Conocer Corporate Labs",
+
+    "problem_eyebrow": "Por qué Labs",
+    "problem_p1": "En the502project hacemos eventos masivos. Llenamos espacios, reunimos a mucha gente, traemos buenos speakers, generamos comunidad.",
+    "problem_p2": "Pero hay algo que un evento grande no puede dar: atención personalizada. Tiempo real con quienes ya construyeron. Espacio para tu pregunta, no para la pregunta promedio.",
+    "problem_p3": "Labs nace para resolver eso.",
+
+    "principles_eyebrow": "Cómo funciona",
+    "principles_title": "Cuatro principios.",
+    "principle_1_title": "Grupos pequeños",
+    "principle_1_body": "Sesiones íntimas. Cada persona tiene espacio para participar.",
+    "principle_2_title": "Hands-on",
+    "principle_2_body": "No venimos a escuchar, venimos a construir.",
+    "principle_3_title": "Atención individual",
+    "principle_3_body": "Cada persona recibe el tiempo y la dirección que necesita.",
+    "principle_4_title": "Filtro real",
+    "principle_4_body": "Labs no es para curiosos. Es para builders.",
+
+    "formats_eyebrow": "Dos formatos",
+    "formats_title": "Open Labs y Corporate Labs.",
+    "open_label": "Open Labs",
+    "open_p1": "Cohorts diseñados por nosotros, abiertos a builders de la comunidad. Cada edición tiene un foco específico: construir con AI, lanzar tu primer producto, montar infraestructura.",
+    "open_p2": "Las ediciones se anuncian por invitación directa a builders activos. Si querés estar en el radar para próximas ediciones, dejanos tu correo.",
+    "open_cta": "Solicitar consideración",
+    "corporate_label": "Corporate Labs",
+    "corporate_p1": "¿Tu empresa quiere acelerar a su equipo en AI, building, o lanzamiento de producto? Diseñamos un Lab a la medida: roadmap específico, seguimiento personalizado, sesiones diseñadas para tu contexto.",
+    "corporate_p2": "No es un workshop genérico. Es un programa hecho para tu equipo y tus objetivos.",
+    "corporate_cta": "Agendar reunión",
+
+    "facilitators_eyebrow": "Facilitadores",
+    "facilitators_body": "Cada Lab está facilitado por expertos: builders y operadores con experiencia probada, ya construyeron al nivel al que querés llegar. No traemos speakers — traemos a quienes ya hicieron el trabajo.",
+
+    "status_label": "Estado actual",
+    "status_body": "Labs está en su primera generación. Las ediciones actuales corren por invitación directa a builders seleccionados. En 2026 abrimos aplicaciones públicas.",
+
+    "form_eyebrow": "Open Labs",
+    "form_title": "Solicitá ser considerado.",
+    "form_subtitle": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
+    "form_name": "Nombre",
+    "form_name_placeholder": "Tu nombre",
+    "form_email": "Email",
+    "form_email_placeholder": "tu@email.com",
+    "form_building": "¿Qué estás construyendo?",
+    "form_building_placeholder": "Una línea es suficiente.",
+    "form_submit": "Solicitar",
+    "form_submitting": "Enviando…",
+    "form_back": "Volver",
+    "form_success_title": "Recibido.",
+    "form_success_body": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
+    "form_error": "Algo falló. Probá de nuevo en un momento."
   }
 }

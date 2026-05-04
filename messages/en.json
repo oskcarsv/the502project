@@ -8,7 +8,8 @@
   "Nav": {
     "events": "Events",
     "blog": "Blog",
-    "partners": "Partners"
+    "partners": "Partners",
+    "labs": "Labs"
   },
   "Pillars": {
     "build": "Build",
@@ -212,5 +213,67 @@
     "about": "About",
     "copyright": "© {year} The 502 Project",
     "made_in": "Made with ♥ in Guatemala"
+  },
+  "Labs": {
+    "eyebrow": "/labs",
+    "title": "Labs",
+    "subline": "Small sessions. Real building. Direct follow-up.",
+    "scroll_hint": "How it works",
+    "hero_caption": "A vertical of the502project",
+    "hero_meta_left": "Generation 01",
+    "hero_meta_right": "Guatemala",
+    "hero_open_teaser": "Curated cohorts, open to builders in the community.",
+    "hero_corporate_teaser": "Tailored programs for company teams.",
+    "hero_open_action": "About Open Labs",
+    "hero_corporate_action": "About Corporate Labs",
+
+    "problem_eyebrow": "Why Labs",
+    "problem_p1": "At the502project we run mass events. We fill rooms, gather a lot of people, bring great speakers, build community.",
+    "problem_p2": "But there's something a large event can't deliver: personalized attention. Real time with people who've already built. Space for your question, not the average question.",
+    "problem_p3": "Labs exists to solve that.",
+
+    "principles_eyebrow": "How it works",
+    "principles_title": "Four principles.",
+    "principle_1_title": "Small groups",
+    "principle_1_body": "Intimate sessions. Everyone has room to participate.",
+    "principle_2_title": "Hands-on",
+    "principle_2_body": "We're not here to listen — we're here to build.",
+    "principle_3_title": "Individual attention",
+    "principle_3_body": "Each person gets the time and direction they need.",
+    "principle_4_title": "Real filter",
+    "principle_4_body": "Labs isn't for the curious. It's for builders.",
+
+    "formats_eyebrow": "Two formats",
+    "formats_title": "Open Labs and Corporate Labs.",
+    "open_label": "Open Labs",
+    "open_p1": "Cohorts designed by us, open to builders in the community. Each edition has a specific focus: building with AI, launching your first product, setting up infrastructure.",
+    "open_p2": "Editions are announced by direct invitation to active builders. If you want to be on the radar for upcoming editions, leave us your email.",
+    "open_cta": "Request consideration",
+    "corporate_label": "Corporate Labs",
+    "corporate_p1": "Does your company want to accelerate its team on AI, building, or product launches? We design a Lab tailored for you: specific roadmap, personalized follow-up, sessions built for your context.",
+    "corporate_p2": "It's not a generic workshop. It's a program made for your team and your goals.",
+    "corporate_cta": "Book a meeting",
+
+    "facilitators_eyebrow": "Facilitators",
+    "facilitators_body": "Each Lab is led by experts: builders and operators with proven track records, already shipping at the level you're aiming for. We don't bring speakers — we bring the people who've done the work.",
+
+    "status_label": "Current status",
+    "status_body": "Labs is in its first generation. Current editions run by direct invitation to selected builders. In 2026 we open public applications.",
+
+    "form_eyebrow": "Open Labs",
+    "form_title": "Request to be considered.",
+    "form_subtitle": "If your profile fits the next edition, we'll reach out directly.",
+    "form_name": "Name",
+    "form_name_placeholder": "Your name",
+    "form_email": "Email",
+    "form_email_placeholder": "you@email.com",
+    "form_building": "What are you building?",
+    "form_building_placeholder": "One line is enough.",
+    "form_submit": "Request",
+    "form_submitting": "Sending…",
+    "form_back": "Back",
+    "form_success_title": "Received.",
+    "form_success_body": "If your profile fits the next edition, we'll reach out directly.",
+    "form_error": "Something failed. Try again in a moment."
   }
 }

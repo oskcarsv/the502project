@@ -10,6 +10,7 @@ import { SOCIAL_LINKS, WHATSAPP_INVITE } from "@/lib/links";
 
 const SITE_LINKS = [
   { key: "events", href: "/eventos" },
+  { key: "labs", href: "/labs" },
   { key: "blog", href: "/blog" },
   { key: "partners", href: "/partners" },
 ] as const;
