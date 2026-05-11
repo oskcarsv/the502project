@@ -108,7 +108,7 @@ export default async function OGImage() {
         >
           <div style={{ display: "flex" }}>
             <span style={{ marginRight: 36 }}>+550 builders</span>
-            <span style={{ marginRight: 36 }}>+12 eventos</span>
+            <span style={{ marginRight: 36 }}>+14 eventos</span>
             <span>+6 sponsors</span>
           </div>
           <span>the502project.com</span>

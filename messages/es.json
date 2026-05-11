@@ -24,7 +24,7 @@
       "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
     },
     "events": {
-      "value": "+12",
+      "value": "+14",
       "label": "Eventos",
       "description": "Hackathons, workshops y charlas realizados con líderes del ecosistema."
     },
@@ -127,7 +127,7 @@
         "description": "Founders, ingenieros, diseñadores y emprendedores construyendo desde Guatemala."
       },
       "events": {
-        "value": "+12",
+        "value": "+14",
         "label": "Eventos en 5 meses",
         "description": "Hackathons, workshops, talks y meetups con asistencia presencial garantizada."
       },
@@ -373,7 +373,7 @@
     "facilitator_stats_eyebrow": "the502project en números",
     "facilitator_stat_1_value": "+550",
     "facilitator_stat_1_label": "Builders",
-    "facilitator_stat_2_value": "+12",
+    "facilitator_stat_2_value": "+14",
     "facilitator_stat_2_label": "Eventos de tecnología",
     "facilitator_stat_3_value": "5 meses",
     "facilitator_stat_3_label": "De 0 a la comunidad",
