@@ -198,7 +198,9 @@
     "subline": "Reflexiones, lecciones y conversaciones desde el ecosistema 502.",
     "read": "lectura",
     "back": "Volver al blog",
-    "empty": "Pronto publicaremos los primeros artículos.",
+    "empty_eyebrow": "Próximamente",
+    "empty_title": "Aún no hay artículos publicados.",
+    "empty_body": "Estamos preparando las primeras reflexiones, lecciones y conversaciones desde el ecosistema 502. Vuelve pronto.",
     "about_author": "Sobre la autora",
     "keep_reading_eyebrow": "Sigue leyendo",
     "keep_reading_title": "Otros artículos."
