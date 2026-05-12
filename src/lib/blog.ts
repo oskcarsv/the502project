@@ -46,11 +46,19 @@ async function readPost(filename: string): Promise<BlogPost> {
   };
 }
 
+async function listMarkdownFiles(): Promise<string[]> {
+  try {
+    const files = await fs.readdir(CONTENT_DIR);
+    return files.filter((f) => f.endsWith(".md"));
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException)?.code === "ENOENT") return [];
+    throw err;
+  }
+}
+
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const files = await fs.readdir(CONTENT_DIR);
-  const posts = await Promise.all(
-    files.filter((f) => f.endsWith(".md")).map(readPost),
-  );
+  const files = await listMarkdownFiles();
+  const posts = await Promise.all(files.map(readPost));
   return posts.sort((a, b) => (a.pubDate < b.pubDate ? 1 : -1));
 }
 
@@ -63,6 +71,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const files = await fs.readdir(CONTENT_DIR);
-  return files.filter((f) => f.endsWith(".md")).map((f) => f.replace(/\.md$/, ""));
+  const files = await listMarkdownFiles();
+  return files.map((f) => f.replace(/\.md$/, ""));
 }
