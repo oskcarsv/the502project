@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { PenLine } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { getAllPosts, type BlogPost } from "@/lib/blog";
@@ -190,9 +191,22 @@ export default async function BlogPage({
           )}
 
           {posts.length === 0 && (
-            <p className="mt-20 text-center text-foreground/60">
-              {t("empty")}
-            </p>
+            <div className="mx-auto mt-16 max-w-2xl sm:mt-20">
+              <div className="flex flex-col items-center rounded-3xl border border-dashed border-foreground/15 bg-background px-8 py-16 text-center sm:px-12 sm:py-20">
+                <div className="flex size-14 items-center justify-center rounded-full bg-brand-green/15 text-brand-dark">
+                  <PenLine className="size-6" aria-hidden="true" />
+                </div>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">
+                  {t("empty_eyebrow")}
+                </p>
+                <h2 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+                  {t("empty_title")}
+                </h2>
+                <p className="mt-4 max-w-md text-base leading-relaxed text-foreground/65">
+                  {t("empty_body")}
+                </p>
+              </div>
+            </div>
           )}
         </div>
       </main>

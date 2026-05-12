@@ -198,7 +198,9 @@
     "subline": "Reflections, lessons, and conversations from the 502 ecosystem.",
     "read": "read",
     "back": "Back to blog",
-    "empty": "We'll be publishing the first posts soon.",
+    "empty_eyebrow": "Coming soon",
+    "empty_title": "No posts published yet.",
+    "empty_body": "We're putting together the first reflections, lessons, and conversations from the 502 ecosystem. Check back soon.",
     "about_author": "About the author",
     "keep_reading_eyebrow": "Keep reading",
     "keep_reading_title": "Other articles."
