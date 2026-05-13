@@ -45,14 +45,6 @@ const SPONSORS: Sponsor[] = [
     className: "h-6 sm:h-8",
   },
   {
-    key: "ddr",
-    src: "/img/logos/ddr.png",
-    alt: "DDR",
-    width: 4167,
-    height: 4168,
-    className: "h-9 sm:h-11",
-  },
-  {
     key: "uvg",
     src: "/img/logos/uvg.png",
     alt: "Universidad del Valle de Guatemala",
