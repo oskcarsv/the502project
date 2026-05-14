@@ -33,7 +33,6 @@ const TRUSTED_LOGOS = [
   { src: "/img/logos/cursor.png", alt: "Cursor", className: "h-5 sm:h-8" },
   { src: "/img/logos/v0.png", alt: "v0 by Vercel", className: "h-9 sm:h-12" },
   { src: "/img/logos/finny.png", alt: "Finny", className: "h-6 sm:h-9" },
-  { src: "/img/logos/ddr.png", alt: "DDR", className: "h-9 sm:h-12" },
   { src: "/img/logos/uvg.png", alt: "Universidad del Valle", className: "h-9 sm:h-12" },
   { src: "/img/logos/unis.png", alt: "Universidad del Istmo", className: "h-10 sm:h-14" },
   { src: "/img/logos/esource.png", alt: "esource", className: "h-6 sm:h-9" },
