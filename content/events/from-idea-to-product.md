@@ -1,13 +1,13 @@
 ---
 title: "From Idea to Product: Build, Launch & Earn"
-titleEs: "From Idea to Product: Build, Launch & Earn"
+titleEn: "From Idea to Product: Build, Launch & Earn"
 date: 2025-12-11
 time: "6:00 PM"
 endTime: "8:30 PM"
 category: workshop
 format: presencial
-description: Learn to use AI as your competitive advantage. Go from an idea to a functional prototype in under two hours, no coding required.
-descriptionEs: Aprende a usar la IA como tu ventaja competitiva. Pasa de una idea a un prototipo funcional en menos de dos horas, sin necesidad de saber programar.
+description: Aprende a usar la IA como tu ventaja competitiva. Pasa de una idea a un prototipo funcional en menos de dos horas, sin necesidad de saber programar.
+descriptionEn: Learn to use AI as your competitive advantage. Go from an idea to a functional prototype in under two hours, no coding required.
 image: /img/gallery/from-idea-product.jpeg
 collaboration: true
 collaboratorName: Vudy

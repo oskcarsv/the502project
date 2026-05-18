@@ -1,13 +1,13 @@
 ---
 title: v0 Prompt to Production — Guatemala City
-titleEs: v0 Prompt to Production — Guatemala City
+titleEn: v0 Prompt to Production — Guatemala City
 date: 2026-02-06
 time: "6:00 PM"
 endTime: "8:30 PM"
 category: workshop
 format: presencial
-description: The biggest v0 update to date, and you're invited to build with us. First official v0 (Vercel) event in Guatemala. Credits, coffee and the best vibes.
-descriptionEs: v0 tendrá la actualización más grande hasta la fecha, y estás invitado a buildear con nosotros. Primer evento oficial de v0 (Vercel) en Guatemala. Créditos, café y la mejor de las vibras.
+description: v0 tendrá la actualización más grande hasta la fecha, y estás invitado a buildear con nosotros. Primer evento oficial de v0 (Vercel) en Guatemala. Créditos, café y la mejor de las vibras.
+descriptionEn: The biggest v0 update to date, and you're invited to build with us. First official v0 (Vercel) event in Guatemala. Credits, coffee and the best vibes.
 image: /img/gallery/prompt-to-production.jpeg
 collaboration: true
 collaboratorName: v0 by Vercel
