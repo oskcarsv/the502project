@@ -68,31 +68,28 @@ Spanish is the **default** locale on this site (no URL prefix), so the built-in 
 
 ### Setup
 
-1. Create (or reuse) an internal integration at [notion.so/profile/integrations](https://www.notion.so/profile/integrations) with _Read content_ capability. The 502 Project workspace already has one called **`the502project web`** — reuse it. The token is its _Internal Integration Token_.
+1. Create (or reuse) an internal integration at [notion.so/profile/integrations](https://www.notion.so/profile/integrations) with _Read content_ capability. The 502 Project workspace already has one called **`the502project web`** — reuse it.
 2. Share the database with the integration: open the DB → `•••` → **Connections** → add `the502project web`.
-3. Set env vars (Vercel → Project Settings → Environment Variables):
+3. Set the first two env vars in Vercel → Project Settings → Environment Variables:
 
    ```bash
-   NOTION_TOKEN=secret_xxx                                            # the502project web token
+   NOTION_TOKEN=secret_xxx                                            # the502project web internal token
    NOTION_EVENTS_DATABASE_ID=b439af06e86d48b593b393834c4af08c
-   NOTION_REVALIDATE_SECRET=any-long-random-string                    # for manual triggers
-   NOTION_WEBHOOK_VERIFICATION_TOKEN=secret_...                       # set after step 4 handshake
    ```
 
-4. **Instant publish — Notion webhook subscription** (recommended, works on every plan). In the Notion connection settings → **Webhooks** tab → **+ Create a subscription**:
+4. **Create the webhook subscription** so changes in Notion publish to the site instantly. In the Notion integration settings (`the502project web`) → **Webhooks** tab → **+ Create a subscription**:
 
    - **Webhook URL:** `https://the502project.com/api/revalidate-events`
    - **API version:** `2026-03-11`
-   - **Events:** subscribe at least to **Page** events (especially `page.properties_updated` and `page.content_updated`) and **Data source** events.
+   - **Events:** subscribe to **Page** and **Data source** at minimum.
 
-   Notion will immediately POST a `verification_token` to the URL. Open Vercel → Deployments → the latest function logs and grep for `[notion-webhook]` — you'll see the token printed. Paste it into Notion's _Verify subscription_ modal **and** add it to Vercel as `NOTION_WEBHOOK_VERIFICATION_TOKEN`. Redeploy. After that, every change in any page the integration can see triggers an instant revalidation of `/eventos`.
+5. **Complete the handshake.** Notion POSTs a `verification_token` to the URL the moment you click Create. Read it from the Vercel function logs (look for `[notion-webhook] >>>`), then:
 
-5. **Alternative — manual trigger** (no webhook subscription, or for testing):
+   - paste it into Notion's "Verify subscription" modal,
+   - add it to Vercel as `NOTION_WEBHOOK_VERIFICATION_TOKEN`,
+   - redeploy.
 
-   ```bash
-   curl -X POST https://the502project.com/api/revalidate-events \
-     -H "x-revalidate-secret: $NOTION_REVALIDATE_SECRET"
-   ```
+   After that, every change in any page the integration can see triggers an instant revalidation of `/eventos`.
 
 ### Caveats
 
