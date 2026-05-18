@@ -239,27 +239,11 @@ function urlValue(prop: NotionPropertyValue | undefined): string | undefined {
   return undefined;
 }
 
-function checkboxValue(prop: NotionPropertyValue | undefined): boolean {
-  return prop?.type === "checkbox" ? Boolean(prop.checkbox) : false;
-}
-
-function dateStart(prop: NotionPropertyValue | undefined): string {
-  if (prop?.type === "date" && prop.date?.start) return prop.date.start;
-  return "";
-}
-
 function fileUrl(file: NotionFile | null | undefined): string | undefined {
   if (!file) return undefined;
   if (file.type === "external") return file.external?.url;
   if (file.type === "file") return file.file?.url;
   return undefined;
-}
-
-function firstFileUrl(
-  prop: NotionPropertyValue | undefined,
-): string | undefined {
-  if (!prop || prop.type !== "files" || !prop.files) return undefined;
-  return fileUrl(prop.files[0]);
 }
 
 function slugify(input: string): string {
@@ -270,17 +254,6 @@ function slugify(input: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
-}
-
-function resolveSlug(
-  props: Record<string, NotionPropertyValue>,
-  pageId: string,
-): string {
-  const explicit = plainText(props["Slug"]).trim();
-  if (explicit) return slugify(explicit);
-  const title = plainText(props["Title"] ?? props["Name"]).trim();
-  if (title) return slugify(title);
-  return pageId.replace(/-/g, "");
 }
 
 function categoryValue(raw: string | null): EventType {
@@ -327,45 +300,69 @@ function parseSponsors(
   return sponsors.length ? sponsors : undefined;
 }
 
+/**
+ * Notion's Date property carries both the day and the start/end times in
+ * a single field. The website renders date, start time and end time
+ * separately, so we split the ISO strings here.
+ */
+function splitDateTime(prop: NotionPropertyValue | undefined): {
+  date: string;
+  time?: string;
+  endTime?: string;
+} {
+  if (prop?.type !== "date" || !prop.date?.start) {
+    return { date: "" };
+  }
+  const start = prop.date.start;
+  const end = prop.date.end;
+  const date = start.slice(0, 10);
+  const time = start.length > 10 ? formatTime(start) : undefined;
+  const endTime = end && end.length > 10 ? formatTime(end) : undefined;
+  return { date, time, endTime };
+}
+
+function formatTime(iso: string): string | undefined {
+  const m = iso.match(/T(\d{2}):(\d{2})/);
+  if (!m) return undefined;
+  const hour = Number(m[1]);
+  const minute = m[2];
+  const period = hour >= 12 ? "PM" : "AM";
+  const display = hour % 12 === 0 ? 12 : hour % 12;
+  return `${display}:${minute} ${period}`;
+}
+
 function mapPage(page: NotionPage, content: string): EventItem {
   const props = page.properties;
-  const title = plainText(props["Title"] ?? props["Name"]).trim();
+  const title = plainText(props["Name"]).trim();
   const titleEs = plainText(props["Title ES"]).trim() || title;
   const description = plainText(props["Description"]).trim();
   const descriptionEs =
     plainText(props["Description ES"]).trim() || description;
 
-  const date = dateStart(props["Date"]);
-  const image =
-    firstFileUrl(props["Cover"]) ??
-    firstFileUrl(props["Image"]) ??
-    fileUrl(page.cover);
+  const { date, time, endTime } = splitDateTime(props["Date"]);
+  const collaboratorName = plainText(props["Collaborator"]).trim() || undefined;
 
   const frontmatter: EventFrontmatter = {
     title,
     titleEs,
     date,
-    time: plainText(props["Time"]).trim() || undefined,
-    endTime: plainText(props["End Time"]).trim() || undefined,
+    time,
+    endTime,
     category: categoryValue(selectName(props["Category"])),
     format: (selectName(props["Format"]) ?? "presencial").toLowerCase(),
     location: plainText(props["Location"]).trim() || undefined,
     description,
     descriptionEs,
-    image,
-    collaboration: checkboxValue(props["Collaboration"]),
-    collaboratorName:
-      plainText(props["Collaborator Name"]).trim() || undefined,
-    collaboratorUrl: urlValue(props["Collaborator URL"]),
+    image: fileUrl(page.cover),
+    collaboration: Boolean(collaboratorName),
+    collaboratorName,
     sponsors: parseSponsors(props["Sponsors"]),
-    lumaUrl: urlValue(props["Luma URL"]),
     customRegistrationUrl: urlValue(props["Registration URL"]),
-    recordingUrl: urlValue(props["Recording URL"]),
   };
 
   return {
     ...frontmatter,
-    slug: resolveSlug(props, page.id),
+    slug: slugify(title || page.id.replace(/-/g, "")),
     content,
     status: computeStatus(date),
   };

@@ -35,71 +35,59 @@ Local Markdown only, under `content/blog/`.
 
 ## Notion as CMS
 
-You can run the Events section from a Notion database without changing the website every time you publish an event. Pages that are pasted with images, callouts, headings, lists, etc. are rendered on the site automatically.
+The Events section can be authored entirely in Notion. New events show up on the site without a redeploy.
 
-### 1. Create an integration
+### Database
 
-1. Open [https://www.notion.so/profile/integrations](https://www.notion.so/profile/integrations) and create an **internal integration**.
-2. Give it _Read content_ capability. (Write is not required.)
-3. Copy the **Internal Integration Token** — this becomes `NOTION_TOKEN`.
+A Notion database already exists: **Events (Website)** in the _The 502 Project_ teamspace (Teamspace Home → Events (Website)). Its id (`b439af06e86d48b593b393834c4af08c`) is the value of `NOTION_EVENTS_DATABASE_ID`.
 
-### 2. Create the events database
+Schema — **exactly 12 fields, names matched verbatim**:
 
-Create a Notion database called **Events** (or anything you want) and share it with the integration (page menu → **Connections** → add your integration).
+| Property            | Type                                                              | Used for                                                                                |
+| ------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `Name`              | Title (built-in)                                                  | English title.                                                                          |
+| `Title ES`          | Text                                                              | Spanish title. Falls back to `Name` if empty.                                           |
+| `Status`            | Select: `Draft`, `Published`                                      | Only `Published` rows appear on the site.                                               |
+| `Date`              | Date (include start time + optional end time in the same field)   | Sorts the list, drives upcoming/past, populates the time labels on cards.               |
+| `Category`          | Select: `hackathon`, `workshop`, `talk`, `mentorship`, `meetup`   | Pill on cards and detail. Defaults to `meetup`.                                         |
+| `Format`            | Select: `presencial`, `virtual`, `hybrid`                         | Defaults to `presencial`.                                                               |
+| `Location`          | Text                                                              | Venue / city. Hidden when empty.                                                        |
+| `Description`       | Text                                                              | English short description (cards + `<meta>` tags + OG).                                 |
+| `Description ES`    | Text                                                              | Spanish short description.                                                              |
+| `Registration URL`  | URL                                                               | CTA link — Luma, Eventbrite, Google Form, whatever.                                     |
+| `Collaborator`      | Text                                                              | Collaborator name. Empty = no collab. You can add an inline link to the collaborator.   |
+| `Sponsors`          | Text (multiline)                                                  | One sponsor per line, formatted `Name \| https://url` or `Name (https://url)`. Empty = no sponsors. |
 
-Use this schema. Property names are matched exactly (case-sensitive). Only `Title`, `Date`, and `Status` are required — everything else is optional.
+**Image (card + hero):** the **page cover** built into every Notion page. Set it from the page itself (`Add cover` at the top). No separate field.
 
-| Property             | Type       | Notes                                                                          |
-| -------------------- | ---------- | ------------------------------------------------------------------------------ |
-| `Title`              | Title      | English title.                                                                 |
-| `Title ES`           | Rich text  | Spanish title. Falls back to `Title` if empty.                                 |
-| `Slug`               | Rich text  | Optional. Used in the URL. Falls back to a slugified `Title`.                  |
-| `Status`             | Select or Status | Must equal **`Published`** for the event to appear on the site.         |
-| `Date`               | Date       | Used for sorting and for the upcoming/past split (today's date is the cutoff). |
-| `Time`               | Rich text  | Free-form, e.g. `7:00 PM`.                                                     |
-| `End Time`           | Rich text  | Free-form.                                                                     |
-| `Category`           | Select     | One of `hackathon`, `workshop`, `talk`, `mentorship`, `meetup`. Defaults to `meetup`. |
-| `Format`             | Select     | e.g. `presencial`, `virtual`, `hybrid`. Defaults to `presencial`.              |
-| `Location`           | Rich text  | Venue or city.                                                                 |
-| `Description`        | Rich text  | English short description (used on cards and meta tags).                       |
-| `Description ES`     | Rich text  | Spanish short description.                                                     |
-| `Cover`              | Files & media | Card image. Falls back to the page _cover_ if empty.                         |
-| `Collaboration`      | Checkbox   | Show the "with X" pill.                                                        |
-| `Collaborator Name`  | Rich text  |                                                                                |
-| `Collaborator URL`   | URL        |                                                                                |
-| `Luma URL`           | URL        | Primary registration CTA.                                                      |
-| `Registration URL`   | URL        | Alternative CTA when `Luma URL` is empty.                                      |
-| `Recording URL`      | URL        | Shown on past events.                                                          |
-| `Sponsors`           | Rich text  | One per line, formatted as `Name | https://url` or `Name (https://url)`.       |
+**Body (long-form content):** whatever you write inside the page — text, headings, lists, images, callouts, code, columns. Fetched via [`GET /v1/pages/{id}/markdown`](https://developers.notion.com/reference/retrieve-page-markdown). Inline images pasted into the page render on the site automatically.
 
-The body of each Notion page becomes the event detail content. It's fetched via the [`/v1/pages/{id}/markdown`](https://developers.notion.com/reference/retrieve-page-markdown) endpoint, so anything you can paste in Notion — including images, callouts, toggles, lists and code blocks — will render on the site. Inline images pasted into the page show up automatically; we only stage the page cover or the `Cover` files property as the card image.
+**Bilingual notes:** `Name`/`Title ES` and `Description`/`Description ES` cover the bilingual UI (cards + meta tags). The body is a single blob — write it in the language you prefer (today the `.md` files are all in Spanish). For truly bilingual long-form content per event, ping us to add a second body field.
 
-### 3. Configure env vars
+### Setup
 
-Set these in your hosting platform (e.g. Vercel → Project Settings → Environment Variables):
+1. Create (or reuse) an internal integration at [notion.so/profile/integrations](https://www.notion.so/profile/integrations) with _Read content_ capability. The 502 Project workspace already has one called **`the502project web`** — reuse it. The token is its _Internal Integration Token_.
+2. Share the database with the integration: open the DB → `•••` → **Connections** → add `the502project web`.
+3. Set env vars (Vercel → Project Settings → Environment Variables):
 
-```bash
-NOTION_TOKEN=secret_xxx                  # Internal integration token
-NOTION_EVENTS_DATABASE_ID=xxxxxxxxxxxx   # DB id from the URL (or share link)
-NOTION_REVALIDATE_SECRET=your-secret     # Optional: enables the webhook below
-```
+   ```bash
+   NOTION_TOKEN=secret_xxx                                 # the502project web token
+   NOTION_EVENTS_DATABASE_ID=b439af06e86d48b593b393834c4af08c
+   NOTION_REVALIDATE_SECRET=any-long-random-string         # used by the webhook
+   ```
 
-### 4. (Optional) Instant refresh from Notion
+4. (Optional) Instant refresh. The site already revalidates every 60s, but for immediate updates when you flip a Status to `Published`, configure a Notion automation:
 
-The site already revalidates every 60 seconds, but if you want events to appear immediately when you flip a Status to `Published`, expose the webhook:
-
-```
-POST https://<your-domain>/api/revalidate-events
-x-revalidate-secret: <NOTION_REVALIDATE_SECRET>
-```
-
-Configure a Notion automation: _When `Status` changes to `Published` → call webhook → URL above with the header set_.
+   ```
+   POST https://<your-domain>/api/revalidate-events
+   x-revalidate-secret: <NOTION_REVALIDATE_SECRET>
+   ```
 
 ### Caveats
 
-- Notion-hosted file URLs are signed and expire in ~1 hour. ISR re-fetches every minute, so inline images stay fresh as long as the page is visited regularly. If you need durable URLs (e.g. for OG previews), use the **external URL** flavor of the `Cover` files property (paste an image link instead of uploading) or host the asset on Vercel Blob / Cloudflare R2 / S3.
+- Notion-hosted file URLs (page covers and pasted images) are signed and expire in ~1 hour. ISR refetches every minute, so they stay fresh as long as the page gets traffic. For long-lived OG images, use an external URL (paste a link instead of uploading the file).
 - The Notion API version pinned in [`src/lib/notion-events.ts`](src/lib/notion-events.ts) is `2026-03-11`. Bumping it may change the response schema.
-- The integration only reads `Status = Published` pages — drafts stay private.
+- Notion + local Markdown coexist. If a Notion event's slug collides with a `content/events/*.md` file, Notion wins.
 
 ## Deploy
 
