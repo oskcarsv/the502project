@@ -49,7 +49,7 @@ function FeaturedUpcoming({
   registerLabel: string;
   upcomingLabel: string;
 }) {
-  const ctaUrl = event.lumaUrl ?? event.customRegistrationUrl;
+  const ctaUrl = event.registrationUrl;
   return (
     <a
       href={`/eventos/${event.slug}`}

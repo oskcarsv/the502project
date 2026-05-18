@@ -22,20 +22,15 @@ npm run lint
 
 ### Events
 
-Two sources, merged by `slug` (Notion wins when there is overlap):
-
-1. **Local Markdown** files in `content/events/*.md`. Frontmatter shape lives in [`src/lib/events.ts`](src/lib/events.ts).
-2. **Notion database** (optional). See _Notion as CMS_ below.
-
-The pages live at `/eventos` and `/eventos/[slug]` (also `/en/eventos/...`). They use ISR with `export const revalidate = 60`, so new Notion entries appear within ~1 minute. You can also trigger an instant refresh from a Notion automation via the webhook (see below).
+Authored 100% in the Notion database `Events (Website)` (see _Notion as CMS_ below). The pages live at `/eventos` and `/eventos/[slug]` (also `/en/eventos/...`) and use ISR with `export const revalidate = 60`, so new entries appear within a minute. The Notion webhook does instant refreshes.
 
 ### Blog
 
-Local Markdown only, under `content/blog/`.
+Local Markdown under `content/blog/`.
 
 ## Notion as CMS
 
-The Events section can be authored entirely in Notion. New events show up on the site without a redeploy.
+The Events section is fully driven by Notion — there is no markdown fallback. If Notion is unreachable the build fails loud (intentionally).
 
 ### Database
 
