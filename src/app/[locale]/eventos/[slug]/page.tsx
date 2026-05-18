@@ -2,14 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Calendar,
-  Clock,
-  MapPin,
-  PlayCircle,
-} from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Calendar, Clock, MapPin } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { BlogContent } from "@/components/blog-content";
@@ -119,7 +112,7 @@ export default async function EventDetailPage({
     .filter((e) => e.slug !== slug)
     .slice(0, 2);
 
-  const ctaUrl = event.lumaUrl ?? event.customRegistrationUrl;
+  const ctaUrl = event.registrationUrl;
   const isUpcoming = event.status === "upcoming";
 
   return (
@@ -158,7 +151,7 @@ export default async function EventDetailPage({
               <span className="rounded-full border border-foreground/15 px-3 py-1 font-medium uppercase tracking-[0.14em] text-foreground/70">
                 {event.category}
               </span>
-              {event.collaboration && event.collaboratorName && (
+              {event.collaboratorName && (
                 <span className="rounded-full bg-brand-green/15 px-3 py-1 text-foreground/80">
                   {t("with")}{" "}
                   <span className="font-semibold text-brand-dark">
@@ -199,45 +192,23 @@ export default async function EventDetailPage({
             </div>
 
             {/* Primary CTA */}
-            {(isUpcoming && ctaUrl) ||
-            event.recordingUrl ||
-            (!isUpcoming && ctaUrl) ? (
+            {ctaUrl && (
               <div className="mt-8 flex flex-wrap gap-3">
-                {isUpcoming && ctaUrl && (
-                  <a
-                    href={ctaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-12 items-center gap-2 rounded-md bg-brand-green px-6 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-green/85"
-                  >
-                    {t("register")}
-                    <ArrowUpRight className="size-4" />
-                  </a>
-                )}
-                {event.recordingUrl && (
-                  <a
-                    href={event.recordingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-12 items-center gap-2 rounded-md border border-foreground/15 px-6 text-sm font-semibold text-brand-dark transition-colors hover:border-brand-green hover:bg-brand-green/5"
-                  >
-                    <PlayCircle className="size-4" />
-                    {t("watch_recording")}
-                  </a>
-                )}
-                {!isUpcoming && ctaUrl && (
-                  <a
-                    href={ctaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-12 items-center gap-2 rounded-md border border-foreground/15 px-6 text-sm font-semibold text-foreground/80 transition-colors hover:border-brand-green hover:bg-brand-green/5 hover:text-brand-dark"
-                  >
-                    {t("view_event")}
-                    <ArrowUpRight className="size-4" />
-                  </a>
-                )}
+                <a
+                  href={ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={
+                    isUpcoming
+                      ? "inline-flex h-12 items-center gap-2 rounded-md bg-brand-green px-6 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-green/85"
+                      : "inline-flex h-12 items-center gap-2 rounded-md border border-foreground/15 px-6 text-sm font-semibold text-foreground/80 transition-colors hover:border-brand-green hover:bg-brand-green/5 hover:text-brand-dark"
+                  }
+                >
+                  {isUpcoming ? t("register") : t("view_event")}
+                  <ArrowUpRight className="size-4" />
+                </a>
               </div>
-            ) : null}
+            )}
           </header>
 
           {/* Cover */}

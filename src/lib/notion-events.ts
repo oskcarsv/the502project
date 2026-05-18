@@ -357,10 +357,9 @@ function mapPage(page: NotionPage, content: string): EventItem {
     description,
     descriptionEn,
     image: fileUrl(page.cover),
-    collaboration: Boolean(collaboratorName),
     collaboratorName,
     sponsors: parseSponsors(props["Sponsors"]),
-    customRegistrationUrl: urlValue(props["Registration URL"]),
+    registrationUrl: urlValue(props["Registration URL"]),
   };
 
   return {
@@ -372,14 +371,35 @@ function mapPage(page: NotionPage, content: string): EventItem {
 }
 
 /**
+ * If two events end up with the same slug (e.g. two co-works that share a
+ * title), keep the first one as-is and disambiguate the next ones with the
+ * event date — stable, predictable URLs that don't change if a third one
+ * appears later.
+ */
+function dedupeSlugs(events: EventItem[]): EventItem[] {
+  const seen = new Set<string>();
+  return events.map((ev) => {
+    if (!seen.has(ev.slug)) {
+      seen.add(ev.slug);
+      return ev;
+    }
+    const datePart = ev.date ? ev.date.slice(0, 10) : "";
+    let candidate = datePart ? `${ev.slug}-${datePart}` : ev.slug;
+    let i = 2;
+    while (seen.has(candidate)) {
+      candidate = `${ev.slug}-${datePart || "x"}-${i}`;
+      i += 1;
+    }
+    seen.add(candidate);
+    return { ...ev, slug: candidate };
+  });
+}
+
+/**
  * Fetch published events from the Notion "events" database.
  *
- * Returns:
- *   - `null` when the integration is not configured (no env vars). Callers
- *     should treat this as "no Notion source available" and fall back to the
- *     local markdown files.
- *   - `[]` when configured but the database is empty or every page is in
- *     draft. This is a successful empty response.
+ * Throws if the integration is misconfigured or unreachable — Notion is the
+ * single source of truth, there's no markdown fallback.
  *
  * Required env vars:
  *   - NOTION_TOKEN
@@ -389,27 +409,24 @@ function mapPage(page: NotionPage, content: string): EventItem {
  * events index, every `[slug]` page, every `generateMetadata`, etc.) share
  * one trip to Notion. The Next.js fetch cache handles cross-request reuse.
  */
-export const getNotionEvents = cache(
-  async (): Promise<EventItem[] | null> => {
-    const token = process.env.NOTION_TOKEN;
-    const databaseId = process.env.NOTION_EVENTS_DATABASE_ID;
-    if (!token || !databaseId) return null;
+export const getNotionEvents = cache(async (): Promise<EventItem[]> => {
+  const token = process.env.NOTION_TOKEN;
+  const databaseId = process.env.NOTION_EVENTS_DATABASE_ID;
+  if (!token || !databaseId) {
+    throw new Error(
+      "Notion is not configured: set NOTION_TOKEN and NOTION_EVENTS_DATABASE_ID.",
+    );
+  }
 
-    try {
-      const dataSourceId = await getEventsDataSourceId(token, databaseId);
-      const pages = await queryEvents(token, dataSourceId);
+  const dataSourceId = await getEventsDataSourceId(token, databaseId);
+  const pages = await queryEvents(token, dataSourceId);
 
-      const events = await Promise.all(
-        pages.map(async (page) => {
-          const content = await fetchPageMarkdown(token, page.id);
-          return mapPage(page, content);
-        }),
-      );
+  const events = await Promise.all(
+    pages.map(async (page) => {
+      const content = await fetchPageMarkdown(token, page.id);
+      return mapPage(page, content);
+    }),
+  );
 
-      return events;
-    } catch (err) {
-      console.error("[notion-events] fetch failed:", err);
-      return null;
-    }
-  },
-);
+  return dedupeSlugs(events);
+});
