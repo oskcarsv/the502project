@@ -73,16 +73,25 @@ Spanish is the **default** locale on this site (no URL prefix), so the built-in 
 3. Set env vars (Vercel → Project Settings → Environment Variables):
 
    ```bash
-   NOTION_TOKEN=secret_xxx                                 # the502project web token
+   NOTION_TOKEN=secret_xxx                                            # the502project web token
    NOTION_EVENTS_DATABASE_ID=b439af06e86d48b593b393834c4af08c
-   NOTION_REVALIDATE_SECRET=any-long-random-string         # used by the webhook
+   NOTION_REVALIDATE_SECRET=any-long-random-string                    # for manual triggers
+   NOTION_WEBHOOK_VERIFICATION_TOKEN=secret_...                       # set after step 4 handshake
    ```
 
-4. (Optional) Instant refresh. The site already revalidates every 60s, but for immediate updates when you flip a Status to `Published`, configure a Notion automation:
+4. **Instant publish — Notion webhook subscription** (recommended, works on every plan). In the Notion connection settings → **Webhooks** tab → **+ Create a subscription**:
 
-   ```
-   POST https://<your-domain>/api/revalidate-events
-   x-revalidate-secret: <NOTION_REVALIDATE_SECRET>
+   - **Webhook URL:** `https://the502project.com/api/revalidate-events`
+   - **API version:** `2026-03-11`
+   - **Events:** subscribe at least to **Page** events (especially `page.properties_updated` and `page.content_updated`) and **Data source** events.
+
+   Notion will immediately POST a `verification_token` to the URL. Open Vercel → Deployments → the latest function logs and grep for `[notion-webhook]` — you'll see the token printed. Paste it into Notion's _Verify subscription_ modal **and** add it to Vercel as `NOTION_WEBHOOK_VERIFICATION_TOKEN`. Redeploy. After that, every change in any page the integration can see triggers an instant revalidation of `/eventos`.
+
+5. **Alternative — manual trigger** (no webhook subscription, or for testing):
+
+   ```bash
+   curl -X POST https://the502project.com/api/revalidate-events \
+     -H "x-revalidate-secret: $NOTION_REVALIDATE_SECRET"
    ```
 
 ### Caveats
