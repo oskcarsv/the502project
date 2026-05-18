@@ -1,13 +1,13 @@
 ---
 title: Build & Pitch
-titleEs: Build & Pitch
+titleEn: Build & Pitch
 date: 2026-02-07
 time: "10:00 AM"
 endTime: "5:30 PM"
 category: hackathon
 format: presencial
-description: 20 ambitious builders selected for a 6-hour nonstop sprint. Like a hackathon but without competition — pure execution and a final pitch. Notion workshop, unlimited specialty coffee and lunch included.
-descriptionEs: 20 builders ambiciosos seleccionados para un sprint nonstop de 6 horas. Como una hackathon pero sin competencia — pura ejecución y pitch final. Incluye taller de Notion, café de especialidad ilimitado y almuerzo.
+description: 20 builders ambiciosos seleccionados para un sprint nonstop de 6 horas. Como una hackathon pero sin competencia — pura ejecución y pitch final. Incluye taller de Notion, café de especialidad ilimitado y almuerzo.
+descriptionEn: 20 ambitious builders selected for a 6-hour nonstop sprint. Like a hackathon but without competition — pure execution and a final pitch. Notion workshop, unlimited specialty coffee and lunch included.
 image: /img/gallery/build-pitch.jpeg
 collaboration: true
 collaboratorName: Notion

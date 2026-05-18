@@ -1,14 +1,14 @@
 ---
-title: "Intro to OpenClaw — Bitcoin & AI"
-titleEs: "Introducción a OpenClaw — Bitcoin e IA"
+title: "Introducción a OpenClaw — Bitcoin e IA"
+titleEn: "Intro to OpenClaw — Bitcoin & AI"
 date: 2026-03-26
 time: "7:00 PM"
 endTime: "10:00 PM"
 category: meetup
 format: presencial
 location: "Teco Coffee House, Zona 4"
-description: Hands-on meetup where you'll learn step by step how to create an AI agent connected to your WhatsApp as a personal assistant using OpenClaw.
-descriptionEs: Meetup práctico donde aprenderás paso a paso cómo crear un agente de IA que se conecte a tu WhatsApp y funcione como tu asistente personal usando OpenClaw.
+description: Meetup práctico donde aprenderás paso a paso cómo crear un agente de IA que se conecte a tu WhatsApp y funcione como tu asistente personal usando OpenClaw.
+descriptionEn: Hands-on meetup where you'll learn step by step how to create an AI agent connected to your WhatsApp as a personal assistant using OpenClaw.
 image: /img/gallery/openclaw.jpeg
 collaboration: true
 collaboratorName: Bullish GT

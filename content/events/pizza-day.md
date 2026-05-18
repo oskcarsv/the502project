@@ -1,11 +1,11 @@
 ---
 title: "Bitcoin Pizza Day"
-titleEs: "Bitcoin Pizza Day"
+titleEn: "Bitcoin Pizza Day"
 date: 2026-05-22
 category: meetup
 format: presencial
-description: We celebrate Bitcoin Pizza Day, a historic moment that marked one of the first uses of Bitcoin as a medium of exchange. Come eat pizza, learn, share with the community and enter the raffle for one of 3 Trezor Model T cold wallets.
-descriptionEs: Celebramos el Bitcoin Pizza Day, una fecha histórica que marcó uno de los primeros usos de Bitcoin como medio de intercambio. Ven a comer pizza, aprender, compartir con la comunidad y participar por una de las 3 carteras frías Trezor Model T que estaremos regalando.
+description: Celebramos el Bitcoin Pizza Day, una fecha histórica que marcó uno de los primeros usos de Bitcoin como medio de intercambio. Ven a comer pizza, aprender, compartir con la comunidad y participar por una de las 3 carteras frías Trezor Model T que estaremos regalando.
+descriptionEn: We celebrate Bitcoin Pizza Day, a historic moment that marked one of the first uses of Bitcoin as a medium of exchange. Come eat pizza, learn, share with the community and enter the raffle for one of 3 Trezor Model T cold wallets.
 customRegistrationUrl: https://www.satlantis.io/events/2180/bitcoin-meetup-pizza-day
 ---
 

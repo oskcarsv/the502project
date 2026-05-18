@@ -15,11 +15,13 @@ import {
 export const revalidate = 60;
 
 function localizedTitle(event: EventItem, locale: string) {
-  return locale === "en" ? event.title : event.titleEs;
+  if (locale === "en") return event.titleEn || event.title;
+  return event.title;
 }
 
 function localizedDescription(event: EventItem, locale: string) {
-  return locale === "en" ? event.description : event.descriptionEs;
+  if (locale === "en") return event.descriptionEn || event.description;
+  return event.description;
 }
 
 function formatDate(iso: string, locale: string) {

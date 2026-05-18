@@ -1,12 +1,12 @@
 ---
 title: Zero to Agent — Guatemala City Hub
-titleEs: Zero to Agent — Guatemala City Hub
+titleEn: Zero to Agent — Guatemala City Hub
 date: 2026-05-02
 category: meetup
 format: presencial
 location: "Teco Coffee House, Ciudad de Guatemala"
-description: Global Zero to Agent week (Apr 24 – May 3) where people and teams go from idea to a working AI agent. Local hub in Guatemala City powered by Ai /abs and co-organized with the502Project.
-descriptionEs: Semana global Zero to Agent (24 abr – 3 may) donde equipos y personas pasan de idea a un agente funcional. Hub local en Ciudad de Guatemala powered by Ai /abs y co-organizado con the502Project.
+description: Semana global Zero to Agent (24 abr – 3 may) donde equipos y personas pasan de idea a un agente funcional. Hub local en Ciudad de Guatemala powered by Ai /abs y co-organizado con the502Project.
+descriptionEn: Global Zero to Agent week (Apr 24 – May 3) where people and teams go from idea to a working AI agent. Local hub in Guatemala City powered by Ai /abs and co-organized with the502Project.
 image: /img/gallery/zero-to-agent.png
 collaboration: true
 collaboratorName: Ai /abs

@@ -1,11 +1,11 @@
 ---
 title: "Cursor Guatemala — Architecting Games in the AI-First Era"
-titleEs: "Cursor Guatemala — Architecting Games in the AI-First Era"
+titleEn: "Cursor Guatemala — Architecting Games in the AI-First Era"
 date: 2026-05-15
 category: workshop
 format: presencial
-description: Discover how to harness AI to design and develop video games quickly and efficiently. Using Cursor as an AI-powered editor and Unity as the game engine, you'll build a game from scratch while learning to structure projects, generate code with intelligent assistance, and solve design problems in real time.
-descriptionEs: Descubre cómo aprovechar el poder de la inteligencia artificial para diseñar y desarrollar videojuegos de manera rápida y eficiente. Usando Cursor como editor potenciado por IA y Unity como motor gráfico, construirás un juego desde cero mientras aprendes a estructurar tu proyecto, generar código con asistencia inteligente y resolver problemas de diseño en tiempo real.
+description: Descubre cómo aprovechar el poder de la inteligencia artificial para diseñar y desarrollar videojuegos de manera rápida y eficiente. Usando Cursor como editor potenciado por IA y Unity como motor gráfico, construirás un juego desde cero mientras aprendes a estructurar tu proyecto, generar código con asistencia inteligente y resolver problemas de diseño en tiempo real.
+descriptionEn: Discover how to harness AI to design and develop video games quickly and efficiently. Using Cursor as an AI-powered editor and Unity as the game engine, you'll build a game from scratch while learning to structure projects, generate code with intelligent assistance, and solve design problems in real time.
 lumaUrl: https://luma.com/2qbev6ui
 ---
 

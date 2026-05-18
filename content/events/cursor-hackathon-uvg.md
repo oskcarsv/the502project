@@ -1,14 +1,14 @@
 ---
 title: Cursor Hackathon — Universidad del Valle de Guatemala
-titleEs: Cursor Hackathon — Universidad del Valle de Guatemala
+titleEn: Cursor Hackathon — Universidad del Valle de Guatemala
 date: 2026-03-07
 time: "10:00 AM"
 endTime: "5:00 PM"
 category: hackathon
 format: presencial
 location: Universidad del Valle de Guatemala
-description: In-person hackathon at Universidad del Valle de Guatemala for builders across Central America. Teams of 2-4 from any background can build with AI tools and ship in one day.
-descriptionEs: Hackatón presencial en la Universidad del Valle de Guatemala para builders de toda Centroamérica. Equipos de 2-4 personas de cualquier perfil para construir en un solo día con herramientas de IA.
+description: Hackatón presencial en la Universidad del Valle de Guatemala para builders de toda Centroamérica. Equipos de 2-4 personas de cualquier perfil para construir en un solo día con herramientas de IA.
+descriptionEn: In-person hackathon at Universidad del Valle de Guatemala for builders across Central America. Teams of 2-4 from any background can build with AI tools and ship in one day.
 image: /img/gallery/cursor-hackathon.jpg
 lumaUrl: https://luma.com/935r7zp6
 ---

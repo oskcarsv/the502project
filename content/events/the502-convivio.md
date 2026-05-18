@@ -1,13 +1,13 @@
 ---
 title: The 502 Convivio
-titleEs: The 502 Convivio
+titleEn: The 502 Convivio
 date: 2025-12-18
 time: "7:00 PM"
 endTime: "10:00 PM"
 category: meetup
 format: presencial
-description: Christmas gathering to close the year together. No speakers, no agenda. Just vibes, conversations and celebrating what we built as a community.
-descriptionEs: Convivio navideño para cerrar el año juntos. Sin speakers, sin agenda. Solo buena vibra, conversaciones y celebrar lo que construimos como comunidad.
+description: Convivio navideño para cerrar el año juntos. Sin speakers, sin agenda. Solo buena vibra, conversaciones y celebrar lo que construimos como comunidad.
+descriptionEn: Christmas gathering to close the year together. No speakers, no agenda. Just vibes, conversations and celebrating what we built as a community.
 image: /img/gallery/convivio.jpeg
 lumaUrl: https://luma.com/o47zaaaa
 ---

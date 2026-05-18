@@ -12,8 +12,11 @@ export type EventStatus = "upcoming" | "past";
 export type Sponsor = { name: string; url: string };
 
 export type EventFrontmatter = {
+  // Spanish is the default site locale (no URL prefix), so `title` and
+  // `description` hold Spanish copy. `titleEn` / `descriptionEn` are the
+  // English variants and fall back to the Spanish copy when empty.
   title: string;
-  titleEs: string;
+  titleEn?: string;
   date: string;
   time?: string;
   endTime?: string;
@@ -21,7 +24,7 @@ export type EventFrontmatter = {
   format: string;
   location?: string;
   description: string;
-  descriptionEs: string;
+  descriptionEn?: string;
   image?: string;
   collaboration?: boolean;
   collaboratorName?: string;

@@ -48,8 +48,10 @@ export async function generateMetadata({
   if (!event) return {};
 
   const isEn = locale === "en";
-  const title = isEn ? event.title : event.titleEs;
-  const description = isEn ? event.description : event.descriptionEs;
+  const title = isEn ? event.titleEn || event.title : event.title;
+  const description = isEn
+    ? event.descriptionEn || event.description
+    : event.description;
   const url = `${isEn ? "/en" : ""}/eventos/${slug}`;
 
   return {
@@ -76,11 +78,13 @@ export async function generateMetadata({
 }
 
 function localizedTitle(event: EventItem, locale: string) {
-  return locale === "en" ? event.title : event.titleEs;
+  if (locale === "en") return event.titleEn || event.title;
+  return event.title;
 }
 
 function localizedDescription(event: EventItem, locale: string) {
-  return locale === "en" ? event.description : event.descriptionEs;
+  if (locale === "en") return event.descriptionEn || event.description;
+  return event.description;
 }
 
 function formatDate(iso: string, locale: string) {

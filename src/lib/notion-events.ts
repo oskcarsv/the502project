@@ -333,21 +333,21 @@ function formatTime(iso: string): string | undefined {
 
 function mapPage(page: NotionPage, content: string): EventItem {
   const props = page.properties;
-  // Spanish is the canonical/default locale, so the built-in `Name` and
-  // `Description` columns hold the Spanish copy. The `*  EN` columns hold the
-  // English variant and fall back to the Spanish copy when empty.
-  const titleEs = plainText(props["Name"]).trim();
-  const title = plainText(props["Title EN"]).trim() || titleEs;
-  const descriptionEs = plainText(props["Description"]).trim();
-  const description =
-    plainText(props["Description EN"]).trim() || descriptionEs;
+  // Spanish is the canonical/default locale on this site, so Notion's built-in
+  // `Name` and `Description` columns hold the Spanish copy. `Title EN` and
+  // `Description EN` are optional English variants.
+  const title = plainText(props["Name"]).trim();
+  const titleEn = plainText(props["Title EN"]).trim() || undefined;
+  const description = plainText(props["Description"]).trim();
+  const descriptionEn =
+    plainText(props["Description EN"]).trim() || undefined;
 
   const { date, time, endTime } = splitDateTime(props["Date"]);
   const collaboratorName = plainText(props["Collaborator"]).trim() || undefined;
 
   const frontmatter: EventFrontmatter = {
     title,
-    titleEs,
+    titleEn,
     date,
     time,
     endTime,
@@ -355,7 +355,7 @@ function mapPage(page: NotionPage, content: string): EventItem {
     format: (selectName(props["Format"]) ?? "presencial").toLowerCase(),
     location: plainText(props["Location"]).trim() || undefined,
     description,
-    descriptionEs,
+    descriptionEn,
     image: fileUrl(page.cover),
     collaboration: Boolean(collaboratorName),
     collaboratorName,
@@ -365,7 +365,7 @@ function mapPage(page: NotionPage, content: string): EventItem {
 
   return {
     ...frontmatter,
-    slug: slugify(titleEs || title || page.id.replace(/-/g, "")),
+    slug: slugify(title || page.id.replace(/-/g, "")),
     content,
     status: computeStatus(date),
   };

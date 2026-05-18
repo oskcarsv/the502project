@@ -1,12 +1,12 @@
 ---
 title: "Claude Code & Notion MCP for Dummies"
-titleEs: "Claude Code & Notion MCP for Dummies"
+titleEn: "Claude Code & Notion MCP for Dummies"
 date: 2026-04-18
 time: "6:00 PM"
 category: workshop
 format: presencial
-description: Want Claude to actually work for you, not just answer? Hands-on workshop to install code, edit files, organize folders and update your Notion automatically while you sip coffee.
-descriptionEs: ¿Quieres que Claude no solo te responda… sino que realmente trabaje para ti? Taller hands-on para instalar código, editar archivos, organizar carpetas y actualizar tu Notion de forma automática mientras tomas café.
+description: ¿Quieres que Claude no solo te responda… sino que realmente trabaje para ti? Taller hands-on para instalar código, editar archivos, organizar carpetas y actualizar tu Notion de forma automática mientras tomas café.
+descriptionEn: Want Claude to actually work for you, not just answer? Hands-on workshop to install code, edit files, organize folders and update your Notion automatically while you sip coffee.
 lumaUrl: https://luma.com/jkikz4j1
 collaboration: true
 collaboratorName: DDR Innova

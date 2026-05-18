@@ -1,13 +1,13 @@
 ---
 title: Finanzas para Emprendedores
-titleEs: Finanzas para Emprendedores
+titleEn: Finanzas para Emprendedores
 date: 2026-01-29
 time: "6:00 PM"
 endTime: "8:30 PM"
 category: talk
 format: presencial
-description: Practical space for builders and founders who want to master their finances. Hands-on workshop with real examples and exercises.
-descriptionEs: Espacio práctico para builders y founders que quieren dominar sus finanzas. Taller hands-on con ejemplos y ejercicios reales.
+description: Espacio práctico para builders y founders que quieren dominar sus finanzas. Taller hands-on con ejemplos y ejercicios reales.
+descriptionEn: Practical space for builders and founders who want to master their finances. Hands-on workshop with real examples and exercises.
 image: /img/gallery/finanzas-emprendedores.jpg
 collaboration: true
 collaboratorName: Finny

@@ -1,13 +1,13 @@
 ---
-title: "AI Agents for Entrepreneurs: Build Your Personal Assistant with Notion"
-titleEs: "Agentes de IA para Emprendedores: Construye tu Asistente Personal en Notion"
+title: "Agentes de IA para Emprendedores: Construye tu Asistente Personal en Notion"
+titleEn: "AI Agents for Entrepreneurs: Build Your Personal Assistant with Notion"
 date: 2025-11-25
 time: "5:00 PM"
 endTime: "9:00 PM"
 category: workshop
 format: presencial
-description: Discover how to get the most out of Notion AI and build your first custom agent. Includes hands-on workshop + brunch and networking.
-descriptionEs: Descubre cómo sacarle el máximo provecho a Notion AI y construye tu primer agente personalizado. Incluye taller hands-on + brunch y networking.
+description: Descubre cómo sacarle el máximo provecho a Notion AI y construye tu primer agente personalizado. Incluye taller hands-on + brunch y networking.
+descriptionEn: Discover how to get the most out of Notion AI and build your first custom agent. Includes hands-on workshop + brunch and networking.
 image: /img/gallery/ai-agents-notion.jpeg
 collaboration: true
 collaboratorName: Notion
