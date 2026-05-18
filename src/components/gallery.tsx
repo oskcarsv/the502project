@@ -23,6 +23,43 @@ type Event = {
 // Aspect ratios are intentionally varied for masonry drama.
 const EVENTS: Event[] = [
   {
+    id: "cursor-architecting-games",
+    title: "Architecting Games in the AI-First Era",
+    date: "15 May 2026",
+    type: "workshop",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: "cursor-cowork-guatemala-2",
+    title: "Cursor Co-work | Ciudad de Guatemala",
+    date: "7 May 2026",
+    type: "meetup",
+    aspect: "aspect-square",
+  },
+  {
+    id: "zero-to-agent",
+    title: "Zero to Agent — Guatemala",
+    date: "2 May 2026",
+    type: "meetup",
+    image: "/img/gallery/zero-to-agent.png",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    id: "cursor-cowork-guatemala",
+    title: "Cursor Co-work | Ciudad de Guatemala",
+    date: "30 Abr 2026",
+    type: "meetup",
+    image: "/img/gallery/co-work-1.jpeg",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    id: "claude-code-for-dummies",
+    title: "Claude Code & Notion MCP for Dummies",
+    date: "18 Abr 2026",
+    type: "workshop",
+    aspect: "aspect-[2/3]",
+  },
+  {
     id: "mentorship-session",
     title: "Mentorship Session",
     date: "8 Abr 2026",
