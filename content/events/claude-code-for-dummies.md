@@ -1,7 +1,7 @@
 ---
 title: "Claude Code & Notion MCP for Dummies"
 titleEs: "Claude Code & Notion MCP for Dummies"
-date: 2026-04-16
+date: 2026-04-18
 time: "6:00 PM"
 category: workshop
 format: presencial
