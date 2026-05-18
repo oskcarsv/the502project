@@ -9,6 +9,11 @@ import {
   type EventItem,
 } from "@/lib/events";
 
+// Re-render the events index at most once per minute so newly published
+// Notion entries propagate without a full deploy. Webhook-based refreshes
+// hit /api/revalidate-events for instant updates.
+export const revalidate = 60;
+
 function localizedTitle(event: EventItem, locale: string) {
   return locale === "en" ? event.title : event.titleEs;
 }

@@ -22,6 +22,14 @@ import {
 } from "@/lib/events";
 import { SITE } from "@/lib/site";
 
+// ISR: re-fetch from Notion (and re-render) at most once per minute. Pair
+// with /api/revalidate-events for on-demand refresh from a Notion automation.
+export const revalidate = 60;
+
+// Allow new Notion events to be served the first time they're requested,
+// even if they weren't known at build time.
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const slugs = await getAllEventSlugs();
   return slugs.flatMap((slug) => [
