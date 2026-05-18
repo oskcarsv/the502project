@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import type {
   EventFrontmatter,
   EventItem,
@@ -121,13 +122,12 @@ async function queryEvents(
   do {
     const body: Record<string, unknown> = {
       page_size: 100,
+      // The Events (Website) DB uses a `select` property named "Status" with
+      // two options: Draft and Published. Notion validates the filter type
+      // against the actual column type, so this has to be `select`.
       filter: {
-        // We support either a `select` or `status` property called "Status".
-        // Notion's filter API requires picking one, so we use an OR.
-        or: [
-          { property: "Status", select: { equals: "Published" } },
-          { property: "Status", status: { equals: "Published" } },
-        ],
+        property: "Status",
+        select: { equals: "Published" },
       },
       sorts: [{ property: "Date", direction: "descending" }],
     };
@@ -384,26 +384,32 @@ function mapPage(page: NotionPage, content: string): EventItem {
  * Required env vars:
  *   - NOTION_TOKEN
  *   - NOTION_EVENTS_DATABASE_ID
+ *
+ * Wrapped in `React.cache` so multiple consumers in the same render (the
+ * events index, every `[slug]` page, every `generateMetadata`, etc.) share
+ * one trip to Notion. The Next.js fetch cache handles cross-request reuse.
  */
-export async function getNotionEvents(): Promise<EventItem[] | null> {
-  const token = process.env.NOTION_TOKEN;
-  const databaseId = process.env.NOTION_EVENTS_DATABASE_ID;
-  if (!token || !databaseId) return null;
+export const getNotionEvents = cache(
+  async (): Promise<EventItem[] | null> => {
+    const token = process.env.NOTION_TOKEN;
+    const databaseId = process.env.NOTION_EVENTS_DATABASE_ID;
+    if (!token || !databaseId) return null;
 
-  try {
-    const dataSourceId = await getEventsDataSourceId(token, databaseId);
-    const pages = await queryEvents(token, dataSourceId);
+    try {
+      const dataSourceId = await getEventsDataSourceId(token, databaseId);
+      const pages = await queryEvents(token, dataSourceId);
 
-    const events = await Promise.all(
-      pages.map(async (page) => {
-        const content = await fetchPageMarkdown(token, page.id);
-        return mapPage(page, content);
-      }),
-    );
+      const events = await Promise.all(
+        pages.map(async (page) => {
+          const content = await fetchPageMarkdown(token, page.id);
+          return mapPage(page, content);
+        }),
+      );
 
-    return events;
-  } catch (err) {
-    console.error("[notion-events] fetch failed:", err);
-    return null;
-  }
-}
+      return events;
+    } catch (err) {
+      console.error("[notion-events] fetch failed:", err);
+      return null;
+    }
+  },
+);
