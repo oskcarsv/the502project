@@ -43,17 +43,19 @@ A Notion database already exists: **Events (Website)** in the _The 502 Project_ 
 
 Schema — **exactly 12 fields, names matched verbatim**:
 
+Spanish is the **default** locale on this site (no URL prefix), so the built-in `Name` and `Description` columns hold the Spanish copy. The `Title EN` / `Description EN` columns hold the English variant and fall back to Spanish when empty.
+
 | Property            | Type                                                              | Used for                                                                                |
 | ------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `Name`              | Title (built-in)                                                  | English title.                                                                          |
-| `Title ES`          | Text                                                              | Spanish title. Falls back to `Name` if empty.                                           |
+| `Name`              | Title (built-in)                                                  | Título en **español** (default).                                                        |
+| `Title EN`          | Text                                                              | Title in **English**. Falls back to `Name` if empty.                                    |
 | `Status`            | Select: `Draft`, `Published`                                      | Only `Published` rows appear on the site.                                               |
 | `Date`              | Date (include start time + optional end time in the same field)   | Sorts the list, drives upcoming/past, populates the time labels on cards.               |
 | `Category`          | Select: `hackathon`, `workshop`, `talk`, `mentorship`, `meetup`   | Pill on cards and detail. Defaults to `meetup`.                                         |
 | `Format`            | Select: `presencial`, `virtual`, `hybrid`                         | Defaults to `presencial`.                                                               |
 | `Location`          | Text                                                              | Venue / city. Hidden when empty.                                                        |
-| `Description`       | Text                                                              | English short description (cards + `<meta>` tags + OG).                                 |
-| `Description ES`    | Text                                                              | Spanish short description.                                                              |
+| `Description`       | Text                                                              | Descripción corta en **español** (cards + `<meta>` tags + OG).                          |
+| `Description EN`    | Text                                                              | Short description in English. Falls back to `Description` when empty.                   |
 | `Registration URL`  | URL                                                               | CTA link — Luma, Eventbrite, Google Form, whatever.                                     |
 | `Collaborator`      | Text                                                              | Collaborator name. Empty = no collab. You can add an inline link to the collaborator.   |
 | `Sponsors`          | Text (multiline)                                                  | One sponsor per line, formatted `Name \| https://url` or `Name (https://url)`. Empty = no sponsors. |
@@ -62,7 +64,7 @@ Schema — **exactly 12 fields, names matched verbatim**:
 
 **Body (long-form content):** whatever you write inside the page — text, headings, lists, images, callouts, code, columns. Fetched via [`GET /v1/pages/{id}/markdown`](https://developers.notion.com/reference/retrieve-page-markdown). Inline images pasted into the page render on the site automatically.
 
-**Bilingual notes:** `Name`/`Title ES` and `Description`/`Description ES` cover the bilingual UI (cards + meta tags). The body is a single blob — write it in the language you prefer (today the `.md` files are all in Spanish). For truly bilingual long-form content per event, ping us to add a second body field.
+**Bilingual notes:** Spanish is the canonical content (`Name`, `Description`). English is a variant (`Title EN`, `Description EN`) and falls back to the Spanish copy when empty — useful if an event doesn't need translation. The body is a single blob — write it in the language you prefer (today the `.md` files are all in Spanish). For truly bilingual long-form content per event, ping us to add a second body field.
 
 ### Setup
 

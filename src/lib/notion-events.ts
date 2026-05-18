@@ -333,11 +333,14 @@ function formatTime(iso: string): string | undefined {
 
 function mapPage(page: NotionPage, content: string): EventItem {
   const props = page.properties;
-  const title = plainText(props["Name"]).trim();
-  const titleEs = plainText(props["Title ES"]).trim() || title;
-  const description = plainText(props["Description"]).trim();
-  const descriptionEs =
-    plainText(props["Description ES"]).trim() || description;
+  // Spanish is the canonical/default locale, so the built-in `Name` and
+  // `Description` columns hold the Spanish copy. The `*  EN` columns hold the
+  // English variant and fall back to the Spanish copy when empty.
+  const titleEs = plainText(props["Name"]).trim();
+  const title = plainText(props["Title EN"]).trim() || titleEs;
+  const descriptionEs = plainText(props["Description"]).trim();
+  const description =
+    plainText(props["Description EN"]).trim() || descriptionEs;
 
   const { date, time, endTime } = splitDateTime(props["Date"]);
   const collaboratorName = plainText(props["Collaborator"]).trim() || undefined;
@@ -362,7 +365,7 @@ function mapPage(page: NotionPage, content: string): EventItem {
 
   return {
     ...frontmatter,
-    slug: slugify(title || page.id.replace(/-/g, "")),
+    slug: slugify(titleEs || title || page.id.replace(/-/g, "")),
     content,
     status: computeStatus(date),
   };
