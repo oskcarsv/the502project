@@ -21,7 +21,11 @@ const NAV_HREFS: Record<(typeof NAV_KEYS)[number], string> = {
   partners: "/partners",
 };
 
-export function Navbar() {
+export function Navbar({
+  showLanguageSwitcher = true,
+}: {
+  showLanguageSwitcher?: boolean;
+}) {
   const t = useTranslations("Hero");
   const tNav = useTranslations("Nav");
 
@@ -47,9 +51,11 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <LanguageSwitcher tone="light" />
-          </div>
+          {showLanguageSwitcher ? (
+            <div className="hidden md:block">
+              <LanguageSwitcher tone="light" />
+            </div>
+          ) : null}
           <a
             href={WHATSAPP_INVITE}
             target="_blank"
@@ -103,9 +109,11 @@ export function Navbar() {
                     {t("cta_primary")}
                     <ArrowRight className="size-4" />
                   </a>
-                  <div className="flex justify-center">
-                    <LanguageSwitcher tone="light" />
-                  </div>
+                  {showLanguageSwitcher ? (
+                    <div className="flex justify-center">
+                      <LanguageSwitcher tone="light" />
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </SheetContent>

@@ -179,3 +179,17 @@
   color: var(--labs-bg);
 }
 
+/* Build & Pitch — light program surface, matches the main site. */
+.bp-glow {
+  background: radial-gradient(
+    55% 45% at 50% -5%,
+    rgba(86, 239, 159, 0.22),
+    transparent 70%
+  );
+}
+
+.bp-text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.16);
+}
+

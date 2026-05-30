@@ -4,6 +4,11 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root so Turbopack doesn't infer it from a stray
+  // lockfile in a parent directory (which breaks module resolution).
+  turbopack: {
+    root: __dirname,
+  },
   images: {
     remotePatterns: [
       // Some event covers in Notion are stored as external URLs pointing back

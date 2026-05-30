@@ -228,12 +228,10 @@
     "hero_corporate_teaser": "Programas a la medida para equipos de empresa.",
     "hero_open_action": "Conocer Open Labs",
     "hero_corporate_action": "Conocer Corporate Labs",
-
     "problem_eyebrow": "Por qué Labs",
     "problem_p1": "En the502project hacemos eventos masivos. Llenamos espacios, reunimos a mucha gente, traemos buenos speakers, generamos comunidad.",
     "problem_p2": "Pero hay algo que un evento grande no puede dar: atención personalizada. Tiempo real con quienes ya construyeron. Espacio para tu pregunta, no para la pregunta promedio.",
     "problem_p3": "Labs nace para resolver eso.",
-
     "principles_eyebrow": "Cómo funciona",
     "principles_title": "Cuatro principios.",
     "principle_1_title": "Grupos pequeños",
@@ -244,7 +242,6 @@
     "principle_3_body": "Cada persona recibe el tiempo y la dirección que necesita.",
     "principle_4_title": "Filtro real",
     "principle_4_body": "Labs no es para curiosos. Es para builders.",
-
     "formats_eyebrow": "Dos formatos",
     "formats_title": "Open Labs y Corporate Labs.",
     "open_label": "Open Labs",
@@ -255,13 +252,10 @@
     "corporate_p1": "Actualiza a tu equipo en AI antes de que se quede atrás. Diseñamos un Lab a la medida: roadmap específico, atención personalizada, sesiones para tu contexto en AI, building y lanzamiento de producto.",
     "corporate_p2": "No es un workshop genérico. Es un programa hecho para tu equipo y tus objetivos.",
     "corporate_cta": "Agendar reunión",
-
     "facilitators_eyebrow": "Facilitadores",
     "facilitators_body": "Cada Lab está facilitado por expertos: builders y operadores con experiencia probada, ya construyeron al nivel al que quieres llegar. No traemos speakers. Traemos a quienes ya hicieron el trabajo.",
-
     "status_label": "Estado actual",
     "status_body": "Labs está en su primera generación. Las ediciones actuales corren por invitación directa a builders seleccionados. En 2026 abrimos aplicaciones públicas.",
-
     "form_eyebrow": "Open Labs",
     "form_title": "Solicita ser considerado.",
     "form_subtitle": "Si tu perfil calza con la próxima edición, te contactamos directamente.",
@@ -284,47 +278,34 @@
     "title": "Términos y condiciones",
     "intro": "Aplican a todas las ediciones de Labs (Open Labs, Corporate Labs y futuras verticales). Léelas con calma. Al confirmar tu lugar en cualquier edición aceptas estos términos.",
     "updated": "Última actualización: 3 de mayo de 2026.",
-
     "section_1_title": "Acuerdo entre las partes",
     "section_1_body": "Estos términos constituyen un acuerdo entre Nura Labs, Empresa Mercantil Individual inscrita en el Registro Mercantil de la República de Guatemala, operadora de la marca The 502 Project (en adelante, The 502 Project), y la persona o empresa que confirma su lugar en una edición de Labs (en adelante, el participante). Al completar el pago, el participante acepta estos términos en su totalidad.",
-
     "section_2_title": "Inversión y precio acordado",
     "section_2_body": "La inversión de cada edición de Labs se publica de forma explícita antes del pago y se procesa a través de la pasarela de pagos segura indicada en cada edición. El precio confirmado al momento del pago es el precio acordado para esa edición específica y no está sujeto a cambios posteriores.",
-
     "section_3_title": "Sin reembolsos",
     "section_3_body": "No hay devoluciones bajo ninguna circunstancia una vez confirmado el pago. La inversión asegura el lugar del participante dentro de las plazas curadas de la edición y cubre la operación de la sesión, los materiales digitales y los beneficios incluidos en cada formato.",
-
     "section_4_title": "No asistencia",
     "section_4_body": "Si el participante no asiste a la sesión en la fecha programada, no aplica reembolso, crédito ni reprogramación a una edición posterior. El lugar reservado no se puede reasignar a otro evento ni transferir a otra cohort.",
-
     "section_5_title": "Transferencia de lugar",
     "section_5_body": "El participante puede ceder su lugar a otra persona avisando con al menos 24 horas de anticipación a través del canal de contacto indicado. The 502 Project se reserva el derecho de aprobar al reemplazo para mantener la curaduría y el perfil de la cohort.",
-
     "section_6_title": "Cancelación o reagendamiento por nuestra parte",
     "section_6_body": "The 502 Project puede reagendar una edición. En caso de reagendamiento, el participante mantiene su lugar en la nueva fecha; si esa fecha no le funciona, se transfiere a una edición posterior. El reagendamiento no implica derecho a reembolso. El reembolso del 100% solo aplica si The 502 Project cancela la edición de forma definitiva sin posibilidad de reagendamiento.",
-
     "section_7_title": "Propiedad intelectual y contenido",
     "section_7_body": "Todo el material, contenido, ejercicios, marcos, plantillas, presentaciones y discusiones de Labs son propiedad intelectual de The 502 Project, sus facilitadores o sus partners. El participante puede usar lo aprendido en sus propios proyectos personales o profesionales, pero no puede grabar, transmitir o redistribuir la sesión sin autorización explícita; tampoco puede compartir materiales específicos del Lab fuera de la cohort, ni reproducir, replicar o vender el formato de Labs como producto propio.",
-
     "section_8_title": "Confidencialidad",
     "section_8_body": "Lo que cada participante comparta durante la sesión queda dentro de la cohort. Las sesiones no se graban sin consentimiento explícito de los presentes. El participante se compromete a mantener la confidencialidad de la información que otros participantes compartan voluntariamente.",
-
     "section_9_title": "Código de conducta",
     "section_9_body": "Aplica el código de conducta de The 502 Project, disponible en the502project.com/code-of-conduct. Una violación al código puede resultar en expulsión inmediata de la sesión o la cohort, sin derecho a reembolso.",
-
     "section_10_title": "Imagen y datos personales",
     "section_10_body": "The 502 Project puede compartir fotografías generales del evento en sus canales de comunicación pública. Si el participante prefiere no aparecer, debe notificarlo al inicio de la sesión. Los datos personales del participante (nombre, correo, ocupación, lo que está construyendo) son tratados por The 502 Project y se utilizan exclusivamente para la operación de Labs y la comunicación pública. No se comparten con terceros sin consentimiento.",
-
     "section_11_title": "Modificaciones y jurisdicción",
     "section_11_body": "The 502 Project puede actualizar estos términos para futuras ediciones; la versión vigente al momento del pago es la que aplica al participante de esa edición. Estos términos se rigen por las leyes de la República de Guatemala.",
-
     "contact_eyebrow": "¿Dudas?",
     "contact_body": "Si tienes preguntas sobre estos términos antes de confirmar tu lugar, escríbeme por WhatsApp.",
     "contact_cta": "Escribir por WhatsApp"
   },
   "AiBuild1": {
     "nav_back": "Volver a Labs",
-
     "hero_to_label": "Para",
     "hero_to_value": "Builders de the502project",
     "hero_from_label": "De",
@@ -333,28 +314,23 @@
     "what_is_labs": "¿Qué es Labs?",
     "title": "AI Build Lab #1",
     "subline": "Construye y lanza tu primera herramienta con AI en una sesión guiada de 4 horas.",
-
     "invitation_salutation": "Hola.",
     "invitation_p1": "Si llegaste a esta página, es porque recibiste el link directamente.",
     "invitation_p2": "AI Build Lab #1 es una sesión privada. No la estamos promocionando públicamente. Estamos invitando a 15 personas específicas de la comunidad, elegidas con cuidado, para la primera edición de Labs.",
     "invitation_p3": "Esto es lo que vamos a hacer juntos.",
-
     "outcome_eyebrow": "Qué vamos a construir",
     "outcome_p1": "Vas a salir de la sesión con una herramienta funcional.",
     "outcome_p2": "No una demo. No un prototipo a medias. Algo que funciona, que puedes enseñar, que puedes seguir construyendo después.",
     "outcome_p3": "En 4 horas vas a usar AI como palanca para construir más rápido de lo que creías posible. Vas a aprender el criterio para decidir qué construir, cómo iterar, y cuándo cortar. No te vamos a enseñar herramientas. Te vamos a enseñar a construir.",
-
     "session_eyebrow": "Cómo funciona la sesión",
     "session_intro": "4 horas. 15 personas. Una sala.",
     "session_block_1": "Arrancamos con contexto rápido: qué vamos a construir y por qué este enfoque.",
     "session_block_2": "Después construimos. La mayor parte de la sesión es building con acompañamiento directo.",
     "session_block_3": "Cerramos con demos cortas: cada quien muestra qué construyó.",
     "session_close": "No hay slides extensos. No hay teoría innecesaria. Hay construcción real con soporte cuando lo necesites.",
-
     "why_you_eyebrow": "Por qué tú",
     "why_you_p1": "No fuiste un nombre en una lista. Fuiste una decisión.",
     "why_you_p2": "Eres parte del top de builders de la comunidad. De los que construyen, no solo asisten. De más de 600 personas en the502project, esta primera edición es para 15. Una eres tú.",
-
     "filter_eyebrow": "Filtro",
     "filter_yes_title": "Esto es para ti si:",
     "filter_yes_1": "Ya construyes (o estás listo para empezar)",
@@ -366,7 +342,6 @@
     "filter_no_2": "Prefieres escuchar a un panel de speakers",
     "filter_no_3": "No tienes intención de seguir construyendo después",
     "filter_no_4": "Estás buscando networking pasivo",
-
     "facilitator_eyebrow": "Quién facilita",
     "facilitator_name": "Oscar Morales",
     "facilitator_credentials_1": "Founder de the502project. Cursor Ambassador. Notion Ambassador.",
@@ -387,7 +362,6 @@
     "facilitator_role_2_value": "Creator",
     "facilitator_role_3_label": "Firecrawl",
     "facilitator_role_3_value": "Creator",
-
     "transformation_eyebrow": "Antes y después",
     "transformation_before_label": "Antes del Lab",
     "transformation_before_1": "Usas AI como user, no como builder.",
@@ -397,14 +371,12 @@
     "transformation_after_1": "Usas AI como palanca para construir, no solo para consumir.",
     "transformation_after_2": "Tienes criterio para decidir qué construir y cuándo cortar.",
     "transformation_after_3": "Sabes el flujo de idea a herramienta funcional.",
-
     "includes_eyebrow": "Qué incluye",
     "includes_1": "Sesión de 4 horas con acompañamiento directo",
     "includes_2": "$20 USD en créditos de AI",
     "includes_3": "3 meses de Notion AI",
     "includes_4": "Coffee break",
     "includes_5": "Acceso permanente al network privado de la cohort",
-
     "details_eyebrow": "Detalles",
     "detail_date_label": "Fecha",
     "detail_date_value": "21 de mayo",
@@ -416,17 +388,14 @@
     "detail_price_value": "Q375",
     "capacity_label": "Cupos disponibles",
     "details_note": "Te enviamos la dirección por correo después de confirmar tu lugar.",
-
     "cta_eyebrow": "Reservá tu cupo",
     "cta_button": "Confirmar mi lugar · Q375",
     "cta_disclaimer": "Pago seguro a través de pasarela acreditada. Recibirás confirmación inmediata por correo.",
     "cta_terms": "Al confirmar aceptas los <link>términos y condiciones</link> de Labs.",
-
     "closing_body": "Si tienes dudas antes de confirmar, escríbeme por WhatsApp. Esto es una invitación, no un funnel: prefiero responderte yo mismo.",
     "closing_signoff": "Oscar",
     "signoff_role": "Founder, The 502 Project",
     "closing_whatsapp_label": "Escribir por WhatsApp",
-
     "confirmed_eyebrow": "AI Build Lab #1",
     "confirmed_title": "Listo.",
     "confirmed_subtitle": "Tu lugar está confirmado.",
@@ -436,5 +405,12 @@
     "confirmed_closing_p1": "Nos vemos el 21 de mayo.",
     "confirmed_closing_signoff": "Oscar",
     "confirmed_back": "Volver a Labs"
+  },
+  "BuildPitchBanner": {
+    "badge": "Convocatoria abierta",
+    "title": "Build & Pitch #2",
+    "subtitle": "Un sprint de un día para los founders más top de Guatemala. Aplica con tu startup.",
+    "meta": "20 de junio · Ciudad de Guatemala",
+    "cta": "Aplicar al programa"
   }
 }
