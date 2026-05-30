@@ -6,6 +6,7 @@ import { Gallery } from "@/components/gallery";
 import { About } from "@/components/about";
 import { Team } from "@/components/team";
 import { FinalCTA } from "@/components/final-cta";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import { Footer } from "@/components/footer";
 
 export default async function Home({
@@ -18,6 +19,7 @@ export default async function Home({
 
   return (
     <>
+      <AnnouncementBar />
       <div className="flex min-h-screen flex-col bg-background">
         <Hero />
         <Sponsors />

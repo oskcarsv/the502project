@@ -28,7 +28,11 @@ const SOCIALS = [
   { key: "discord", href: SOCIAL_LINKS.discord, Icon: DiscordIcon },
 ] as const;
 
-export function Footer() {
+export function Footer({
+  showLanguageSwitcher = true,
+}: {
+  showLanguageSwitcher?: boolean;
+}) {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Nav");
   const year = new Date().getFullYear();
@@ -114,7 +118,7 @@ export function Footer() {
             <p className="text-xs text-white/50">
               {t("copyright", { year })}
             </p>
-            <LanguageSwitcher />
+            {showLanguageSwitcher ? <LanguageSwitcher /> : null}
           </div>
           <p className="text-xs text-white/50">{t("made_in")}</p>
         </div>
