@@ -19,7 +19,7 @@
   "Stats": {
     "title": "A community growing every day.",
     "members": {
-      "value": "+550",
+      "value": "+600",
       "label": "Members",
       "description": "Builders and founders sharing knowledge, opportunities, and projects."
     },
@@ -76,7 +76,7 @@
   "FinalCTA": {
     "eyebrow": "Join",
     "title": "Let's build together.",
-    "subline": "+550 builders, founders, and operators are already in the community. They're waiting for you.",
+    "subline": "+600 builders, founders, and operators are already in the community. They're waiting for you.",
     "cta_primary": "Join the community",
     "cta_secondary": "Follow"
   },
@@ -114,7 +114,7 @@
   "Partners": {
     "eyebrow": "Partners",
     "title": "Build with the largest builder community in Guatemala.",
-    "subline": "Connect your brand, your product or your talent with +550 active builders and founders from the 502 ecosystem.",
+    "subline": "Connect your brand, your product or your talent with +600 active builders and founders from the 502 ecosystem.",
     "cta_primary": "Let's talk",
     "cta_secondary": "Meet the community",
     "email_subject": "I want to be a partner of The 502 Project",
@@ -122,7 +122,7 @@
     "stats_title": "The ecosystem in numbers.",
     "stats": {
       "members": {
-        "value": "+550",
+        "value": "+600",
         "label": "Active builders",
         "description": "Founders, engineers, designers and entrepreneurs building from Guatemala."
       },
@@ -353,7 +353,7 @@
 
     "why_you_eyebrow": "Why you",
     "why_you_p1": "You weren't a name on a list. You were a decision.",
-    "why_you_p2": "You're among the top builders in the community. The ones who build, not just attend. Out of 550+ people in the502project, this first edition is for 15. One of them is you.",
+    "why_you_p2": "You're among the top builders in the community. The ones who build, not just attend. Out of 600+ people in the502project, this first edition is for 15. One of them is you.",
 
     "filter_eyebrow": "Filter",
     "filter_yes_title": "This is for you if:",
@@ -373,7 +373,7 @@
     "facilitator_more": "Read more about Oscar",
     "facilitator_less": "Close",
     "facilitator_stats_eyebrow": "the502project by the numbers",
-    "facilitator_stat_1_value": "+550",
+    "facilitator_stat_1_value": "+600",
     "facilitator_stat_1_label": "Builders",
     "facilitator_stat_2_value": "+14",
     "facilitator_stat_2_label": "Tech events",
