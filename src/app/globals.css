@@ -193,3 +193,65 @@
   -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.16);
 }
 
+/* ───────────────────────────────────────────────────────────────
+   502 Demo Day: disruptive dark program surface.
+   Brand palette only: black, white (with opacity for greys) and brand green.
+   Scoped tokens so this theme never leaks into the rest of the site.
+   ─────────────────────────────────────────────────────────────── */
+.demo-surface {
+  --demo-bg: #000000;
+  --demo-fg: #ffffff;
+  --demo-muted: rgba(255, 255, 255, 0.56);
+  --demo-line: rgba(255, 255, 255, 0.1);
+  --demo-accent: #56ef9f;
+  --demo-urgent: #56ef9f;
+
+  background-color: var(--demo-bg);
+  color: var(--demo-fg);
+  color-scheme: dark;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.demo-surface ::selection {
+  background-color: var(--demo-accent);
+  color: var(--demo-bg);
+}
+
+/* Space Mono for labels, data and the countdown. */
+.font-space {
+  font-family: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Brand-green outline type for the kinetic outro. */
+.demo-text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--demo-accent);
+}
+
+/* Black outline type, used on the green marquee strip. */
+.demo-text-outline-dark {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--demo-bg);
+}
+
+@keyframes demo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes demo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
