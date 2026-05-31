@@ -38,7 +38,7 @@ export function DemoNotionBlock({ logoSrc }: { logoSrc: string | null }) {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="flex lg:justify-end">
+          <Reveal delay={0.1} className="flex justify-center lg:justify-end">
             <a
               href={NOTION.href}
               target="_blank"

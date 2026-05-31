@@ -106,7 +106,7 @@ export function DemoHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex items-center gap-3"
+            className="flex flex-wrap items-center gap-x-3 gap-y-2"
           >
             <span className="inline-block bg-[var(--demo-accent)] px-3 py-1.5 font-space text-xs font-bold uppercase tracking-[0.14em] text-[var(--demo-bg)]">
               En colaboración con

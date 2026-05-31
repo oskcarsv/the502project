@@ -48,7 +48,7 @@ export function AnnouncementBar() {
     <div className="relative bg-black text-white">
       <Link
         href="/demo-day"
-        className="group flex items-center justify-center gap-x-2.5 gap-y-1 px-10 py-2.5 text-center text-sm font-medium"
+        className="group flex flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 px-10 py-2.5 text-center text-xs font-medium sm:text-sm"
       >
         <span className="relative flex size-2 shrink-0" aria-hidden>
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand-green opacity-75" />

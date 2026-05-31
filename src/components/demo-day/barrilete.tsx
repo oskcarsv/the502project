@@ -24,7 +24,7 @@ export function DemoBarrilete({ logoSrc }: { logoSrc: string | null }) {
 
         {/* Dominant headline. */}
         <Reveal delay={0.05}>
-          <h2 className="mt-12 font-display text-[clamp(2.5rem,9vw,8.5rem)] font-extrabold uppercase leading-[0.82] tracking-[-0.045em] sm:mt-16">
+          <h2 className="mt-12 font-display text-[clamp(2rem,8.5vw,8.5rem)] font-extrabold uppercase leading-[0.85] tracking-[-0.045em] sm:mt-16">
             El primer fondo ángel
             <br />
             de Guatemala.

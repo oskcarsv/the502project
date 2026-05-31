@@ -73,7 +73,7 @@ export default async function DemoDayPage({
   const logos = resolveLogos();
 
   return (
-    <div className="demo-surface min-h-screen">
+    <div className="demo-surface min-h-screen overflow-x-clip">
       <main>
         <DemoHero />
         <DemoMarquee variant="dark" />
