@@ -82,9 +82,9 @@ export default async function DemoDayPage({
         <DemoStats />
         <DemoWho />
         <DemoNotionBlock logoSrc={logos.notion} />
-        <DemoDayFlow />
-        <DemoMarquee />
         <DemoCountdown />
+        <DemoMarquee />
+        <DemoDayFlow />
         <DemoClosing />
       </main>
       <DemoOutro />

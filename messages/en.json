@@ -406,11 +406,10 @@
     "confirmed_closing_signoff": "Oscar",
     "confirmed_back": "Back to Labs"
   },
-  "BuildPitchBanner": {
+  "DemoDayBanner": {
+    "live": "Live",
+    "title": "502 Demo Day · Edition 1",
     "badge": "Applications open",
-    "title": "Build & Pitch #2",
-    "subtitle": "A one-day sprint for Guatemala's top founders. Apply with your startup.",
-    "meta": "June 20 · Guatemala City",
-    "cta": "Apply to the program"
+    "cta": "Learn more"
   }
 }
