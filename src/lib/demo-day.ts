@@ -101,21 +101,3 @@ export const DEMO_DAY_FLOW = [
     body: "Cierras presentando ante Barrilete Ventures, el fondo que invierte en startups con tracción real.",
   },
 ] as const;
-
-export const DEMO_INVESTORS = [
-  {
-    name: "Barrilete Ventures",
-    role: "Fondo · en colaboración · Edición 1",
-    body: "El fondo busca startups guatemaltecas con tracción real para acompañarlas en su crecimiento. Edición 1 es exclusivamente con ellos.",
-    accent: true,
-  },
-] as const;
-
-export const DEMO_TAKEAWAYS = [
-  "Taller de Notion en vivo",
-  "3 meses de Notion + AI gratis",
-  "Mentoría durante todo el día",
-  "Entrenamiento de pitch",
-  "Comida y bebidas durante la jornada",
-  "Pitch ante Barrilete Ventures",
-] as const;

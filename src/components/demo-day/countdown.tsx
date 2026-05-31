@@ -53,7 +53,7 @@ export function DemoCountdown() {
             <div key={cell.key} className="flex items-start gap-1 sm:gap-3">
               <div className="flex flex-col items-center">
                 <span className="font-space text-[clamp(2rem,13vw,11rem)] font-bold leading-[0.8] tabular-nums text-[var(--demo-accent)]">
-                  {parts ? pad(parts[cell.key]) : "00"}
+                  {parts ? pad(parts[cell.key]) : "··"}
                 </span>
                 <span className="mt-4 font-space text-[0.6rem] uppercase tracking-[0.2em] text-[var(--demo-muted)] sm:text-sm">
                   {cell.label}

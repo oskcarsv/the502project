@@ -1,6 +1,18 @@
+import { Fragment, type ReactNode } from "react";
 import { DEMO_DAY, DEMO_DAY_FLOW } from "@/lib/demo-day";
-import { Tag } from "./primitives";
+import { BarrileteLink, Tag } from "./primitives";
 import { Reveal } from "./reveal";
+
+/** Linkify every "Barrilete Ventures" mention inside an agenda body string. */
+function linkifyBarrilete(text: string): ReactNode {
+  const parts = text.split("Barrilete Ventures");
+  return parts.map((part, i) => (
+    <Fragment key={i}>
+      {part}
+      {i < parts.length - 1 && <BarrileteLink>Barrilete Ventures</BarrileteLink>}
+    </Fragment>
+  ));
+}
 
 export function DemoDayFlow() {
   return (
@@ -48,7 +60,7 @@ export function DemoDayFlow() {
                     </h3>
                   </div>
                   <p className="mt-3 max-w-xl leading-relaxed text-[var(--demo-muted)]">
-                    {step.body}
+                    {linkifyBarrilete(step.body)}
                   </p>
                 </div>
               </div>
