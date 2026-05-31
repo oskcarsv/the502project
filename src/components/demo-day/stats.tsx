@@ -7,7 +7,7 @@ const CELLS = [
   {
     figure: String(DEMO_DAY.spots),
     label: "startups",
-    sub: "seleccionadas a mano",
+    sub: "seleccionadas cuidadosamente",
     link: false,
   },
   { figure: "1", label: "día", sub: "de trabajo real, no charlas", link: false },

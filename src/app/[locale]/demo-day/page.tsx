@@ -9,7 +9,6 @@ import { DemoMarquee } from "@/components/demo-day/marquee";
 import { DemoAbout } from "@/components/demo-day/about";
 import { DemoStats } from "@/components/demo-day/stats";
 import { DemoWho } from "@/components/demo-day/who";
-import { DemoDayFlow } from "@/components/demo-day/day";
 import { DemoCountdown } from "@/components/demo-day/countdown";
 import { DemoBarrilete } from "@/components/demo-day/barrilete";
 import { DemoNotionBlock } from "@/components/demo-day/notion-block";
@@ -84,7 +83,6 @@ export default async function DemoDayPage({
         <DemoNotionBlock logoSrc={logos.notion} />
         <DemoCountdown />
         <DemoMarquee />
-        <DemoDayFlow />
         <DemoClosing />
       </main>
       <DemoOutro />
