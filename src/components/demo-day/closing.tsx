@@ -18,7 +18,7 @@ export function DemoClosing() {
           transition={{ duration: 0.6 }}
         >
           <span className="font-space text-xs font-bold uppercase tracking-[0.18em]">
-            Solo {DEMO_DAY.spots} plazas · revisamos cada aplicación a mano
+            Solo {DEMO_DAY.spots} plazas · revisamos cada aplicación cuidadosamente
           </span>
 
           <h2 className="mt-8 font-display text-[clamp(3rem,12vw,11rem)] font-extrabold uppercase leading-[0.82] tracking-[-0.045em]">
