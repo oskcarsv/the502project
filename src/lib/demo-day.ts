@@ -74,30 +74,3 @@ export const DEMO_SIGNALS = [
   },
 ] as const;
 
-export const DEMO_DAY_FLOW = [
-  {
-    time: "09:30",
-    title: "Taller de Notion",
-    body: "Arrancas con un taller para montar tu startup en Notion y dejarla lista para mostrar.",
-  },
-  {
-    time: "11:30",
-    title: "Mentoría en vivo",
-    body: "Founders, CEOs y CTOs metidos contigo durante el día, con el equipo de Barrilete en la sala.",
-  },
-  {
-    time: "13:00",
-    title: "Almuerzo",
-    body: "Pausa para comer y seguir conversando con mentores y founders.",
-  },
-  {
-    time: "14:30",
-    title: "Prepara tu pitch",
-    body: "Trabajas y mejoras tu pitch para presentarlo ante el fondo.",
-  },
-  {
-    time: "16:00",
-    title: "Pitch ante Barrilete",
-    body: "Cierras presentando ante Barrilete Ventures, el fondo que invierte en startups con tracción real.",
-  },
-] as const;
