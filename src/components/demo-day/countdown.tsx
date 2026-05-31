@@ -48,19 +48,19 @@ export function DemoCountdown() {
           </span>
         </div>
 
-        <div className="mt-12 flex w-full items-start justify-center gap-1 sm:gap-3">
+        <div className="mt-12 flex w-full max-w-full items-start justify-center gap-0.5 sm:gap-3">
           {CELLS.map((cell, i) => (
-            <div key={cell.key} className="flex items-start gap-1 sm:gap-3">
+            <div key={cell.key} className="flex items-start gap-0.5 sm:gap-3">
               <div className="flex flex-col items-center">
-                <span className="font-space text-[clamp(2rem,13vw,11rem)] font-bold leading-[0.8] tabular-nums text-[var(--demo-accent)]">
-                  {parts ? pad(parts[cell.key]) : "00"}
+                <span className="font-space text-[clamp(1.75rem,11.5vw,11rem)] font-bold leading-[0.8] tabular-nums text-[var(--demo-accent)]">
+                  {parts ? pad(parts[cell.key]) : "··"}
                 </span>
-                <span className="mt-4 font-space text-[0.6rem] uppercase tracking-[0.2em] text-[var(--demo-muted)] sm:text-sm">
+                <span className="mt-3 font-space text-[0.55rem] uppercase tracking-[0.18em] text-[var(--demo-muted)] sm:mt-4 sm:text-sm">
                   {cell.label}
                 </span>
               </div>
               {i < CELLS.length - 1 && (
-                <span className="font-space text-[clamp(1.5rem,8vw,7rem)] font-bold leading-[0.8] text-[var(--demo-line)]">
+                <span className="font-space text-[clamp(1.25rem,6vw,7rem)] font-bold leading-[0.8] text-[var(--demo-line)]">
                   :
                 </span>
               )}

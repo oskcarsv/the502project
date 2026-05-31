@@ -73,7 +73,7 @@ export default async function DemoDayPage({
   const logos = resolveLogos();
 
   return (
-    <div className="demo-surface min-h-screen">
+    <div className="demo-surface min-h-screen overflow-x-clip">
       <main>
         <DemoHero />
         <DemoMarquee variant="dark" />
@@ -82,9 +82,9 @@ export default async function DemoDayPage({
         <DemoStats />
         <DemoWho />
         <DemoNotionBlock logoSrc={logos.notion} />
-        <DemoDayFlow />
-        <DemoMarquee />
         <DemoCountdown />
+        <DemoMarquee />
+        <DemoDayFlow />
         <DemoClosing />
       </main>
       <DemoOutro />

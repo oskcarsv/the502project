@@ -36,7 +36,7 @@ export function DemoClosing() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href={DEMO_DAY.whatsapp}
+              href={DEMO_DAY.communityUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border border-black/30 px-8 py-5 text-base font-bold uppercase tracking-wide transition-colors hover:bg-black/5"

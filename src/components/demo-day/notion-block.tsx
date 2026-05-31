@@ -29,7 +29,7 @@ export function DemoNotionBlock({ logoSrc }: { logoSrc: string | null }) {
               los grandes.
             </h2>
             <p className="mt-8 flex items-center gap-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
-              <span aria-hidden>🎁</span>
+              <span className="size-3 bg-[var(--demo-bg)]" aria-hidden />
               3 meses de Notion + AI
             </p>
             <p className="mt-3 max-w-md font-space text-xs uppercase tracking-[0.14em] text-black/60">
@@ -38,7 +38,7 @@ export function DemoNotionBlock({ logoSrc }: { logoSrc: string | null }) {
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="flex lg:justify-end">
+          <Reveal delay={0.1} className="flex justify-center lg:justify-end">
             <a
               href={NOTION.href}
               target="_blank"
