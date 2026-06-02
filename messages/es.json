@@ -112,62 +112,117 @@
     "report_body": "Tu seguridad y bienestar son nuestra prioridad. Si experimentás o ves cualquier comportamiento que viole este código de conducta, contactá a los representantes de the502project de inmediato. Tu reporte será tratado con confidencialidad."
   },
   "Partners": {
-    "eyebrow": "Partners",
-    "title": "Construye con la comunidad de builders más grande de Guatemala.",
-    "subline": "Conecta tu marca, tu producto o tu talento con +600 builders y founders activos del ecosistema 502.",
-    "cta_primary": "Hablemos",
-    "cta_secondary": "Conoce la comunidad",
-    "email_subject": "Quiero ser partner de The 502 Project",
-    "stats_eyebrow": "Por qué partner",
-    "stats_title": "El ecosistema en números.",
-    "stats": {
-      "members": {
-        "value": "+600",
-        "label": "Builders activos",
-        "description": "Founders, ingenieros, diseñadores y emprendedores construyendo desde Guatemala."
-      },
-      "events": {
-        "value": "+20",
-        "label": "Eventos en 5 meses",
-        "description": "Hackathons, workshops, talks y meetups con asistencia presencial garantizada."
-      },
-      "sponsors": {
-        "value": "+6",
-        "label": "Sponsors actuales",
-        "description": "Empresas y partners que ya están conectados con el ecosistema."
+    "meta_title": "Partners · The 502 Project",
+    "meta_description": "Construyamos juntos el ecosistema tech de la región. 502 reúne a los builders que están construyendo el futuro del software en Centroamérica, con el respaldo de Cursor y Notion. Súmate como partner.",
+    "email_subject": "Aplicación al programa de partners · The 502 Project",
+    "email_body": "Hola, equipo de 502. Quiero aplicar como partner.%0D%0A%0D%0AMarca / empresa:%0D%0ARol:%0D%0AQué buscamos lograr:%0D%0ANivel de interés (Supporter / Partner / Lead Partner):",
+    "apply_label": "Aplicar al programa de partners",
+    "hero": {
+      "eyebrow": "Partners 502",
+      "title": "El ecosistema tech de la región no se va a construir solo. Lo estamos construyendo.",
+      "subline": "502 reúne a los builders que están definiendo el futuro del software en Centroamérica. Súmate como partner y crezcamos el ecosistema juntos.",
+      "scarcity": "Programa exclusivo. Revisamos cada postulación con cuidado."
+    },
+    "mission": {
+      "eyebrow": "La misión",
+      "title": "Centroamérica ya construye software de clase mundial. Le falta el ecosistema que lo potencie.",
+      "kicker": "Los partners se suman a un movimiento. No compran espacio.",
+      "pillars": {
+        "gather": {
+          "title": "Reunimos el talento",
+          "body": "Founders, ingenieros y creadores en un mismo lugar."
+        },
+        "produce": {
+          "title": "Producimos los espacios",
+          "body": "Eventos y encuentros que la comunidad ya espera."
+        },
+        "connect": {
+          "title": "Conectamos el ecosistema",
+          "body": "Personas, empresas y oportunidades que crecen juntas."
+        }
       }
     },
-    "collab_eyebrow": "Formas de colaborar",
-    "collab_title": "Cómo podemos trabajar juntos.",
-    "collab_subline": "Diseñamos cada partnership para que tu marca tenga impacto real en la comunidad y la comunidad tenga impacto real en tu negocio.",
-    "collab": {
-      "sponsor_event": {
-        "title": "Sponsorea un evento",
-        "description": "Tu marca presente en un hackathon, workshop o talk. Acceso directo a builders activos, branding en piezas, mención en comunicación y posibilidad de hablar a la audiencia. Ideal para lanzamientos, hiring o awareness."
-      },
-      "year_partner": {
-        "title": "Sé partner del año",
-        "description": "Partnership recurrente con presencia en todos los eventos del año, contenido co-creado, branding compartido y acceso prioritario a iniciativas. Para empresas que quieren construir relación a largo plazo con el ecosistema."
-      },
-      "talent": {
-        "title": "Acceso al talento",
-        "description": "Conecta con la próxima generación de builders. Job board, referrals, talent pipeline y eventos de hiring exclusivos. La comunidad ya está construyendo. Los puedes conocer trabajando, no en una entrevista."
-      },
-      "co_create": {
-        "title": "Co-crea con la comunidad",
-        "description": "Workshops, programas educativos, productos co-construidos o contenido en conjunto. Si tienes una herramienta o iniciativa, la comunidad puede testearla, validarla y amplificarla."
+    "proof": {
+      "eyebrow": "Nuestra trayectoria",
+      "title": "Ya lo estamos construyendo. Estos son los números.",
+      "audience_label": "Quiénes asisten",
+      "audience_value": "Ingenieros, emprendedores, founders",
+      "items": {
+        "members": {
+          "value": "+600",
+          "label": "Builders en la comunidad"
+        },
+        "events": {
+          "value": "+20",
+          "label": "Eventos organizados"
+        },
+        "attendees": {
+          "value": "+100",
+          "label": "Asistentes por espacio"
+        }
       }
     },
-    "trusted_eyebrow": "Quienes confían en nosotros",
-    "trusted_title": "Empresas que ya son parte.",
-    "contact_eyebrow": "Conversemos",
-    "contact_title": "Hablemos de cómo construir juntos.",
-    "contact_subline": "Cuéntanos qué tienes en mente: sponsorship, lanzamiento, hiring, contenido o algo distinto. Te respondemos en menos de 48 horas.",
-    "contact_email_label": "Email",
-    "contact_email_cta": "Enviar correo",
-    "contact_community_label": "WhatsApp",
-    "contact_community_value": "Comunidad The 502 Project",
-    "contact_community_cta": "Únete al grupo"
+    "backers": {
+      "eyebrow": "Respaldados por",
+      "title": "Quienes ya creen en esto.",
+      "note": "Las mismas herramientas que usan los mejores builders del mundo respaldan lo que construimos en la región.",
+      "items": {
+        "cursor": {
+          "name": "Cursor",
+          "tag": "El editor con IA para builders"
+        },
+        "notion": {
+          "name": "Notion",
+          "tag": "El espacio de trabajo conectado"
+        }
+      }
+    },
+    "tiers": {
+      "eyebrow": "Formas de ser partner",
+      "title": "Tres formas de construir con nosotros.",
+      "intro": "Elige cómo quieres sumarte. Cada nivel es una forma distinta de ser partner en la comunidad.",
+      "spots_label": "Cupos limitados",
+      "featured_label": "Más exclusivo",
+      "cta": "Aplicar a este nivel",
+      "items": {
+        "supporter": {
+          "name": "Supporter",
+          "audience": "Para marcas en etapa temprana que empiezan a construir presencia.",
+          "benefits": {
+            "b1": "Presencia digital constante en los canales de la comunidad.",
+            "b2": "Posicionamiento en el newsletter quincenal.",
+            "b3": "Difusión mensual con acuerdo previo.",
+            "b4": "Acceso preferente a las entradas de los espacios premium."
+          }
+        },
+        "partner": {
+          "name": "Partner",
+          "audience": "Para startups con tracción y empresas medianas listas para la acción.",
+          "benefits": {
+            "b1": "Presencia física con stand o activación en los eventos del mes.",
+            "b2": "Tiempo de habla para entregar valor técnico ante la audiencia.",
+            "b3": "Acceso al canal de talento de la comunidad.",
+            "b4": "Posts colaborativos y difusión ampliada."
+          }
+        },
+        "lead": {
+          "name": "Lead Partner",
+          "audience": "Para marcas líderes y corporativos que buscan la máxima presencia.",
+          "benefits": {
+            "b1": "Máxima visibilidad en todos los activos digitales y físicos.",
+            "b2": "Presencia en los espacios del mes.",
+            "b3": "Acceso completo al talento de la comunidad.",
+            "b4": "Opciones de co-creación con tu marca."
+          }
+        }
+      }
+    },
+    "close": {
+      "cta_eyebrow": "Súmate",
+      "cta_title": "Construyamos el ecosistema de la región, juntos.",
+      "cta_body": "Si compartes la visión, hablemos. Cuéntanos quién eres y qué quieres construir.",
+      "note": "Programa exclusivo. Elegimos con cuidado con quién construimos."
+    }
   },
   "Events": {
     "eyebrow": "Eventos",

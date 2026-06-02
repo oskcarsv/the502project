@@ -112,62 +112,117 @@
     "report_body": "Your safety and wellbeing are our priority. If you experience or witness any behavior that violates this code of conduct, contact the502project representatives immediately. Your report will be treated with confidentiality."
   },
   "Partners": {
-    "eyebrow": "Partners",
-    "title": "Build with the largest builder community in Guatemala.",
-    "subline": "Connect your brand, your product or your talent with +600 active builders and founders from the 502 ecosystem.",
-    "cta_primary": "Let's talk",
-    "cta_secondary": "Meet the community",
-    "email_subject": "I want to be a partner of The 502 Project",
-    "stats_eyebrow": "Why partner",
-    "stats_title": "The ecosystem in numbers.",
-    "stats": {
-      "members": {
-        "value": "+600",
-        "label": "Active builders",
-        "description": "Founders, engineers, designers and entrepreneurs building from Guatemala."
-      },
-      "events": {
-        "value": "+20",
-        "label": "Events in 5 months",
-        "description": "Hackathons, workshops, talks and meetups with guaranteed in-person attendance."
-      },
-      "sponsors": {
-        "value": "+6",
-        "label": "Current sponsors",
-        "description": "Companies and partners already connected with the ecosystem."
+    "meta_title": "Partners · The 502 Project",
+    "meta_description": "Let's build the region's tech ecosystem together. 502 brings together the builders shaping the future of software in Central America, backed by Cursor and Notion. Join as a partner.",
+    "email_subject": "Application to the partners program · The 502 Project",
+    "email_body": "Hi 502 team. I'd like to apply as a partner.%0D%0A%0D%0ABrand / company:%0D%0ARole:%0D%0AWhat we want to achieve:%0D%0ALevel of interest (Supporter / Partner / Lead Partner):",
+    "apply_label": "Apply to the partners program",
+    "hero": {
+      "eyebrow": "502 Partners",
+      "title": "The region's tech ecosystem won't build itself. We're building it.",
+      "subline": "502 brings together the builders defining the future of software in Central America. Join as a partner and let's grow the ecosystem together.",
+      "scarcity": "Exclusive program. We review every application carefully."
+    },
+    "mission": {
+      "eyebrow": "The mission",
+      "title": "Central America already builds world-class software. It lacks the ecosystem to power it.",
+      "kicker": "Partners join a movement. They don't buy space.",
+      "pillars": {
+        "gather": {
+          "title": "We gather the talent",
+          "body": "Founders, engineers and creators in one place."
+        },
+        "produce": {
+          "title": "We produce the spaces",
+          "body": "Events and gatherings the community already shows up for."
+        },
+        "connect": {
+          "title": "We connect the ecosystem",
+          "body": "People, companies and opportunities that grow together."
+        }
       }
     },
-    "collab_eyebrow": "Ways to collaborate",
-    "collab_title": "How we can work together.",
-    "collab_subline": "We design each partnership so your brand has real impact on the community, and the community has real impact on your business.",
-    "collab": {
-      "sponsor_event": {
-        "title": "Sponsor an event",
-        "description": "Your brand present at a hackathon, workshop or talk. Direct access to active builders, branding across assets, mention in communications and the chance to speak to the audience. Ideal for launches, hiring or awareness."
-      },
-      "year_partner": {
-        "title": "Become year partner",
-        "description": "Recurring partnership with presence at every event of the year, co-created content, shared branding and priority access to initiatives. For companies that want to build long-term relationships with the ecosystem."
-      },
-      "talent": {
-        "title": "Access to talent",
-        "description": "Connect with the next generation of builders. Job board, referrals, talent pipeline and exclusive hiring events. The community is already building. You can meet them while they ship, not in an interview."
-      },
-      "co_create": {
-        "title": "Co-create with the community",
-        "description": "Workshops, educational programs, co-built products or joint content. If you have a tool or initiative, the community can test it, validate it and amplify it."
+    "proof": {
+      "eyebrow": "Our track record",
+      "title": "We're already building it. Here are the numbers.",
+      "audience_label": "Who shows up",
+      "audience_value": "Engineers, entrepreneurs, founders",
+      "items": {
+        "members": {
+          "value": "600+",
+          "label": "Builders in the community"
+        },
+        "events": {
+          "value": "20+",
+          "label": "Events organized"
+        },
+        "attendees": {
+          "value": "100+",
+          "label": "Attendees per space"
+        }
       }
     },
-    "trusted_eyebrow": "Trusted by",
-    "trusted_title": "Companies that are already part.",
-    "contact_eyebrow": "Let's talk",
-    "contact_title": "Let's talk about building together.",
-    "contact_subline": "Tell us what you have in mind: sponsorship, launch, hiring, content or something else. We respond in under 48 hours.",
-    "contact_email_label": "Email",
-    "contact_email_cta": "Send email",
-    "contact_community_label": "WhatsApp",
-    "contact_community_value": "The 502 Project Community",
-    "contact_community_cta": "Join the group"
+    "backers": {
+      "eyebrow": "Backed by",
+      "title": "Who already believes in this.",
+      "note": "The same tools the best builders in the world use stand behind what we're building in the region.",
+      "items": {
+        "cursor": {
+          "name": "Cursor",
+          "tag": "The AI code editor for builders"
+        },
+        "notion": {
+          "name": "Notion",
+          "tag": "The connected workspace"
+        }
+      }
+    },
+    "tiers": {
+      "eyebrow": "Ways to partner",
+      "title": "Three ways to build with us.",
+      "intro": "Choose how you want to join. Each tier is a different way to partner with the community.",
+      "spots_label": "Limited spots",
+      "featured_label": "Most exclusive",
+      "cta": "Apply to this tier",
+      "items": {
+        "supporter": {
+          "name": "Supporter",
+          "audience": "For early-stage brands starting to build presence.",
+          "benefits": {
+            "b1": "Constant digital presence across the community's channels.",
+            "b2": "Positioning in the biweekly newsletter.",
+            "b3": "Monthly amplification by prior agreement.",
+            "b4": "Preferred access to premium space tickets."
+          }
+        },
+        "partner": {
+          "name": "Partner",
+          "audience": "For startups with traction and mid-sized companies ready for action.",
+          "benefits": {
+            "b1": "Physical presence with a booth or activation at monthly events.",
+            "b2": "Speaking time to deliver technical value to the audience.",
+            "b3": "Access to the community's talent channel.",
+            "b4": "Collaborative posts and extended amplification."
+          }
+        },
+        "lead": {
+          "name": "Lead Partner",
+          "audience": "For leading brands and corporates seeking maximum presence.",
+          "benefits": {
+            "b1": "Maximum visibility across every digital and physical asset.",
+            "b2": "Presence at the month's spaces.",
+            "b3": "Full access to the community's talent.",
+            "b4": "Co-creation options with your brand."
+          }
+        }
+      }
+    },
+    "close": {
+      "cta_eyebrow": "Join us",
+      "cta_title": "Let's build the region's ecosystem, together.",
+      "cta_body": "If you share the vision, let's talk. Tell us who you are and what you want to build.",
+      "note": "Exclusive program. We choose carefully who we build with."
+    }
   },
   "Events": {
     "eyebrow": "Events",

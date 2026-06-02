@@ -5,8 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { getCalApi } from "@calcom/embed-react";
 import { cn } from "@/lib/utils";
 
-const NAMESPACE = "the-502-project-corporate-labs";
-const CAL_LINK = "nura-labs/the-502-project-corporate-labs";
+/** Full URL: https://cal.com/nura-labs/the-502-partners */
+const NAMESPACE = "the-502-partners";
+const CAL_LINK = "nura-labs/the-502-partners";
 
 type Props = {
   children: React.ReactNode;
