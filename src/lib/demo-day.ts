@@ -46,6 +46,12 @@ export const DEMO_PARTNERS = [
     role: "powered by",
     href: "https://www.notion.com",
   },
+  {
+    id: "codex",
+    name: "Codex",
+    role: "powered by",
+    href: "https://openai.com/codex",
+  },
 ] as const;
 
 export type DemoPartner = (typeof DEMO_PARTNERS)[number];

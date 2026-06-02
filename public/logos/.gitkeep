@@ -6,6 +6,7 @@ Name each file after the partner id, any image format works
   502.svg        -> The 502 Project
   barrilete.svg  -> Barrilete Ventures
   notion.svg     -> Notion
+  codex.svg      -> Codex
 
 The page auto-detects them and swaps the text wordmark for the real logo.
 Prefer light/white versions since they sit on a near-black background.
