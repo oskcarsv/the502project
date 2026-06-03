@@ -179,7 +179,7 @@ export default async function EventDetailPage({
                   <Clock className="size-4 text-brand-green" />
                   <span>
                     {event.time}
-                    {event.endTime ? ` — ${event.endTime}` : ""}
+                    {event.endTime ? ` a ${event.endTime}` : ""}
                   </span>
                 </div>
               )}

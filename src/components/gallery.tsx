@@ -38,7 +38,7 @@ const EVENTS: Event[] = [
   },
   {
     id: "zero-to-agent",
-    title: "Zero to Agent — Guatemala",
+    title: "Zero to Agent, Guatemala",
     date: "2 May 2026",
     type: "meetup",
     image: "/img/gallery/zero-to-agent.png",

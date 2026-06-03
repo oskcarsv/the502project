@@ -154,6 +154,25 @@
   }
 }
 
+/* Talleres / eventos privados — superficie editorial premium (no Demo Day). */
+.workshop-surface {
+  --ws-bg: #000000;
+  --ws-elevated: #080808;
+  --ws-fg: #ffffff;
+  --ws-muted: rgba(255, 255, 255, 0.58);
+  --ws-line: rgba(255, 255, 255, 0.1);
+  --ws-accent: #56ef9f;
+
+  background-color: var(--ws-bg);
+  color: var(--ws-fg);
+  color-scheme: dark;
+}
+
+.workshop-surface ::selection {
+  background-color: var(--ws-accent);
+  color: var(--ws-bg);
+}
+
 /* ───────────────────────────────────────────────────────────────
    502 Demo Day: disruptive dark program surface.
    Brand palette only: black, white (with opacity for greys) and brand green.
