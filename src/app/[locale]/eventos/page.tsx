@@ -99,7 +99,7 @@ function FeaturedUpcoming({
                 <Clock className="size-4 shrink-0 text-brand-green" />
                 <span>
                   {event.time}
-                  {event.endTime ? ` — ${event.endTime}` : ""}
+                  {event.endTime ? ` a ${event.endTime}` : ""}
                 </span>
               </div>
             )}
