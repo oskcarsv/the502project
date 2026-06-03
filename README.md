@@ -1,6 +1,6 @@
 # The 502 Project — Website
 
-Bilingual (ES/EN) Next.js site for The 502 Project community in Guatemala. Events, blog, labs, and partner pages live here.
+Bilingual (ES/EN) Next.js site for The 502 Project community in Guatemala. Events, blog, and partner pages live here.
 
 ## Tech
 
