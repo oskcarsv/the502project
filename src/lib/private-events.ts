@@ -70,7 +70,7 @@ export const PRIVATE_EVENTS = {
     level: "Principiante",
     levelEn: "Beginner",
     durationHours: 4,
-    date: "2026-06-19",
+    date: "2026-06-18",
     time: "9:00",
     endTime: "13:00",
     location: "Ciudad de Guatemala",
