@@ -75,7 +75,7 @@ export const PRIVATE_EVENTS = {
     endTime: "13:00",
     location: "Ciudad de Guatemala",
     locationEn: "Guatemala City",
-    priceLabel: "$60",
+    priceLabel: "$65",
     capacity: 15,
     availablePercent: 80,
     registrationUrl:
@@ -83,16 +83,17 @@ export const PRIVATE_EVENTS = {
     facilitator: "Oscar Morales",
     facilitatorUrl: "https://www.linkedin.com/in/theoscarvibes/",
     description: [
-      "Aprende a usar Claude como los pros para administrar tu empresa y tu equipo. Vemos prompting, los modelos de Claude, MCPs y skills, todo aplicado a la operación real de tu negocio.",
+      "Aprende a usar Claude como los pros para administrar tu empresa y tu equipo. Vemos prompting, los modos de Claude, Claude Co-work, MCPs y skills, todo aplicado a la operación real de tu negocio.",
       "Vas a conectar Claude con las herramientas que ya usas todos los días, con plataformas externas y con los canales donde te comunicas hoy, para dejar de perder horas en tareas repetitivas.",
     ],
     descriptionEn: [
-      "Learn to use Claude like the pros to run your company and your team. We cover prompting, Claude's models, MCPs, and skills, all applied to the real operation of your business.",
+      "Learn to use Claude like the pros to run your company and your team. We cover prompting, Claude's modes, Claude Co-work, MCPs, and skills, all applied to the real operation of your business.",
       "You'll connect Claude with the tools you already use every day, with external platforms, and with the channels where you communicate today, so you stop losing hours on repetitive tasks.",
     ],
     agenda: [
       "Prompting efectivo para obtener mejores resultados.",
-      "Los modelos de Claude y cuándo usar cada uno.",
+      "Los modos de Claude y cuándo usar cada uno.",
+      "Claude Co-work para tareas y flujos en equipo.",
       "MCPs: qué son y cómo conectarlos.",
       "Skills para ampliar lo que Claude puede hacer por ti.",
       "Conectar Claude a las herramientas de tu día a día y a plataformas externas.",
@@ -101,7 +102,8 @@ export const PRIVATE_EVENTS = {
     ],
     agendaEn: [
       "Effective prompting to get better results.",
-      "Claude's models and when to use each one.",
+      "Claude's modes and when to use each one.",
+      "Claude Co-work for tasks and team workflows.",
       "MCPs: what they are and how to connect them.",
       "Skills to extend what Claude can do for you.",
       "Connecting Claude to your everyday tools and external platforms.",
