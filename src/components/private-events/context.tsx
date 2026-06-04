@@ -9,9 +9,10 @@ export async function PrivateEventsContext() {
       <div className="container mx-auto px-4 py-10 sm:py-14">
         <div className="mx-auto max-w-3xl">
           <WorkshopLabel>{t("context_eyebrow")}</WorkshopLabel>
-          <p className="mt-4 text-base leading-relaxed text-[color:var(--ws-muted)] sm:text-lg">
-            {t("context_body")}
-          </p>
+          <div className="mt-4 space-y-4 text-base leading-relaxed text-[color:var(--ws-muted)] sm:text-lg">
+            <p>{t("context_lead")}</p>
+            <p>{t("context_body")}</p>
+          </div>
         </div>
       </div>
     </section>
