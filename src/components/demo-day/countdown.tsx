@@ -69,7 +69,7 @@ export function DemoCountdown() {
         </div>
 
         <p className="mt-12 max-w-2xl font-display text-2xl font-bold uppercase leading-tight tracking-tight sm:text-4xl">
-          20 startups. Un día.{" "}
+          {DEMO_DAY.spots} startups. Un día.{" "}
           <span className="text-[var(--demo-accent)]">Cero excusas.</span>
         </p>
       </div>

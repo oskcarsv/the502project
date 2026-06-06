@@ -5,6 +5,7 @@ import { Reveal } from "./reveal";
 
 const NOTION = DEMO_PARTNERS.find((p) => p.id === "notion")!;
 const CODEX = DEMO_PARTNERS.find((p) => p.id === "codex")!;
+const CURSOR = DEMO_PARTNERS.find((p) => p.id === "cursor")!;
 
 /** Same bounding box for square icons and wide wordmarks. */
 const SPONSOR_LOGO_BOX = "h-14 w-32 sm:h-16 sm:w-40";
@@ -12,9 +13,11 @@ const SPONSOR_LOGO_BOX = "h-14 w-32 sm:h-16 sm:w-40";
 export function DemoNotionBlock({
   notionLogoSrc,
   codexLogoSrc,
+  cursorLogoSrc,
 }: {
   notionLogoSrc: string | null;
   codexLogoSrc: string | null;
+  cursorLogoSrc: string | null;
 }) {
   return (
     <section
@@ -24,7 +27,7 @@ export function DemoNotionBlock({
       <div className="container mx-auto px-4 py-24 sm:py-32">
         <Reveal>
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-black/20 pb-6">
-            <Tag tone="dark">Notion · Codex</Tag>
+            <Tag tone="dark">Notion · Codex · Cursor</Tag>
             <span className="font-space text-xs uppercase tracking-[0.18em] text-black/60">
               Patrocina el Demo Day
             </span>
@@ -51,8 +54,16 @@ export function DemoNotionBlock({
               Créditos en Codex para las startups seleccionadas
             </p>
             <p className="mt-3 max-w-md font-space text-xs uppercase tracking-[0.14em] text-black/60">
-              Taller para construir y shippear con agentes de Codex el día del
-              Demo Day.
+              Para construir y shippear con agentes de Codex durante el
+              programa.
+            </p>
+            <p className="mt-6 flex items-center gap-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+              <span className="size-3 bg-[var(--demo-bg)]" aria-hidden />
+              Créditos en Cursor para las startups seleccionadas
+            </p>
+            <p className="mt-3 max-w-md font-space text-xs uppercase tracking-[0.14em] text-black/60">
+              El IDE con IA para construir más rápido durante el programa
+              mientras te preparas para el Demo Day.
             </p>
           </Reveal>
 
@@ -83,6 +94,19 @@ export function DemoNotionBlock({
               <LogoSlot
                 partner={CODEX}
                 src={codexLogoSrc}
+                boxClassName={SPONSOR_LOGO_BOX}
+              />
+            </a>
+            <a
+              href={CURSOR.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Cursor"
+              className="inline-flex transition-transform hover:-translate-y-1"
+            >
+              <LogoSlot
+                partner={CURSOR}
+                src={cursorLogoSrc}
                 boxClassName={SPONSOR_LOGO_BOX}
               />
             </a>

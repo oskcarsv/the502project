@@ -15,11 +15,10 @@ export const DEMO_DAY = {
   dateShort: "Sáb 27 jun 2026",
   city: "Ciudad de Guatemala",
   /** Startups selected for the cohort. */
-  spots: 20,
+  spots: 12,
   whatsapp: "https://wa.me/50230059646",
   communityUrl: WHATSAPP_INVITE,
-  /** Connected to the application flow later. */
-  applyUrl: "#aplicar",
+  applyUrl: "/demo-day/apply",
 } as const;
 
 /**
@@ -51,6 +50,12 @@ export const DEMO_PARTNERS = [
     name: "Codex",
     role: "powered by",
     href: "https://openai.com/codex",
+  },
+  {
+    id: "cursor",
+    name: "Cursor",
+    role: "powered by",
+    href: "https://cursor.com",
   },
 ] as const;
 

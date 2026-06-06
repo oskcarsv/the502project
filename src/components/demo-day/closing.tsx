@@ -2,6 +2,7 @@
 
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "@/i18n/navigation";
 import { DEMO_DAY } from "@/lib/demo-day";
 
 export function DemoClosing() {
@@ -28,13 +29,13 @@ export function DemoClosing() {
           </h2>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
+            <Link
               href={DEMO_DAY.applyUrl}
               className="group inline-flex items-center justify-center gap-2 bg-[var(--demo-bg)] px-9 py-5 text-base font-bold uppercase tracking-wide text-[var(--demo-accent)] transition-transform hover:-translate-y-0.5"
             >
               Aplicar ahora
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
             <a
               href={DEMO_DAY.communityUrl}
               target="_blank"
