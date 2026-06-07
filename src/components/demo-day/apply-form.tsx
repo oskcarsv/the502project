@@ -1,8 +1,15 @@
 "use client";
 
 import { useState, type FormEvent, type ReactNode } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { DEMO_DAY } from "@/lib/demo-day";
 import {
   DEMO_DAY_FIELD_HINTS,
   DEMO_DAY_STAGES,
@@ -29,6 +36,12 @@ const LABEL =
 
 const HINT = "mt-1.5 break-words text-sm text-[var(--demo-muted)]";
 const FIELD_ERR = "mt-1.5 text-sm text-red-400";
+
+const SUBMIT_ERROR_MESSAGE =
+  "No pudimos enviar tu aplicación. Por favor contacta al equipo de The 502 Project por WhatsApp y te ayudaremos a completar el proceso.";
+
+const WHATSAPP_BTN =
+  "inline-flex min-h-11 items-center justify-center gap-2 border border-[#25D366]/50 px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#25D366] transition-colors hover:border-[#25D366] hover:bg-[#25D366]/10 sm:px-8 sm:py-4";
 
 type FieldProps = {
   id: string;
@@ -228,6 +241,7 @@ export function DemoApplyForm() {
     Partial<Record<keyof DemoDayApplicationForm, string>>
   >({});
   const [error, setError] = useState<string | null>(null);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitMethod, setSubmitMethod] = useState<"notion" | "mailto" | null>(
@@ -255,6 +269,7 @@ export function DemoApplyForm() {
       return next;
     });
     setError(null);
+    setSubmitFailed(false);
   };
 
   const validateStep = (targetStep: DemoDayWizardStep) => {
@@ -280,10 +295,12 @@ export function DemoApplyForm() {
   const goNext = () => {
     if (!validateStep(step)) {
       setError("Revisa los campos marcados antes de continuar.");
+      setSubmitFailed(false);
       scrollToFirstError(getDemoDayStepErrors(step, form), step);
       return;
     }
     setError(null);
+    setSubmitFailed(false);
     setFieldErrors({});
     if (step < DEMO_DAY_WIZARD_STEPS.length) {
       setStep((step + 1) as DemoDayWizardStep);
@@ -293,6 +310,7 @@ export function DemoApplyForm() {
 
   const goBack = () => {
     setError(null);
+    setSubmitFailed(false);
     setFieldErrors({});
     if (step > 1) {
       setStep((step - 1) as DemoDayWizardStep);
@@ -305,6 +323,7 @@ export function DemoApplyForm() {
 
     if (!validateStep(step)) {
       setError("Revisa los campos marcados antes de enviar.");
+      setSubmitFailed(false);
       scrollToFirstError(getDemoDayStepErrors(step, form), step);
       return;
     }
@@ -313,6 +332,7 @@ export function DemoApplyForm() {
     setFieldErrors(errors);
     if (Object.keys(errors).length > 0) {
       setError("Revisa los campos marcados antes de enviar.");
+      setSubmitFailed(false);
       scrollToFirstError(errors);
       return;
     }
@@ -321,6 +341,7 @@ export function DemoApplyForm() {
 
     setSubmitting(true);
     setError(null);
+    setSubmitFailed(false);
 
     try {
       const res = await fetch("/api/demo-day/apply", {
@@ -328,17 +349,27 @@ export function DemoApplyForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const json = (await res.json()) as {
+
+      let json: {
         ok: boolean;
         error?: string;
         method?: "notion" | "mailto";
         mailto?: string;
       };
 
+      try {
+        json = (await res.json()) as typeof json;
+      } catch {
+        setSubmitFailed(true);
+        setError(SUBMIT_ERROR_MESSAGE);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
       if (!res.ok || !json.ok) {
-        setError(
-          json.error ?? "No pudimos enviar tu aplicación. Intenta de nuevo.",
-        );
+        setSubmitFailed(true);
+        setError(SUBMIT_ERROR_MESSAGE);
+        window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
 
@@ -351,7 +382,9 @@ export function DemoApplyForm() {
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
-      setError("Error de conexión. Revisa tu red e intenta de nuevo.");
+      setSubmitFailed(true);
+      setError(SUBMIT_ERROR_MESSAGE);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } finally {
       setSubmitting(false);
     }
@@ -381,10 +414,24 @@ export function DemoApplyForm() {
             </p>
           )}
 
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mx-auto mt-8 flex w-full max-w-sm flex-col gap-3 sm:mt-10 sm:max-w-md">
+            <a
+              href={DEMO_DAY.communityUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex min-h-11 w-full flex-col items-center justify-center gap-1 bg-[var(--demo-accent)] px-6 py-3 text-center transition-transform hover:-translate-y-0.5 sm:px-8 sm:py-4"
+            >
+              <span className="inline-flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wide text-[var(--demo-bg)]">
+                Únete a la comunidad en WhatsApp
+                <ArrowUpRight className="size-4 shrink-0" />
+              </span>
+              <span className="text-xs font-normal normal-case tracking-normal text-[var(--demo-bg)]/80">
+                Estate al tanto de las últimas novedades
+              </span>
+            </a>
             <Link
               href="/demo-day"
-              className="group inline-flex min-h-11 items-center justify-center gap-2 bg-[var(--demo-accent)] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[var(--demo-bg)] transition-transform hover:-translate-y-0.5 sm:px-8 sm:py-4"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-[var(--demo-line)] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[var(--demo-muted)] transition-colors hover:border-[var(--demo-accent)] hover:text-[var(--demo-accent)] sm:px-8 sm:py-4"
             >
               <ArrowLeft className="size-4" />
               Volver al Demo Day
@@ -718,7 +765,25 @@ export function DemoApplyForm() {
         ) : null}
       </div>
 
-      {error ? (
+      {submitFailed ? (
+        <div
+          role="alert"
+          className="mt-6 border border-red-500/40 bg-red-500/10 px-4 py-4 text-left sm:mt-8 sm:px-6 sm:py-5"
+        >
+          <p className="break-words text-sm text-red-300 sm:text-base">
+            {error ?? SUBMIT_ERROR_MESSAGE}
+          </p>
+          <a
+            href={DEMO_DAY.communityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`mt-4 ${WHATSAPP_BTN}`}
+          >
+            Contactar por WhatsApp
+            <ArrowUpRight className="size-4" />
+          </a>
+        </div>
+      ) : error ? (
         <p
           role="alert"
           className="mt-6 break-words border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-300 sm:mt-8"

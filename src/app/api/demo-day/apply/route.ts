@@ -23,8 +23,22 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await submitDemoDayApplication(validated.data);
-  return NextResponse.json(result);
+  try {
+    const result = await submitDemoDayApplication(validated.data);
+    if (!result.ok) {
+      return NextResponse.json(result, { status: 500 });
+    }
+    return NextResponse.json(result);
+  } catch (error) {
+    console.error("[demo-day/apply] Unexpected error:", error);
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Ocurrió un error inesperado al enviar tu aplicación.",
+      },
+      { status: 500 },
+    );
+  }
 }
 
 export const dynamic = "force-dynamic";

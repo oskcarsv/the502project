@@ -175,6 +175,12 @@ function buildDemoDayNotionProperties(data: DemoDayApplication) {
   return properties;
 }
 
+function isNotionConfigured() {
+  return Boolean(
+    process.env.NOTION_TOKEN && process.env.NOTION_DEMO_DAY_APPLICATIONS_DATABASE_ID,
+  );
+}
+
 /** Persists an application to Notion when configured. */
 export async function submitDemoDayApplicationToNotion(
   data: DemoDayApplication,
@@ -183,32 +189,61 @@ export async function submitDemoDayApplicationToNotion(
   const databaseId = process.env.NOTION_DEMO_DAY_APPLICATIONS_DATABASE_ID;
   if (!token || !databaseId) return false;
 
-  const res = await fetch(`${NOTION_API}/pages`, {
-    method: "POST",
-    headers: notionHeaders(token),
-    body: JSON.stringify({
-      parent: { database_id: databaseId },
-      properties: buildDemoDayNotionProperties(data),
-    }),
-  });
+  try {
+    const res = await fetch(`${NOTION_API}/pages`, {
+      method: "POST",
+      headers: notionHeaders(token),
+      body: JSON.stringify({
+        parent: { database_id: databaseId },
+        properties: buildDemoDayNotionProperties(data),
+      }),
+    });
 
-  if (!res.ok) {
-    const detail = await res.text();
-    console.error("[demo-day-apply] Notion create failed:", res.status, detail);
+    if (!res.ok) {
+      const detail = await res.text();
+      console.error("[demo-day-apply] Notion create failed:", res.status, detail);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error("[demo-day-apply] Notion create error:", error);
     return false;
   }
-
-  return true;
 }
 
-export async function submitDemoDayApplication(data: DemoDayApplication) {
-  const saved = await submitDemoDayApplicationToNotion(data);
-  if (saved) {
-    return { ok: true as const, method: "notion" as const };
+type SubmitSuccess =
+  | { ok: true; method: "notion" }
+  | { ok: true; method: "mailto"; mailto: string };
+
+type SubmitFailure = { ok: false; error: string };
+
+export async function submitDemoDayApplication(
+  data: DemoDayApplication,
+): Promise<SubmitSuccess | SubmitFailure> {
+  try {
+    if (isNotionConfigured()) {
+      const saved = await submitDemoDayApplicationToNotion(data);
+      if (saved) {
+        return { ok: true, method: "notion" };
+      }
+      return {
+        ok: false,
+        error:
+          "No pudimos guardar tu aplicación. Intenta de nuevo en unos minutos.",
+      };
+    }
+
+    return {
+      ok: true,
+      method: "mailto",
+      mailto: demoDayApplicationMailto(data),
+    };
+  } catch (error) {
+    console.error("[demo-day-apply] Submission error:", error);
+    return {
+      ok: false,
+      error: "Ocurrió un error inesperado al enviar tu aplicación.",
+    };
   }
-  return {
-    ok: true as const,
-    method: "mailto" as const,
-    mailto: demoDayApplicationMailto(data),
-  };
 }
