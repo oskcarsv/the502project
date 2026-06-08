@@ -79,7 +79,7 @@ export const PRIVATE_EVENTS = {
     capacity: 15,
     availablePercent: 80,
     registrationUrl:
-      "https://app.recurrente.com/s/the-502-project/claude-for-entrepreneurs",
+      "https://app.recurrente.com/s/the-502-project/claude-for-entrepreneurs-8pe0iw",
     facilitator: "Oscar Morales",
     facilitatorUrl: "https://www.linkedin.com/in/theoscarvibes/",
     description: [
