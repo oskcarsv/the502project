@@ -20,7 +20,7 @@
     "members": {
       "value": "+600",
       "label": "Miembros",
-      "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos, con sponsors como Notion y Cursor."
+      "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
     },
     "events": {
       "value": "+20",
@@ -75,7 +75,7 @@
   "FinalCTA": {
     "eyebrow": "Únete",
     "title": "Construyamos juntos.",
-    "subline": "+600 builders, founders y operators ya están en la comunidad, con sponsors como Notion y Cursor. Te están esperando.",
+    "subline": "+600 builders, founders y operators ya están en la comunidad. Te están esperando.",
     "cta_primary": "Únete a la comunidad",
     "cta_secondary": "Síguenos"
   },
@@ -292,7 +292,7 @@
     "edition_badge": "Requisitos de perfil",
     "edition_view": "Ver workshop",
     "edition_label_date": "Fecha",
-    "edition_label_format": "Formato",
+    "edition_label_format": "Format",
     "edition_label_price": "Inversión",
     "corporate_eyebrow": "Para empresas",
     "corporate_title": "¿Workshop en tu empresa o uno hecho a tu medida?",
