@@ -20,7 +20,7 @@
     "members": {
       "value": "+600",
       "label": "Members",
-      "description": "Builders and founders sharing knowledge, opportunities, and projects."
+      "description": "Builders and founders sharing knowledge, opportunities, and projects, with sponsors like Notion and Cursor."
     },
     "events": {
       "value": "+20",
@@ -75,7 +75,7 @@
   "FinalCTA": {
     "eyebrow": "Join",
     "title": "Let's build together.",
-    "subline": "+600 builders, founders, and operators are already in the community. They're waiting for you.",
+    "subline": "+600 builders, founders, and operators are already in the community, with sponsors like Notion and Cursor. They're waiting for you.",
     "cta_primary": "Join the community",
     "cta_secondary": "Follow"
   },
@@ -148,7 +148,7 @@
       "audience_value": "Engineers, entrepreneurs, founders",
       "items": {
         "members": {
-          "value": "600+",
+          "value": "+600",
           "label": "Builders in the community"
         },
         "events": {
