@@ -20,7 +20,7 @@
     "members": {
       "value": "+600",
       "label": "Miembros",
-      "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
+      "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos, con sponsors como Notion y Cursor."
     },
     "events": {
       "value": "+20",
@@ -75,7 +75,7 @@
   "FinalCTA": {
     "eyebrow": "Únete",
     "title": "Construyamos juntos.",
-    "subline": "+600 builders, founders y operators ya están en la comunidad. Te están esperando.",
+    "subline": "+600 builders, founders y operators ya están en la comunidad, con sponsors como Notion y Cursor. Te están esperando.",
     "cta_primary": "Únete a la comunidad",
     "cta_secondary": "Síguenos"
   },
