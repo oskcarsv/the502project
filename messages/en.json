@@ -20,7 +20,7 @@
     "members": {
       "value": "+600",
       "label": "Members",
-      "description": "Builders and founders sharing knowledge, opportunities, and projects, with sponsors like Notion and Cursor."
+      "description": "Builders and founders sharing knowledge, opportunities, and projects."
     },
     "events": {
       "value": "+20",
@@ -75,7 +75,7 @@
   "FinalCTA": {
     "eyebrow": "Join",
     "title": "Let's build together.",
-    "subline": "+600 builders, founders, and operators are already in the community, with sponsors like Notion and Cursor. They're waiting for you.",
+    "subline": "+600 builders, founders, and operators are already in the community. They're waiting for you.",
     "cta_primary": "Join the community",
     "cta_secondary": "Follow"
   },
@@ -316,7 +316,7 @@
     "requirements_beginner_note": "A workshop for beginners. No prior experience needed.",
     "includes_eyebrow": "What's included",
     "includes_label": "Included",
-    "not_includes_label": "Not included",
+    "not_includes_label": "No included",
     "gift_label": "Welcome gift",
     "outcome_eyebrow": "What you leave with",
     "cta_eyebrow": "Reserve your seat",
