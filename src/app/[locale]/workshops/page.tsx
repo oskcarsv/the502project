@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { setRequestLocale, getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { SITE } from "@/lib/site";
 import { PrivateEventsHero } from "@/components/private-events/hero";
 import { PrivateEventsContext } from "@/components/private-events/context";
@@ -7,34 +8,25 @@ import { PrivateEventsEditions } from "@/components/private-events/editions";
 import { PrivateEventsCorporate } from "@/components/private-events/corporate";
 import { PrivateEventsClosing } from "@/components/private-events/closing";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "PrivateEvents" });
-  const title = t("meta_title");
-  const description = t("meta_description");
-  const path = locale === "es" ? "/workshops" : "/en/workshops";
-  const url = `${SITE.url}${path}`;
+const TITLE = "Workshops · The 502 Project";
+const DESCRIPTION =
+  "Workshops prácticos para aprender a usar la inteligencia artificial en tu negocio, sin necesidad de ser técnico. Grupos pequeños, coffee break y parqueo incluidos.";
 
-  return {
-    title,
-    description,
-    alternates: { canonical: path },
-    openGraph: {
-      type: "website",
-      siteName: SITE.name,
-      title,
-      description,
-      url,
-      locale: locale === "es" ? "es_GT" : "en_US",
-    },
-    twitter: { card: "summary_large_image", title, description },
-    robots: { index: false, follow: false },
-  };
-}
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/workshops" },
+  openGraph: {
+    type: "website",
+    siteName: SITE.name,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE.url}/workshops`,
+    locale: "es_GT",
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  robots: { index: false, follow: false },
+};
 
 export default async function PrivateEventsPage({
   params,
@@ -42,6 +34,8 @@ export default async function PrivateEventsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  // Los workshops son solo en español.
+  if (locale !== "es") redirect("/workshops");
   setRequestLocale(locale);
 
   return (

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { SITE } from "@/lib/site";
-import {
-  getPrivateEvent,
-  getPrivateEventSlugs,
-  localizedPrivateField,
-} from "@/lib/private-events";
+import { getPrivateEvent, getPrivateEventSlugs } from "@/lib/private-events";
 import { PrivateEventHero } from "@/components/private-events/event/hero";
 import { PrivateEventDescription } from "@/components/private-events/event/description";
 import { PrivateEventRequirements } from "@/components/private-events/requirements";
@@ -19,6 +15,7 @@ import { PrivateEventClosing } from "@/components/private-events/event/closing";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  // Los workshops son solo en español; la variante /en redirige.
   return getPrivateEventSlugs().flatMap((slug) => [
     { locale: "es", slug },
     { locale: "en", slug },
@@ -30,32 +27,23 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { locale, slug } = await params;
+  const { slug } = await params;
   const event = getPrivateEvent(slug);
   if (!event) return {};
 
-  const title = localizedPrivateField(locale, event.title, event.titleEn);
-  const description = localizedPrivateField(
-    locale,
-    event.tagline,
-    event.taglineEn,
-  );
-  const path =
-    locale === "es"
-      ? `/workshops/${slug}`
-      : `/en/workshops/${slug}`;
+  const path = `/workshops/${slug}`;
 
   return {
-    title: `${title} · Workshops`,
-    description,
+    title: `${event.title} · Workshops`,
+    description: event.tagline,
     alternates: { canonical: path },
     openGraph: {
       type: "website",
       siteName: SITE.name,
-      title,
-      description,
+      title: event.title,
+      description: event.tagline,
       url: `${SITE.url}${path}`,
-      locale: locale === "es" ? "es_GT" : "en_US",
+      locale: "es_GT",
     },
     robots: { index: false, follow: false },
   };
@@ -67,6 +55,8 @@ export default async function PrivateEventDetailPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
+  // Los workshops son solo en español.
+  if (locale !== "es") redirect(`/workshops/${slug}`);
   setRequestLocale(locale);
 
   const event = getPrivateEvent(slug);

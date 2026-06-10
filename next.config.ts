@@ -4,6 +4,21 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // El slug del workshop se acortó; links viejos ya compartidos.
+      {
+        source: "/workshops/claude-for-entrepreneurs",
+        destination: "/workshops/claude",
+        permanent: true,
+      },
+      {
+        source: "/en/workshops/claude-for-entrepreneurs",
+        destination: "/workshops/claude",
+        permanent: true,
+      },
+    ];
+  },
   // Pin the workspace root so Turbopack doesn't infer it from a stray
   // lockfile in a parent directory (which breaks module resolution).
   turbopack: {

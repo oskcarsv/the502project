@@ -1,19 +1,16 @@
-import { getTranslations } from "next-intl/server";
-
 type Props = {
   backHref?: string;
   backLabel?: string;
   showEmpresasLink?: boolean;
 };
 
-export async function PrivateEventsNav({
+export function PrivateEventsNav({
   backHref,
   backLabel,
   showEmpresasLink = false,
 }: Props) {
-  const t = await getTranslations("PrivateEvents");
   const href = backHref ?? "/";
-  const label = backLabel ?? t("nav_home");
+  const label = backLabel ?? "Inicio";
 
   return (
     <header className="border-b border-[color:var(--ws-line)]">
@@ -30,11 +27,11 @@ export async function PrivateEventsNav({
               href="#empresas"
               className="hidden font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--ws-accent)] transition-opacity hover:opacity-80 sm:inline"
             >
-              {t("nav_corporate")}
+              Para empresas
             </a>
           ) : null}
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--ws-muted)] md:inline">
-            {t("brand_label")}
+            Workshops
           </span>
           <a
             href={href}
