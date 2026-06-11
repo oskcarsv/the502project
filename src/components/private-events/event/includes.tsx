@@ -1,68 +1,66 @@
-import { Check, Gift, X } from "lucide-react";
-import { WorkshopLabel } from "@/components/private-events/label";
-import type { PrivateEvent } from "@/lib/private-events";
+import {
+  BookOpen,
+  Clock,
+  Coffee,
+  Gift,
+  LayoutTemplate,
+  SquareParking,
+  X,
+} from "lucide-react";
+import type { PerkIcon, PrivateEvent } from "@/lib/private-events";
+
+const PERK_ICONS: Record<PerkIcon, typeof Coffee> = {
+  clock: Clock,
+  coffee: Coffee,
+  parking: SquareParking,
+  book: BookOpen,
+  templates: LayoutTemplate,
+};
 
 type Props = { event: PrivateEvent };
 
 export function PrivateEventIncludes({ event }: Props) {
   return (
-    <section className="border-t border-[color:var(--ws-line)] bg-[color:var(--ws-elevated)]">
-      <div className="container mx-auto max-w-3xl px-4 py-14 sm:py-16">
-        <WorkshopLabel>Qué incluye</WorkshopLabel>
+    <section>
+      <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+        Qué incluye
+      </h2>
 
-        <div className="mt-6 flex items-center gap-4 border border-[color:var(--ws-accent)]/40 bg-[color:var(--ws-accent)]/10 p-5 sm:p-6">
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[color:var(--ws-accent)] text-[color:var(--ws-bg)]">
-            <Gift className="size-5" />
+      <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+        {event.included.map((perk) => {
+          const Icon = PERK_ICONS[perk.icon];
+          return (
+            <li
+              key={perk.text}
+              className="flex items-center gap-3.5 rounded-2xl bg-[color:var(--ws-elevated)] p-4 ring-1 ring-[color:var(--ws-line)]"
+            >
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ws-accent-soft)] text-[color:var(--ws-accent)]">
+                <Icon className="size-5" strokeWidth={2} />
+              </span>
+              <span className="text-sm leading-snug sm:text-[15px]">
+                {perk.text}
+              </span>
+            </li>
+          );
+        })}
+
+        <li className="flex items-center gap-3.5 rounded-2xl bg-[color:var(--ws-accent)] p-4 text-white">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/20">
+            <Gift className="size-5" strokeWidth={2} />
           </span>
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--ws-accent)]">
-              Regalo de bienvenida
-            </p>
-            <p className="mt-1 font-display text-lg font-bold text-[color:var(--ws-fg)] sm:text-xl">
-              {event.gift}
-            </p>
-          </div>
-        </div>
+          <span className="text-sm leading-snug sm:text-[15px]">
+            <span className="font-semibold">Regalo de bienvenida:</span>{" "}
+            {event.gift}
+          </span>
+        </li>
+      </ul>
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-12">
-          <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--ws-fg)]">
-              Incluye
-            </p>
-            <ul className="mt-5 space-y-4">
-              {event.included.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Check
-                    className="mt-1 size-4 shrink-0 text-[color:var(--ws-accent)]"
-                    strokeWidth={2.5}
-                  />
-                  <span className="text-base leading-relaxed text-[color:var(--ws-fg)]">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-[color:var(--ws-muted)]">
-              No incluye
-            </p>
-            <ul className="mt-5 space-y-4">
-              {event.notIncluded.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <X
-                    className="mt-1 size-4 shrink-0 text-[color:var(--ws-muted)]"
-                    strokeWidth={2.5}
-                  />
-                  <span className="text-base leading-relaxed text-[color:var(--ws-muted)]">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+      {event.notIncluded.length > 0 ? (
+        <p className="mt-4 flex items-center gap-2 text-sm text-[color:var(--ws-muted)]">
+          <X className="size-4" strokeWidth={2.5} />
+          No incluye: {event.notIncluded.join(" · ")}.
+        </p>
+      ) : null}
     </section>
   );
 }

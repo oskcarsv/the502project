@@ -154,23 +154,24 @@
   }
 }
 
-/* Talleres / eventos privados — superficie editorial premium (no Demo Day). */
+/* Talleres / eventos privados — superficie cálida y amigable (no Demo Day). */
 .workshop-surface {
-  --ws-bg: #000000;
-  --ws-elevated: #080808;
-  --ws-fg: #ffffff;
-  --ws-muted: rgba(255, 255, 255, 0.58);
-  --ws-line: rgba(255, 255, 255, 0.1);
-  --ws-accent: #56ef9f;
+  --ws-bg: #faf8f3;
+  --ws-elevated: #ffffff;
+  --ws-fg: #202a24;
+  --ws-muted: #5f6b63;
+  --ws-line: rgba(32, 42, 36, 0.12);
+  --ws-accent: #0d8f5f;
+  --ws-accent-soft: #e6f5ec;
 
   background-color: var(--ws-bg);
   color: var(--ws-fg);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 .workshop-surface ::selection {
   background-color: var(--ws-accent);
-  color: var(--ws-bg);
+  color: #ffffff;
 }
 
 /* ───────────────────────────────────────────────────────────────

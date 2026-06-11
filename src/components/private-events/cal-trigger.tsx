@@ -20,7 +20,7 @@ export function PrivateEventsCalTrigger({ children, className }: Props) {
       cal("ui", {
         hideEventTypeDetails: false,
         layout: "month_view",
-        theme: "dark",
+        theme: "light",
         cssVarsPerTheme: {
           dark: {
             "cal-brand": "#56ef9f",
@@ -45,7 +45,7 @@ export function PrivateEventsCalTrigger({ children, className }: Props) {
       data-cal-link={link}
       data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
       className={cn(
-        "group inline-flex h-12 items-center justify-center gap-2 border border-[color:var(--ws-accent)] bg-[color:var(--ws-accent)] px-8 text-sm font-semibold text-[color:var(--ws-bg)] transition-opacity hover:opacity-90 sm:text-base",
+        "group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[color:var(--ws-accent)] px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90",
         className,
       )}
     >

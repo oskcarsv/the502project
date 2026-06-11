@@ -1,5 +1,14 @@
 export type PrivateEventStatus = "upcoming" | "past";
 
+export type PerkIcon =
+  | "clock"
+  | "coffee"
+  | "parking"
+  | "book"
+  | "templates";
+
+export type Perk = { icon: PerkIcon; text: string };
+
 // Los workshops son solo en español: una sola fuente de copy, sin variantes EN.
 export type PrivateEvent = {
   slug: string;
@@ -28,8 +37,8 @@ export type PrivateEvent = {
   /** Agenda / temas, se muestra como "qué vas a aprender". */
   agenda: string[];
   requirements: string[];
-  /** Qué incluye el workshop. */
-  included: string[];
+  /** Qué incluye el workshop, con icono para la UI. */
+  included: Perk[];
   /** Qué no incluye. */
   notIncluded: string[];
   /** Regalo de bienvenida destacado. */
@@ -70,28 +79,27 @@ export const PRIVATE_EVENTS = {
       "Vas a aprender a pedirle las cosas de la forma correcta, a conectarlo con las herramientas que ya usas todos los días (correo, calendario, documentos) y a quitarte de encima esas tareas repetitivas que te roban horas cada semana.",
     ],
     agenda: [
-      "Cómo pedirle las cosas a Claude para obtener buenos resultados, sin fórmulas complicadas.",
-      "Los modos de Claude y cuándo conviene usar cada uno.",
-      "Claude Co-work: cómo apoyarte en Claude para organizar tareas y trabajar en equipo.",
-      "Cómo conectar Claude con tus herramientas de todos los días: correo, calendario, documentos y más.",
-      "Skills y conexiones, explicadas en palabras simples: qué son y para qué te sirven.",
-      "Cómo llevar Claude a los canales donde ya hablas con tu equipo y tus clientes.",
-      "Ideas y flujos listos para usar en la administración de tu empresa.",
+      "Cómo pedirle las cosas a Claude para obtener buenos resultados.",
+      "Los modos de Claude y cuándo usar cada uno.",
+      "Claude Co-work para organizar tareas y trabajar en equipo.",
+      "Conectar Claude con tu correo, calendario y documentos.",
+      "Skills y conexiones, explicadas en palabras simples.",
+      "Llevar Claude a donde ya hablas con tu equipo y clientes.",
+      "Flujos listos para usar en la administración de tu empresa.",
     ],
     requirements: [
       "Eres emprendedor o estás construyendo tu empresa.",
-      "No necesitas experiencia previa ni saber de tecnología: es un taller para principiantes.",
-      "Vienes con ganas de ahorrar tiempo en el día a día de tu negocio.",
+      "No necesitas experiencia previa ni saber de tecnología.",
+      "Quieres ahorrar tiempo en el día a día de tu negocio.",
     ],
     included: [
-      "Taller presencial de 3 horas con acompañamiento directo y en lenguaje sencillo.",
-      "Coffee break para recargar energías y conocer a otros emprendedores.",
-      "Parqueo incluido en el lugar del evento.",
-      "3 meses de Notion + AI gratis para empezar a organizar tu empresa.",
-      "Te compartimos nuestras plantillas y flujos para que los uses desde el día uno.",
-      "Material didáctico para que repases con calma en casa.",
+      { icon: "clock", text: "3 horas presenciales con acompañamiento directo" },
+      { icon: "coffee", text: "Coffee break para recargar energías" },
+      { icon: "parking", text: "Parqueo incluido en el lugar del evento" },
+      { icon: "templates", text: "Nuestras plantillas y flujos listos para usar" },
+      { icon: "book", text: "Material didáctico para repasar en casa" },
     ],
-    notIncluded: ["No incluye licencia de Claude."],
+    notIncluded: ["Licencia de Claude"],
     gift: "3 meses de Notion + AI gratis",
     outcomes: [
       "Te llevas el conocimiento para usar la inteligencia artificial correctamente en tu empresa.",

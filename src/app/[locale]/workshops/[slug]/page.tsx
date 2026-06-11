@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { SITE } from "@/lib/site";
 import { getPrivateEvent, getPrivateEventSlugs } from "@/lib/private-events";
 import { PrivateEventHero } from "@/components/private-events/event/hero";
+import { PrivateEventCard } from "@/components/private-events/event/card";
 import { PrivateEventDescription } from "@/components/private-events/event/description";
 import { PrivateEventRequirements } from "@/components/private-events/requirements";
 import { PrivateEventIncludes } from "@/components/private-events/event/includes";
@@ -66,11 +67,20 @@ export default async function PrivateEventDetailPage({
     <div className="workshop-surface min-h-screen">
       <main>
         <PrivateEventHero event={event} />
-        <PrivateEventDescription event={event} />
-        <PrivateEventRequirements event={event} />
-        <PrivateEventIncludes event={event} />
-        <PrivateEventOutcome event={event} />
-        <PrivateEventCta event={event} />
+        <div className="container mx-auto max-w-5xl px-4 pb-16 pt-8 sm:pt-10">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-14">
+            <aside className="lg:sticky lg:top-8 lg:order-2">
+              <PrivateEventCard event={event} />
+            </aside>
+            <div className="space-y-12 lg:order-1 sm:space-y-14">
+              <PrivateEventDescription event={event} />
+              <PrivateEventRequirements event={event} />
+              <PrivateEventIncludes event={event} />
+              <PrivateEventOutcome event={event} />
+              <PrivateEventCta event={event} />
+            </div>
+          </div>
+        </div>
         <PrivateEventsCorporate />
       </main>
       <PrivateEventClosing />

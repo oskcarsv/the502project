@@ -1,59 +1,79 @@
-import { ArrowRight } from "lucide-react";
-import { WorkshopLabel } from "@/components/private-events/label";
+import Link from "next/link";
+import { ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react";
 import { getAllPrivateEvents, type PrivateEvent } from "@/lib/private-events";
 
 function formatDate(iso: string) {
   return new Date(`${iso}T12:00:00`).toLocaleDateString("es-GT", {
-    year: "numeric",
-    month: "long",
     day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 }
 
+function formatHour(hhmm: string): string {
+  const [h, m] = hhmm.split(":").map(Number);
+  const display = h % 12 === 0 ? 12 : h % 12;
+  const period = h >= 12 ? "PM" : "AM";
+  return m ? `${display}:${String(m).padStart(2, "0")} ${period}` : `${display} ${period}`;
+}
+
 function EditionCard({ event }: { event: PrivateEvent }) {
+  const details = [
+    { icon: CalendarDays, value: formatDate(event.date) },
+    {
+      icon: Clock,
+      value: event.endTime
+        ? `${formatHour(event.time)} a ${formatHour(event.endTime)}`
+        : formatHour(event.time),
+    },
+    { icon: MapPin, value: event.location },
+  ];
+
   return (
-    <a
+    <Link
       href={`/workshops/${event.slug}`}
-      className="group block bg-[color:var(--ws-elevated)] ring-1 ring-[color:var(--ws-line)] transition-[box-shadow,ring-color] hover:ring-[color:var(--ws-accent)]/50"
+      className="group block overflow-hidden rounded-3xl bg-[color:var(--ws-elevated)] ring-1 ring-[color:var(--ws-line)] transition-shadow hover:shadow-[0_16px_40px_-16px_rgba(32,42,36,0.2)]"
     >
-      <div className="grid lg:grid-cols-[1.15fr_1fr]">
-        <div className="flex flex-col justify-between gap-8 p-8 sm:p-10 lg:border-r lg:border-[color:var(--ws-line)]">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--ws-muted)]">
-              Edición {event.edition} · Grupo reducido
-            </p>
-            <h3 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-[color:var(--ws-fg)] sm:text-4xl">
-              {event.title}
-            </h3>
-            <p className="mt-3 text-[color:var(--ws-muted)]">{event.tagline}</p>
-          </div>
-          <span className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--ws-fg)] transition-colors group-hover:text-[color:var(--ws-accent)]">
+      <div className="p-7 sm:p-9">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="inline-flex items-center rounded-full bg-[color:var(--ws-accent-soft)] px-3 py-1 text-xs font-semibold text-[color:var(--ws-accent)]">
+            Edición {event.edition}
+          </span>
+          <span className="inline-flex items-center rounded-full bg-[color:var(--ws-bg)] px-3 py-1 text-xs font-medium text-[color:var(--ws-muted)] ring-1 ring-[color:var(--ws-line)]">
+            {event.level}
+          </span>
+        </div>
+
+        <h3 className="mt-4 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+          {event.title}
+        </h3>
+        <p className="mt-2 max-w-2xl text-[color:var(--ws-muted)]">
+          {event.tagline}
+        </p>
+
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-sm text-[color:var(--ws-muted)]">
+          {details.map((d, i) => (
+            <span key={i} className="inline-flex items-center gap-2">
+              <d.icon className="size-4 text-[color:var(--ws-accent)]" />
+              {d.value}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-7 flex items-center justify-between border-t border-[color:var(--ws-line)] pt-5">
+          <span className="font-display text-2xl font-bold">
+            {event.priceLabel}
+            <span className="ml-1.5 text-sm font-normal text-[color:var(--ws-muted)]">
+              por persona
+            </span>
+          </span>
+          <span className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--ws-accent)] transition-transform group-hover:translate-x-0.5">
             Ver workshop
             <ArrowRight className="size-4" />
           </span>
         </div>
-        <div className="flex flex-col justify-center gap-0 p-8 text-sm sm:p-10">
-          <div className="flex justify-between gap-4 border-b border-[color:var(--ws-line)] py-4">
-            <span className="text-[color:var(--ws-muted)]">Fecha</span>
-            <span className="text-[color:var(--ws-fg)]">
-              {formatDate(event.date)}
-            </span>
-          </div>
-          <div className="flex justify-between gap-4 border-b border-[color:var(--ws-line)] py-4">
-            <span className="text-[color:var(--ws-muted)]">Formato</span>
-            <span className="text-right text-[color:var(--ws-fg)]">
-              {event.format}
-            </span>
-          </div>
-          <div className="flex justify-between gap-4 py-4">
-            <span className="text-[color:var(--ws-muted)]">Inversión</span>
-            <span className="font-display text-xl font-bold text-[color:var(--ws-accent)]">
-              {event.priceLabel}
-            </span>
-          </div>
-        </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
@@ -63,21 +83,15 @@ export function PrivateEventsEditions() {
   if (events.length === 0) return null;
 
   return (
-    <section
-      id="talleres"
-      className="scroll-mt-16 border-t border-[color:var(--ws-line)]"
-    >
-      <div className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl">
-          <WorkshopLabel>Workshops</WorkshopLabel>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-[color:var(--ws-fg)] sm:text-4xl md:text-5xl">
-            Próximas ediciones
-          </h2>
-          <div className="mt-8 sm:mt-10">
-            {events.map((event) => (
-              <EditionCard key={event.slug} event={event} />
-            ))}
-          </div>
+    <section id="talleres" className="scroll-mt-16">
+      <div className="container mx-auto max-w-5xl px-4 py-10 sm:py-12">
+        <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          Próximos workshops
+        </h2>
+        <div className="mt-6 space-y-6 sm:mt-8">
+          {events.map((event) => (
+            <EditionCard key={event.slug} event={event} />
+          ))}
         </div>
       </div>
     </section>

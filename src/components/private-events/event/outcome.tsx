@@ -1,23 +1,22 @@
-import { WorkshopLabel } from "@/components/private-events/label";
 import type { PrivateEvent } from "@/lib/private-events";
 
 type Props = { event: PrivateEvent };
 
 export function PrivateEventOutcome({ event }: Props) {
   return (
-    <section className="border-t border-[color:var(--ws-line)]">
-      <div className="container mx-auto max-w-3xl px-4 py-14 sm:py-16">
-        <WorkshopLabel>Qué te llevas</WorkshopLabel>
-        <div className="mt-6 space-y-5">
-          {event.outcomes.map((item, i) => (
-            <p
-              key={i}
-              className="border-l-2 border-[color:var(--ws-accent)] pl-5 font-display text-xl font-semibold leading-snug tracking-tight text-[color:var(--ws-fg)] sm:text-2xl"
-            >
-              {item}
-            </p>
-          ))}
-        </div>
+    <section>
+      <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
+        Qué te llevas
+      </h2>
+      <div className="mt-5 space-y-4">
+        {event.outcomes.map((item, i) => (
+          <p
+            key={i}
+            className="rounded-2xl border-l-4 border-[color:var(--ws-accent)] bg-[color:var(--ws-elevated)] px-5 py-4 text-base font-medium leading-relaxed ring-1 ring-[color:var(--ws-line)] sm:text-lg"
+          >
+            {item}
+          </p>
+        ))}
       </div>
     </section>
   );
