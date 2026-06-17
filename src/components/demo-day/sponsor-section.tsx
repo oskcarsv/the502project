@@ -3,6 +3,11 @@ import { LogoSlot } from "./logo-slot";
 import { Tag } from "./primitives";
 import { Reveal } from "./reveal";
 
+export type SponsorAttribution = {
+  label: string;
+  people: { name: string; role: string }[];
+};
+
 type SponsorSectionProps = {
   id: string;
   partner: DemoPartner;
@@ -10,11 +15,58 @@ type SponsorSectionProps = {
   headline: string;
   whatItIs: string;
   whatItsFor: string;
-  attribution?: string;
+  attribution?: SponsorAttribution;
   tone?: "light" | "accent";
   /** e.g. brightness-0 invert for dark marks on the demo day's black panels */
   logoClassName?: string;
 };
+
+function SponsorAttributionBlock({
+  attribution,
+  isAccent,
+}: {
+  attribution: SponsorAttribution;
+  isAccent: boolean;
+}) {
+  return (
+    <div
+      className={`mt-10 border p-5 sm:mt-12 sm:p-6 ${
+        isAccent
+          ? "border-black/25 bg-black/5"
+          : "border-[var(--demo-line)] bg-white/[0.03]"
+      }`}
+    >
+      <p
+        className={`font-space text-xs font-bold uppercase tracking-[0.16em] ${
+          isAccent ? "text-black/70" : "text-[var(--demo-accent)]"
+        }`}
+      >
+        {attribution.label}
+      </p>
+
+      <div
+        className={`mt-5 grid gap-5 sm:gap-6 ${
+          attribution.people.length > 1 ? "sm:grid-cols-2" : ""
+        }`}
+      >
+        {attribution.people.map((person) => (
+          <div key={person.name}>
+            <p className="font-display text-xl font-extrabold tracking-tight sm:text-2xl">
+              {person.name}
+            </p>
+            <p
+              className={`mt-1 text-sm font-medium leading-snug sm:text-base ${
+                isAccent ? "text-black/70" : "text-[var(--demo-muted)]"
+              }`}
+            >
+              {person.role}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function DemoSponsorSection({
   id,
@@ -108,13 +160,10 @@ export function DemoSponsorSection({
               </p>
 
               {attribution ? (
-                <p
-                  className={`mt-6 font-space text-xs uppercase tracking-[0.14em] ${
-                    isAccent ? "text-black/60" : "text-[var(--demo-muted)]"
-                  }`}
-                >
-                  {attribution}
-                </p>
+                <SponsorAttributionBlock
+                  attribution={attribution}
+                  isAccent={isAccent}
+                />
               ) : null}
             </div>
           </Reveal>
