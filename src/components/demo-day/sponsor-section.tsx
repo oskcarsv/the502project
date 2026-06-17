@@ -5,7 +5,7 @@ import { Reveal } from "./reveal";
 
 export type SponsorAttribution = {
   label: string;
-  people: { name: string; role: string }[];
+  people: { name: string; role: string; href?: string }[];
 };
 
 type SponsorSectionProps = {
@@ -51,9 +51,20 @@ function SponsorAttributionBlock({
       >
         {attribution.people.map((person) => (
           <div key={person.name}>
-            <p className="font-display text-xl font-extrabold tracking-tight sm:text-2xl">
-              {person.name}
-            </p>
+            {person.href ? (
+              <a
+                href={person.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-display text-xl font-extrabold tracking-tight underline decoration-current/25 underline-offset-4 transition-[text-decoration-color] hover:decoration-current sm:text-2xl"
+              >
+                {person.name}
+              </a>
+            ) : (
+              <p className="font-display text-xl font-extrabold tracking-tight sm:text-2xl">
+                {person.name}
+              </p>
+            )}
             <p
               className={`mt-1 text-sm font-medium leading-snug sm:text-base ${
                 isAccent ? "text-black/70" : "text-[var(--demo-muted)]"

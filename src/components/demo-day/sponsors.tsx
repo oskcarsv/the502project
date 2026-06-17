@@ -60,10 +60,12 @@ export function DemoSponsors({
             {
               name: "Walter Morales",
               role: "Regional Lead de Centroamérica",
+              href: "https://www.linkedin.com/in/wmoralesdev",
             },
             {
               name: "Oscar Morales",
               role: "Cursor Ambassador",
+              href: "https://www.linkedin.com/in/theoscarvibes",
             },
           ],
         }}
