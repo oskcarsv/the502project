@@ -21,28 +21,10 @@ export function DemoSponsors({
         partner={NOTION}
         logoSrc={notionLogoSrc}
         tone="light"
+        logoClassName="h-24 w-auto brightness-0 invert sm:h-36 lg:h-44"
         headline="El workspace con IA de las mejores startups."
         whatItIs="Notion es el espacio de trabajo todo-en-uno donde equipos documentan, planifican y construyen con IA integrada."
         whatItsFor="Tres meses de Notion + AI para las startups seleccionadas, más un taller para arrancar con el stack con el que operan las mejores startups del mundo."
-      />
-
-      <DemoSponsorSection
-        id="codex"
-        partner={CODEX}
-        logoSrc={codexLogoSrc}
-        tone="accent"
-        headline="Agentes de código que construyen contigo."
-        whatItIs="Codex es el agente de código de OpenAI: entiende tu repositorio, escribe, refactoriza y shippea features con contexto real del proyecto."
-        whatItsFor="Créditos en Codex para las startups seleccionadas, para construir y shippear con agentes durante el programa."
-        attribution={{
-          label: "Programa",
-          people: [
-            {
-              name: "Codex Ambassadors",
-              role: "Este apoyo es parte del programa Codex Ambassadors.",
-            },
-          ],
-        }}
       />
 
       <DemoSponsorSection
@@ -66,6 +48,25 @@ export function DemoSponsors({
               name: "Oscar Morales",
               role: "Cursor Ambassador",
               href: "https://www.linkedin.com/in/theoscarvibes",
+            },
+          ],
+        }}
+      />
+
+      <DemoSponsorSection
+        id="codex"
+        partner={CODEX}
+        logoSrc={codexLogoSrc}
+        tone="accent"
+        headline="Agentes de código que construyen contigo."
+        whatItIs="Codex es el agente de código de OpenAI: entiende tu repositorio, escribe, refactoriza y shippea features con contexto real del proyecto."
+        whatItsFor="Créditos en Codex para las startups seleccionadas, para construir y shippear con agentes durante el programa."
+        attribution={{
+          label: "Programa",
+          people: [
+            {
+              name: "Codex Ambassadors",
+              role: "Este apoyo es parte del programa Codex Ambassadors.",
             },
           ],
         }}
