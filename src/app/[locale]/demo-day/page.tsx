@@ -11,7 +11,7 @@ import { DemoStats } from "@/components/demo-day/stats";
 import { DemoWho } from "@/components/demo-day/who";
 import { DemoCountdown } from "@/components/demo-day/countdown";
 import { DemoBarrilete } from "@/components/demo-day/barrilete";
-import { DemoNotionBlock } from "@/components/demo-day/notion-block";
+import { DemoSponsors } from "@/components/demo-day/sponsors";
 import { DemoClosing } from "@/components/demo-day/closing";
 import { DemoOutro } from "@/components/demo-day/outro";
 import { DemoApplyFab } from "@/components/demo-day/apply-fab";
@@ -80,7 +80,7 @@ export default async function DemoDayPage({
         <DemoAbout />
         <DemoStats />
         <DemoWho />
-        <DemoNotionBlock
+        <DemoSponsors
           notionLogoSrc={logos.notion}
           codexLogoSrc={logos.codex}
           cursorLogoSrc={logos.cursor}
