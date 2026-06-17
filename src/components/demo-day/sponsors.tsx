@@ -20,7 +20,8 @@ export function DemoSponsors({
         id="notion"
         partner={NOTION}
         logoSrc={notionLogoSrc}
-        tone="accent"
+        tone="light"
+        logoClassName="h-24 w-auto brightness-0 invert sm:h-36 lg:h-44"
         headline="El workspace con IA de las mejores startups."
         whatItIs="Notion es el espacio de trabajo todo-en-uno donde equipos documentan, planifican y construyen con IA integrada."
         whatItsFor="Tres meses de Notion + AI para las startups seleccionadas, más un taller para arrancar con el stack con el que operan las mejores startups del mundo."
