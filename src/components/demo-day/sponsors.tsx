@@ -42,6 +42,7 @@ export function DemoSponsors({
         partner={CURSOR}
         logoSrc={cursorLogoSrc}
         tone="light"
+        logoClassName="h-24 w-auto brightness-0 invert sm:h-36 lg:h-44"
         headline="El IDE con IA para construir más rápido."
         whatItIs="Cursor es el editor de código con IA integrada: autocompletado, edición en lenguaje natural y agentes que trabajan dentro de tu codebase."
         whatItsFor="Créditos en Cursor para las startups seleccionadas, para acelerar el desarrollo mientras te preparas para el Demo Day."

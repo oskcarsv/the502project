@@ -12,6 +12,8 @@ type SponsorSectionProps = {
   whatItsFor: string;
   attribution?: string;
   tone?: "light" | "accent";
+  /** e.g. brightness-0 invert for dark marks on the demo day's black panels */
+  logoClassName?: string;
 };
 
 export function DemoSponsorSection({
@@ -23,6 +25,7 @@ export function DemoSponsorSection({
   whatItsFor,
   attribution,
   tone = "accent",
+  logoClassName,
 }: SponsorSectionProps) {
   const isAccent = tone === "accent";
 
@@ -75,7 +78,7 @@ export function DemoSponsorSection({
               <LogoSlot
                 partner={partner}
                 src={logoSrc}
-                className="h-24 w-auto sm:h-36 lg:h-44"
+                className={logoClassName ?? "h-24 w-auto sm:h-36 lg:h-44"}
               />
             </a>
           </Reveal>
