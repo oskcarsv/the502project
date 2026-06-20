@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "communityName": "The 502 Project",
+    "platform": "WhatsApp Community",
+    "startMonth": "2025-11",
+    "lastUpdated": "2026-06-20",
+    "updateInstructions": "El último día de cada mes: abre WhatsApp → Comunidad → scroll abajo → copia el total de miembros → actualiza el snapshot del mes en este archivo."
+  },
+  "snapshots": [
+    {
+      "month": "2025-11",
+      "members": 170,
+      "events": 2,
+      "eventAttendees": 60,
+      "note": "Recap del primer mes: +170 personas, 2 eventos, +60 asistentes.",
+      "source": "linkedin",
+      "confirmed": true
+    },
+    {
+      "month": "2025-12",
+      "members": 220,
+      "events": 1,
+      "note": "Estimado — reemplazar con el conteo real de WhatsApp.",
+      "confirmed": false
+    },
+    {
+      "month": "2026-01",
+      "members": 280,
+      "events": 2,
+      "note": "Estimado — reemplazar con el conteo real de WhatsApp.",
+      "confirmed": false
+    },
+    {
+      "month": "2026-02",
+      "members": 340,
+      "events": 2,
+      "note": "Estimado — reemplazar con el conteo real de WhatsApp.",
+      "confirmed": false
+    },
+    {
+      "month": "2026-03",
+      "members": 380,
+      "events": 3,
+      "eventAttendees": 140,
+      "note": "Mes del Cursor Hackathon GT (140 participantes). Miembros estimados.",
+      "confirmed": false
+    },
+    {
+      "month": "2026-04",
+      "members": 400,
+      "events": 9,
+      "sponsors": 6,
+      "note": "Post de LinkedIn: +400 builders, +9 eventos, +6 sponsors.",
+      "source": "linkedin",
+      "confirmed": true
+    },
+    {
+      "month": "2026-05",
+      "members": 510,
+      "events": 2,
+      "note": "Estimado — reemplazar con el conteo real de WhatsApp.",
+      "confirmed": false
+    },
+    {
+      "month": "2026-06",
+      "members": 625,
+      "events": 2,
+      "note": "625 community members en WhatsApp (8 grupos).",
+      "source": "whatsapp",
+      "confirmed": true
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2025-11-02",
+      "title": "Lanzamiento del grupo WhatsApp",
+      "description": "55 personas en el día 2. Oscar y Sebastian crean la comunidad.",
+      "members": 55
+    },
+    {
+      "date": "2025-11-15",
+      "title": "130 miembros en 2 semanas",
+      "description": "Crecimiento orgánico desde posts en LinkedIn.",
+      "members": 130
+    },
+    {
+      "date": "2025-11-25",
+      "title": "Primer evento: AI Agents in Notion",
+      "description": "~40 asistentes presenciales con Notion Guatemala.",
+      "members": 56
+    },
+    {
+      "date": "2026-03-15",
+      "title": "Cursor Hackathon Ciudad de Guatemala",
+      "description": "140 participantes, 40 equipos, 12 jueces. Meta de 100 superada.",
+      "eventAttendees": 140
+    },
+    {
+      "date": "2026-04-01",
+      "title": "+400 builders",
+      "description": "4 meses de comunidad. 9 eventos y 6 sponsors.",
+      "members": 400
+    },
+    {
+      "date": "2026-06-20",
+      "title": "625 miembros",
+      "description": "Comunidad de WhatsApp con 8 grupos activos.",
+      "members": 625
+    }
+  ]
+}

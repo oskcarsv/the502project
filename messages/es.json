@@ -275,5 +275,47 @@
     "title": "502 Demo Day · Edición 1",
     "badge": "Convocatoria abierta",
     "cta": "Conoce más"
+  },
+  "Growth": {
+    "metaTitle": "Dashboard de crecimiento",
+    "metaDescription": "Seguimiento mensual de miembros y eventos de The 502 Project.",
+    "eyebrow": "Dashboard interno",
+    "title": "Crecimiento de la comunidad 502",
+    "subtitle": "Noviembre 2025 → Junio 2026. Miembros de la comunidad de WhatsApp, eventos y milestones clave.",
+    "dataNote": "Última actualización",
+    "membersChartTitle": "Miembros por mes",
+    "netNewChartTitle": "Nuevos miembros netos",
+    "tableTitle": "Registro mensual",
+    "timelineTitle": "Hitos clave",
+    "howToTitle": "Cómo actualizar el conteo cada mes",
+    "howToSteps": [
+      "Abre WhatsApp → Comunidad The 502 Project.",
+      "Scroll hasta abajo y anota el total de miembros (ej. 625 community members).",
+      "Edita content/growth.json: agrega o actualiza el snapshot del mes con members, events y note.",
+      "Marca confirmed: true cuando el dato viene directo de WhatsApp.",
+      "Deploy — las gráficas se actualizan automáticamente."
+    ],
+    "stats": {
+      "members": "Miembros actuales",
+      "growth": "Crecimiento total",
+      "avgMonthly": "Promedio neto / mes",
+      "months": "Meses activos"
+    },
+    "table": {
+      "month": "Mes",
+      "members": "Miembros",
+      "netNew": "Neto nuevo",
+      "events": "Eventos",
+      "status": "Estado",
+      "note": "Nota",
+      "confirmed": "Confirmado",
+      "estimated": "Estimado"
+    },
+    "legend": {
+      "confirmed": "Dato confirmado",
+      "estimated": "Estimado (pendiente)"
+    },
+    "milestoneMembers": "miembros",
+    "milestoneAttendees": "asistentes"
   }
 }
