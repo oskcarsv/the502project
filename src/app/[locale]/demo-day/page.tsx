@@ -14,7 +14,6 @@ import { DemoBarrilete } from "@/components/demo-day/barrilete";
 import { DemoSponsors } from "@/components/demo-day/sponsors";
 import { DemoClosing } from "@/components/demo-day/closing";
 import { DemoOutro } from "@/components/demo-day/outro";
-import { DemoApplyFab } from "@/components/demo-day/apply-fab";
 
 const TITLE = "502 Demo Day · Edición 1 · con Barrilete Ventures";
 const DESCRIPTION =
@@ -90,7 +89,6 @@ export default async function DemoDayPage({
         <DemoClosing />
       </main>
       <DemoOutro />
-      <DemoApplyFab />
     </div>
   );
 }
