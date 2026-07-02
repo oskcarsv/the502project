@@ -23,19 +23,10 @@ export function DemoClosing() {
           </span>
 
           <h2 className="mt-8 font-display text-[clamp(3rem,12vw,11rem)] font-extrabold uppercase leading-[0.82] tracking-[-0.045em]">
-            ¿Ya construyes?
-            <br />
-            Demuéstralo.
+            Cerrado, nos vemos en el próximo.
           </h2>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link
-              href={DEMO_DAY.applyUrl}
-              className="group inline-flex items-center justify-center gap-2 bg-[var(--demo-bg)] px-9 py-5 text-base font-bold uppercase tracking-wide text-[var(--demo-accent)] transition-transform hover:-translate-y-0.5"
-            >
-              Aplicar ahora
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
             <a
               href={DEMO_DAY.communityUrl}
               target="_blank"

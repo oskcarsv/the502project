@@ -4,7 +4,6 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { DEMO_DAY } from "@/lib/demo-day";
 import { SITE } from "@/lib/site";
-import { DemoApplyForm } from "@/components/demo-day/apply-form";
 import { DemoApplyCriteria } from "@/components/demo-day/apply-criteria";
 import { DemoApplyScaffold } from "@/components/demo-day/apply-scaffold";
 import { DemoApplyHero } from "@/components/demo-day/apply-hero";
@@ -64,10 +63,8 @@ export default async function DemoDayApplyPage({
         <DemoApplyCriteria />
 
         <section id="aplicacion" className="border-b border-[var(--demo-line)]">
-          <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
-            <div className="mx-auto min-w-0 max-w-3xl">
-              <DemoApplyForm />
-            </div>
+          <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 text-center">
+             <h2 className="font-display text-4xl font-extrabold uppercase">Cerrado, nos vemos en el próximo</h2>
           </div>
         </section>
       </main>
