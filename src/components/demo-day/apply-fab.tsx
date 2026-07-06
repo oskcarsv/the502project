@@ -4,6 +4,8 @@ import { DEMO_DAY } from "@/lib/demo-day";
 
 /** Minimal floating CTA. No navbar; this is the only persistent action. */
 export function DemoApplyFab() {
+  if (!DEMO_DAY.applicationsOpen) return null;
+
   return (
     <Link
       href={DEMO_DAY.applyUrl}

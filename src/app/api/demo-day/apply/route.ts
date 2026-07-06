@@ -1,10 +1,18 @@
 import { NextResponse } from "next/server";
+import { DEMO_DAY } from "@/lib/demo-day";
 import {
   submitDemoDayApplication,
   validateDemoDayApplication,
 } from "@/lib/demo-day-apply";
 
 export async function POST(request: Request) {
+  if (!DEMO_DAY.applicationsOpen) {
+    return NextResponse.json(
+      { ok: false, error: "La convocatoria del Demo Day ya cerró." },
+      { status: 403 },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = (await request.json()) as Record<string, unknown>;

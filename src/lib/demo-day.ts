@@ -9,6 +9,8 @@ export const BARRILETE_URL = "https://www.barrilete.vc/";
  */
 export const DEMO_DAY = {
   edition: "Edición 1",
+  /** When false, the landing shows a closed state and applications are blocked. */
+  applicationsOpen: false,
   /** ISO start, Guatemala time (UTC-6). Drives the live countdown. */
   eventDate: "2026-06-27T09:00:00-06:00",
   dateLabel: "Sábado 27 de junio, 2026",

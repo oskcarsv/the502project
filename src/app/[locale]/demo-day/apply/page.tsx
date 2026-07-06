@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -40,6 +41,10 @@ export default async function DemoDayApplyPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (!DEMO_DAY.applicationsOpen) {
+    redirect("/demo-day");
+  }
 
   return (
     <div className="demo-surface min-h-screen overflow-x-clip">

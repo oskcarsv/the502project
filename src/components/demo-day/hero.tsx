@@ -108,12 +108,20 @@ export function DemoHero() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="flex flex-wrap items-center gap-x-3 gap-y-2"
           >
-            <span className="inline-block bg-[var(--demo-accent)] px-3 py-1.5 font-space text-xs font-bold uppercase tracking-[0.14em] text-[var(--demo-bg)]">
-              En colaboración con
-            </span>
-            <BarrileteLink className="font-display text-lg font-extrabold uppercase tracking-tight no-underline hover:text-[var(--demo-accent)] sm:text-2xl">
-              Barrilete Ventures
-            </BarrileteLink>
+            {DEMO_DAY.applicationsOpen ? (
+              <>
+                <span className="inline-block bg-[var(--demo-accent)] px-3 py-1.5 font-space text-xs font-bold uppercase tracking-[0.14em] text-[var(--demo-bg)]">
+                  En colaboración con
+                </span>
+                <BarrileteLink className="font-display text-lg font-extrabold uppercase tracking-tight no-underline hover:text-[var(--demo-accent)] sm:text-2xl">
+                  Barrilete Ventures
+                </BarrileteLink>
+              </>
+            ) : (
+              <span className="inline-block bg-[var(--demo-bg)] px-3 py-1.5 font-space text-xs font-bold uppercase tracking-[0.14em] text-[var(--demo-accent)]">
+                Edición cerrada · Gracias por acompañarnos
+              </span>
+            )}
           </motion.div>
 
           <motion.div

@@ -18,7 +18,7 @@ import { DemoApplyFab } from "@/components/demo-day/apply-fab";
 
 const TITLE = "502 Demo Day · Edición 1 · con Barrilete Ventures";
 const DESCRIPTION =
-  "El primer Demo Day del 502: 12 startups guatemaltecas que ya están construyendo se preparan un día con mentores y herramientas, y pitchean ante Barrilete Ventures, el primer fondo ángel de Guatemala.";
+  "La Edición 1 del 502 Demo Day ya cerró. Gracias a todos los que aplicaron y nos acompañaron. Nos vemos en la próxima edición.";
 
 export const metadata: Metadata = {
   title: TITLE,
