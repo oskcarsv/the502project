@@ -7,8 +7,8 @@ import { MetricValue } from "./metric-value";
  * The `value` strings are PLACEHOLDERS. Edit them in the messages files under
  * `Partners.proof.items.<key>.value` (es.json and en.json):
  *   - members.value   → total builders in the community (referential)
- *   - events.value    → events organized to date (referential: +20 / 20+)
- *   - attendees.value → average attendees per space/event (referential)
+ *   - events.value    → events organized to date (referential: +25)
+ *   - attendees.value → total attendees across events (referential: +1500)
  * Audience makeup lives in `Partners.proof.audience_value` (free text).
  * Numeric values count up on scroll; text renders as-is.
  */

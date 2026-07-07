@@ -23,9 +23,14 @@
       "description": "Builders and founders sharing knowledge, opportunities, and projects."
     },
     "events": {
-      "value": "+20",
+      "value": "+25",
       "label": "Events",
       "description": "Hackathons, workshops, and talks hosted with leaders of the ecosystem."
+    },
+    "attendees": {
+      "value": "+1500",
+      "label": "Attendees",
+      "description": "People who have attended our events and community spaces."
     },
     "sponsors": {
       "value": "+8",
@@ -152,12 +157,12 @@
           "label": "Builders in the community"
         },
         "events": {
-          "value": "20+",
+          "value": "+25",
           "label": "Events organized"
         },
         "attendees": {
-          "value": "100+",
-          "label": "Attendees per space"
+          "value": "+1500",
+          "label": "Attendees"
         }
       }
     },

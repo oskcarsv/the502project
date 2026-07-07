@@ -23,9 +23,14 @@
       "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
     },
     "events": {
-      "value": "+20",
+      "value": "+25",
       "label": "Eventos",
       "description": "Hackathons, workshops y charlas realizados con líderes del ecosistema."
+    },
+    "attendees": {
+      "value": "+1500",
+      "label": "Asistentes",
+      "description": "Personas que han asistido a nuestros eventos y espacios de la comunidad."
     },
     "sponsors": {
       "value": "+8",
@@ -152,12 +157,12 @@
           "label": "Builders en la comunidad"
         },
         "events": {
-          "value": "+20",
+          "value": "+25",
           "label": "Eventos organizados"
         },
         "attendees": {
-          "value": "+100",
-          "label": "Asistentes por espacio"
+          "value": "+1500",
+          "label": "Asistentes"
         }
       }
     },

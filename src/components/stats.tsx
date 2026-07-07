@@ -1,14 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { Calendar, Handshake, Users } from "lucide-react";
+import { Calendar, Handshake, UserCheck, Users } from "lucide-react";
 import { motion, useAnimation, useInView } from "motion/react";
 import { useTranslations } from "next-intl";
 
-const STAT_KEYS = ["members", "events", "sponsors"] as const;
+const STAT_KEYS = ["members", "events", "attendees", "sponsors"] as const;
 const STAT_ICONS: Record<(typeof STAT_KEYS)[number], React.ElementType> = {
   members: Users,
   events: Calendar,
+  attendees: UserCheck,
   sponsors: Handshake,
 };
 
@@ -40,7 +41,7 @@ export function Stats() {
           initial="hidden"
           animate={controls}
           variants={{ hidden: {}, visible: {} }}
-          className="mx-auto grid max-w-6xl md:grid-cols-3"
+          className="mx-auto grid max-w-6xl md:grid-cols-2 lg:grid-cols-4"
         >
           {STAT_KEYS.map((key, i) => {
             const Icon = STAT_ICONS[key];
