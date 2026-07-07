@@ -14,11 +14,10 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { WHATSAPP_INVITE } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
-const NAV_KEYS = ["events", "blog", "partners"] as const;
+const NAV_KEYS = ["events", "blog"] as const;
 const NAV_HREFS: Record<(typeof NAV_KEYS)[number], string> = {
   events: "/eventos",
   blog: "/blog",
-  partners: "/partners",
 };
 
 export function Navbar({

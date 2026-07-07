@@ -7,8 +7,7 @@
   },
   "Nav": {
     "events": "Events",
-    "blog": "Blog",
-    "partners": "Partners"
+    "blog": "Blog"
   },
   "Pillars": {
     "build": "Build",
@@ -114,119 +113,6 @@
     "report_eyebrow": "Report",
     "report_title": "Were you a victim or witness?",
     "report_body": "Your safety and wellbeing are our priority. If you experience or witness any behavior that violates this code of conduct, contact the502project representatives immediately. Your report will be treated with confidentiality."
-  },
-  "Partners": {
-    "meta_title": "Partners · The 502 Project",
-    "meta_description": "Let's build the region's tech ecosystem together. 502 brings together the builders shaping the future of software in Central America, backed by Cursor and Notion. Join as a partner.",
-    "email_subject": "Application to the partners program · The 502 Project",
-    "email_body": "Hi 502 team. I'd like to apply as a partner.%0D%0A%0D%0ABrand / company:%0D%0ARole:%0D%0AWhat we want to achieve:%0D%0ALevel of interest (Supporter / Partner / Lead Partner):",
-    "apply_label": "Apply to the partners program",
-    "hero": {
-      "eyebrow": "502 Partners",
-      "title": "The region's tech ecosystem won't build itself. We're building it.",
-      "subline": "502 brings together the builders defining the future of software in Central America. Join as a partner and let's grow the ecosystem together.",
-      "scarcity": "Exclusive program. We review every application carefully."
-    },
-    "mission": {
-      "eyebrow": "The mission",
-      "title": "Central America already builds world-class software. It lacks the ecosystem to power it.",
-      "kicker": "Partners join a movement. They don't buy space.",
-      "pillars": {
-        "gather": {
-          "title": "We gather the talent",
-          "body": "Founders, engineers and creators in one place."
-        },
-        "produce": {
-          "title": "We produce the spaces",
-          "body": "Events and gatherings the community already shows up for."
-        },
-        "connect": {
-          "title": "We connect the ecosystem",
-          "body": "People, companies and opportunities that grow together."
-        }
-      }
-    },
-    "proof": {
-      "eyebrow": "Our track record",
-      "title": "We're already building it. Here are the numbers.",
-      "audience_label": "Who shows up",
-      "audience_value": "Engineers, entrepreneurs, founders",
-      "items": {
-        "members": {
-          "value": "+600",
-          "label": "Builders in the community"
-        },
-        "events": {
-          "value": "+25",
-          "label": "Events organized"
-        },
-        "attendees": {
-          "value": "+1500",
-          "label": "Attendees"
-        }
-      }
-    },
-    "backers": {
-      "eyebrow": "Backed by",
-      "title": "Who already believes in this.",
-      "note": "The same tools the best builders in the world use stand behind what we're building in the region.",
-      "items": {
-        "cursor": {
-          "name": "Cursor",
-          "tag": "The AI code editor for builders"
-        },
-        "notion": {
-          "name": "Notion",
-          "tag": "The connected workspace"
-        }
-      }
-    },
-    "tiers": {
-      "eyebrow": "Ways to partner",
-      "title": "Three ways to build with us.",
-      "intro": "Choose how you want to join. Each tier is a different way to partner with the community.",
-      "spots_label": "Limited spots",
-      "featured_label": "Most exclusive",
-      "cta": "Apply to this tier",
-      "items": {
-        "supporter": {
-          "name": "Supporter",
-          "audience": "For early-stage brands starting to build presence.",
-          "benefits": {
-            "b1": "Constant digital presence across the community's channels.",
-            "b2": "Positioning in the biweekly newsletter.",
-            "b3": "Monthly amplification by prior agreement.",
-            "b4": "Preferred access to premium space tickets."
-          }
-        },
-        "partner": {
-          "name": "Partner",
-          "audience": "For startups with traction and mid-sized companies ready for action.",
-          "benefits": {
-            "b1": "Physical presence with a booth or activation at monthly events.",
-            "b2": "Speaking time to deliver technical value to the audience.",
-            "b3": "Access to the community's talent channel.",
-            "b4": "Collaborative posts and extended amplification."
-          }
-        },
-        "lead": {
-          "name": "Lead Partner",
-          "audience": "For leading brands and corporates seeking maximum presence.",
-          "benefits": {
-            "b1": "Maximum visibility across every digital and physical asset.",
-            "b2": "Presence at the month's spaces.",
-            "b3": "Full access to the community's talent.",
-            "b4": "Co-creation options with your brand."
-          }
-        }
-      }
-    },
-    "close": {
-      "cta_eyebrow": "Join us",
-      "cta_title": "Let's build the region's ecosystem, together.",
-      "cta_body": "If you share the vision, let's talk. Tell us who you are and what you want to build.",
-      "note": "Exclusive program. We choose carefully who we build with."
-    }
   },
   "Events": {
     "eyebrow": "Events",

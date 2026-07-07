@@ -11,7 +11,6 @@ import { SOCIAL_LINKS, WHATSAPP_INVITE } from "@/lib/links";
 const SITE_LINKS = [
   { key: "events", href: "/eventos" },
   { key: "blog", href: "/blog" },
-  { key: "partners", href: "/partners" },
 ] as const;
 
 const COMMUNITY_LINKS = [

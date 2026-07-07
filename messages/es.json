@@ -7,8 +7,7 @@
   },
   "Nav": {
     "events": "Eventos",
-    "blog": "Blog",
-    "partners": "Partners"
+    "blog": "Blog"
   },
   "Pillars": {
     "build": "Construye",
@@ -114,119 +113,6 @@
     "report_eyebrow": "Reportar",
     "report_title": "¿Fuiste víctima o testigo?",
     "report_body": "Tu seguridad y bienestar son nuestra prioridad. Si experimentás o ves cualquier comportamiento que viole este código de conducta, contactá a los representantes de the502project de inmediato. Tu reporte será tratado con confidencialidad."
-  },
-  "Partners": {
-    "meta_title": "Partners · The 502 Project",
-    "meta_description": "Construyamos juntos el ecosistema tech de la región. 502 reúne a los builders que están construyendo el futuro del software en Centroamérica, con el respaldo de Cursor y Notion. Súmate como partner.",
-    "email_subject": "Aplicación al programa de partners · The 502 Project",
-    "email_body": "Hola, equipo de 502. Quiero aplicar como partner.%0D%0A%0D%0AMarca / empresa:%0D%0ARol:%0D%0AQué buscamos lograr:%0D%0ANivel de interés (Supporter / Partner / Lead Partner):",
-    "apply_label": "Aplicar al programa de partners",
-    "hero": {
-      "eyebrow": "Partners 502",
-      "title": "El ecosistema tech de la región no se va a construir solo. Lo estamos construyendo.",
-      "subline": "502 reúne a los builders que están definiendo el futuro del software en Centroamérica. Súmate como partner y crezcamos el ecosistema juntos.",
-      "scarcity": "Programa exclusivo. Revisamos cada postulación con cuidado."
-    },
-    "mission": {
-      "eyebrow": "La misión",
-      "title": "Centroamérica ya construye software de clase mundial. Le falta el ecosistema que lo potencie.",
-      "kicker": "Los partners se suman a un movimiento. No compran espacio.",
-      "pillars": {
-        "gather": {
-          "title": "Reunimos el talento",
-          "body": "Founders, ingenieros y creadores en un mismo lugar."
-        },
-        "produce": {
-          "title": "Producimos los espacios",
-          "body": "Eventos y encuentros que la comunidad ya espera."
-        },
-        "connect": {
-          "title": "Conectamos el ecosistema",
-          "body": "Personas, empresas y oportunidades que crecen juntas."
-        }
-      }
-    },
-    "proof": {
-      "eyebrow": "Nuestra trayectoria",
-      "title": "Ya lo estamos construyendo. Estos son los números.",
-      "audience_label": "Quiénes asisten",
-      "audience_value": "Ingenieros, emprendedores, founders",
-      "items": {
-        "members": {
-          "value": "+600",
-          "label": "Builders en la comunidad"
-        },
-        "events": {
-          "value": "+25",
-          "label": "Eventos organizados"
-        },
-        "attendees": {
-          "value": "+1500",
-          "label": "Asistentes"
-        }
-      }
-    },
-    "backers": {
-      "eyebrow": "Respaldados por",
-      "title": "Quienes ya creen en esto.",
-      "note": "Las mismas herramientas que usan los mejores builders del mundo respaldan lo que construimos en la región.",
-      "items": {
-        "cursor": {
-          "name": "Cursor",
-          "tag": "El editor con IA para builders"
-        },
-        "notion": {
-          "name": "Notion",
-          "tag": "El espacio de trabajo conectado"
-        }
-      }
-    },
-    "tiers": {
-      "eyebrow": "Formas de ser partner",
-      "title": "Tres formas de construir con nosotros.",
-      "intro": "Elige cómo quieres sumarte. Cada nivel es una forma distinta de ser partner en la comunidad.",
-      "spots_label": "Cupos limitados",
-      "featured_label": "Más exclusivo",
-      "cta": "Aplicar a este nivel",
-      "items": {
-        "supporter": {
-          "name": "Supporter",
-          "audience": "Para marcas en etapa temprana que empiezan a construir presencia.",
-          "benefits": {
-            "b1": "Presencia digital constante en los canales de la comunidad.",
-            "b2": "Posicionamiento en el newsletter quincenal.",
-            "b3": "Difusión mensual con acuerdo previo.",
-            "b4": "Acceso preferente a las entradas de los espacios premium."
-          }
-        },
-        "partner": {
-          "name": "Partner",
-          "audience": "Para startups con tracción y empresas medianas listas para la acción.",
-          "benefits": {
-            "b1": "Presencia física con stand o activación en los eventos del mes.",
-            "b2": "Tiempo de habla para entregar valor técnico ante la audiencia.",
-            "b3": "Acceso al canal de talento de la comunidad.",
-            "b4": "Posts colaborativos y difusión ampliada."
-          }
-        },
-        "lead": {
-          "name": "Lead Partner",
-          "audience": "Para marcas líderes y corporativos que buscan la máxima presencia.",
-          "benefits": {
-            "b1": "Máxima visibilidad en todos los activos digitales y físicos.",
-            "b2": "Presencia en los espacios del mes.",
-            "b3": "Acceso completo al talento de la comunidad.",
-            "b4": "Opciones de co-creación con tu marca."
-          }
-        }
-      }
-    },
-    "close": {
-      "cta_eyebrow": "Súmate",
-      "cta_title": "Construyamos el ecosistema de la región, juntos.",
-      "cta_body": "Si compartes la visión, hablemos. Cuéntanos quién eres y qué quieres construir.",
-      "note": "Programa exclusivo. Elegimos con cuidado con quién construimos."
-    }
   },
   "Events": {
     "eyebrow": "Eventos",
