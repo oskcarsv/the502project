@@ -62,8 +62,8 @@ export function Stats() {
                 <div className="shrink-0 rounded-full bg-brand-dark p-3 transition-transform group-hover:scale-105 sm:mb-6 sm:p-4">
                   <Icon className="size-6 text-brand-green sm:size-8" />
                 </div>
-                <div className="flex flex-1 flex-col gap-1.5 sm:items-center sm:gap-0">
-                  <div className="flex items-baseline gap-3 sm:flex-col sm:gap-2">
+                <div className="flex flex-1 flex-col gap-1.5 sm:items-center sm:gap-0 sm:text-center">
+                  <div className="flex items-baseline gap-3 sm:flex-col sm:items-center sm:gap-2">
                     <div className="font-display text-4xl font-bold leading-none tracking-tight text-brand-dark sm:text-6xl">
                       {t(`${key}.value`)}
                     </div>
@@ -71,7 +71,7 @@ export function Stats() {
                       {t(`${key}.label`)}
                     </div>
                   </div>
-                  <p className="text-sm leading-relaxed text-foreground/65 sm:mt-0">
+                  <p className="text-sm leading-relaxed text-foreground/65 sm:mt-0 sm:max-w-[18rem]">
                     {t(`${key}.description`)}
                   </p>
                 </div>
