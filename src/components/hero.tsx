@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, Calendar, Handshake, UserCheck, Users } from "lucide-react";
+import { ArrowRight, Calendar, UserCheck, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Navbar } from "@/components/navbar";
@@ -13,12 +13,11 @@ import {
 } from "@/components/social-icons";
 import { SOCIAL_LINKS, WHATSAPP_INVITE } from "@/lib/links";
 
-const STAT_KEYS = ["members", "events", "attendees", "sponsors"] as const;
+const STAT_KEYS = ["members", "events", "attendees"] as const;
 const STAT_ICONS: Record<(typeof STAT_KEYS)[number], React.ElementType> = {
   members: Users,
   events: Calendar,
   attendees: UserCheck,
-  sponsors: Handshake,
 };
 
 const SOCIALS = [

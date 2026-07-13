@@ -30,11 +30,6 @@
       "value": "+1000",
       "label": "Asistentes",
       "description": "Personas que han asistido a nuestros eventos y espacios de la comunidad."
-    },
-    "sponsors": {
-      "value": "+8",
-      "label": "Sponsors",
-      "description": "Empresas y partners apoyando el crecimiento de la comunidad 502."
     }
   },
   "About": {

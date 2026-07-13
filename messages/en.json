@@ -30,11 +30,6 @@
       "value": "+1000",
       "label": "Attendees",
       "description": "People who have attended our events and community spaces."
-    },
-    "sponsors": {
-      "value": "+8",
-      "label": "Sponsors",
-      "description": "Companies and partners supporting the growth of the 502 community."
     }
   },
   "About": {
