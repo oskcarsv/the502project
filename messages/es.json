@@ -17,7 +17,7 @@
   "Stats": {
     "title": "Una comunidad que crece todos los días.",
     "members": {
-      "value": "+600",
+      "value": "+700",
       "label": "Miembros",
       "description": "Builders y founders compartiendo conocimiento, oportunidades y proyectos."
     },
@@ -27,7 +27,7 @@
       "description": "Hackathons, workshops y charlas realizados con líderes del ecosistema."
     },
     "attendees": {
-      "value": "+1500",
+      "value": "+1000",
       "label": "Asistentes",
       "description": "Personas que han asistido a nuestros eventos y espacios de la comunidad."
     },
@@ -79,7 +79,7 @@
   "FinalCTA": {
     "eyebrow": "Únete",
     "title": "Construyamos juntos.",
-    "subline": "+600 builders, founders y operators ya están en la comunidad. Te están esperando.",
+    "subline": "+700 builders, founders y operators ya están en la comunidad. Te están esperando.",
     "cta_primary": "Únete a la comunidad",
     "cta_secondary": "Síguenos"
   },

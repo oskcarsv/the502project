@@ -41,7 +41,7 @@ export function Stats() {
           initial="hidden"
           animate={controls}
           variants={{ hidden: {}, visible: {} }}
-          className="mx-auto grid max-w-6xl md:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto grid w-full max-w-6xl border border-foreground/10 md:grid-cols-2 lg:grid-cols-4"
         >
           {STAT_KEYS.map((key, i) => {
             const Icon = STAT_ICONS[key];
@@ -58,7 +58,7 @@ export function Stats() {
                   stiffness: 100,
                   damping: 12,
                 }}
-                className="group flex flex-row items-center gap-5 border border-foreground/10 bg-background p-6 sm:flex-col sm:items-center sm:p-10 sm:text-center"
+                className="group flex flex-row items-center gap-5 border-foreground/10 bg-background p-6 sm:flex-col sm:items-center sm:p-10 sm:text-center max-md:not-last:border-b md:[&:nth-child(-n+2)]:border-b md:odd:border-r lg:border-b-0 lg:border-r-0 lg:not-last:border-r"
               >
                 <div className="shrink-0 rounded-full bg-brand-dark p-3 transition-transform group-hover:scale-105 sm:mb-6 sm:p-4">
                   <Icon className="size-6 text-brand-green sm:size-8" />
